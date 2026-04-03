@@ -27,19 +27,6 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors
                 return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.OpenAq.OpenApiClient.v3.sensors.item collection</summary>
-        /// <param name="position">Limit the results to a specific sensors id</param>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("sensors_%2Did", position);
-                return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.SensorsRequestBuilder"/> and sets the default values.
         /// </summary>
