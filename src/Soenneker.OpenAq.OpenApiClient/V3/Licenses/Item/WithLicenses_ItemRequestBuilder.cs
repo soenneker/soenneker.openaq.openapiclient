@@ -34,7 +34,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item
         {
         }
         /// <summary>
-        /// Provides a instrument by instrument ID
+        /// Provides a license by license ID
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LicensesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.LicensesResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.LicensesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides a instrument by instrument ID
+        /// Provides a license by license ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

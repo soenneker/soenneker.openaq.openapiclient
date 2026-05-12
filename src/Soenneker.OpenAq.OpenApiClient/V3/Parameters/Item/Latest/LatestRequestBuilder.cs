@@ -34,7 +34,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Parameters.Item.Latest
         {
         }
         /// <summary>
-        /// Parameters Latest Get
+        /// Provides a list of latest measurements of the indicated parameters ID
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LatestResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Parameters.Item.Latest
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.LatestResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.LatestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Parameters Latest Get
+        /// Provides a list of latest measurements of the indicated parameters ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Parameters.Item.Latest
             return new global::Soenneker.OpenAq.OpenApiClient.V3.Parameters.Item.Latest.LatestRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Parameters Latest Get
+        /// Provides a list of latest measurements of the indicated parameters ID
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LatestRequestBuilderGetQueryParameters 

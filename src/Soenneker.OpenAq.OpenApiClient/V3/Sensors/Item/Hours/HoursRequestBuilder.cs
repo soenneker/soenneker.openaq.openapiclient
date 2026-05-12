@@ -70,7 +70,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours
         {
         }
         /// <summary>
-        /// Provides a list of hourly data by sensor ID
+        /// Provides a list of hourly measurements by sensor ID. If a sensor         is reporting at a higher frequency than hourly (e.g. one measurement         every 10 minutes), this endpoint returns the precomputed average         measurement value by the hour.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -93,7 +93,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides a list of hourly data by sensor ID
+        /// Provides a list of hourly measurements by sensor ID. If a sensor         is reporting at a higher frequency than hourly (e.g. one measurement         every 10 minutes), this endpoint returns the precomputed average         measurement value by the hour.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours
             return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours.HoursRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Provides a list of hourly data by sensor ID
+        /// Provides a list of hourly measurements by sensor ID. If a sensor         is reporting at a higher frequency than hourly (e.g. one measurement         every 10 minutes), this endpoint returns the precomputed average         measurement value by the hour.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HoursRequestBuilderGetQueryParameters 

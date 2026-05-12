@@ -34,7 +34,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Measurements.Hourly
         {
         }
         /// <summary>
-        /// Provides a list of measurements by sensor ID
+        /// Provides a list of measurements aggregated to hourly values         on the fly by sensor ID. For better performance but similar functionality,         `/sensors/{sensors_id}/hours` is the recommended endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.MeasurementsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Measurements.Hourly
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.MeasurementsResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.MeasurementsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides a list of measurements by sensor ID
+        /// Provides a list of measurements aggregated to hourly values         on the fly by sensor ID. For better performance but similar functionality,         `/sensors/{sensors_id}/hours` is the recommended endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Measurements.Hourly
             return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Measurements.Hourly.HourlyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Provides a list of measurements by sensor ID
+        /// Provides a list of measurements aggregated to hourly values         on the fly by sensor ID. For better performance but similar functionality,         `/sensors/{sensors_id}/hours` is the recommended endpoint.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HourlyRequestBuilderGetQueryParameters 

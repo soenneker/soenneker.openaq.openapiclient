@@ -34,7 +34,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Days.Monthly
         {
         }
         /// <summary>
-        /// Provides a list of daily summaries of hourly data by sensor ID
+        /// Provides a list of monthly summaries of daily data by sensor ID
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Days.Monthly
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Provides a list of daily summaries of hourly data by sensor ID
+        /// Provides a list of monthly summaries of daily data by sensor ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Days.Monthly
             return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Days.Monthly.MonthlyRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Provides a list of daily summaries of hourly data by sensor ID
+        /// Provides a list of monthly summaries of daily data by sensor ID
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MonthlyRequestBuilderGetQueryParameters 
