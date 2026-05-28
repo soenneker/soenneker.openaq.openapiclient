@@ -1,0 +1,5464 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "OpenAQ",
+    "description": "OpenAQ API",
+    "version": "3.0.0"
+  },
+  "paths": {
+    "/v3/instruments/{instruments_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get an instrument by ID",
+        "description": "Provides a instrument by instrument ID",
+        "operationId": "instrument-get-v3-instruments-instruments-id-get",
+        "parameters": [
+          {
+            "name": "instruments_id",
+            "in": "path",
+            "description": "Limit the results to a specific instruments id",
+            "required": true,
+            "schema": {
+              "title": "Instruments Id",
+              "type": "integer",
+              "description": "Limit the results to a specific instruments id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstrumentsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/instruments": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get instruments",
+        "description": "Provides a list of instruments",
+        "operationId": "instruments-get-v3-instruments-get",
+        "parameters": [
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstrumentsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/manufacturers/{manufacturers_id}/instruments": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get instruments by manufacturer ID",
+        "description": "Provides a list of instruments for a specific manufacturer",
+        "operationId": "get-instruments-by-manufacturer-v3-manufacturers-manufacturers-id-instruments-get",
+        "parameters": [
+          {
+            "name": "manufacturers_id",
+            "in": "path",
+            "description": "Limit results to a specific manufacturer id",
+            "required": true,
+            "schema": {
+              "title": "Manufacturers Id",
+              "type": "integer",
+              "description": "Limit results to a specific manufacturer id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstrumentsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/locations/{locations_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a location by ID",
+        "description": "Provides a location by location ID",
+        "operationId": "location-get-v3-locations-locations-id-get",
+        "parameters": [
+          {
+            "name": "locations_id",
+            "in": "path",
+            "description": "Limit the results to a specific location by id",
+            "required": true,
+            "schema": {
+              "title": "Locations Id",
+              "type": "integer",
+              "description": "Limit the results to a specific location by id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/locations": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get locations",
+        "description": "Provides a list of locations",
+        "operationId": "locations-get-v3-locations-get",
+        "parameters": [
+          {
+            "name": "coordinates",
+            "in": "query",
+            "description": "WGS 84 Coordinate pair in form latitude,longitude. Supports up to 4 decimal points of precision, additional decimal precision will be truncated in the query e.g. 38.9074,-77.0373",
+            "schema": {
+              "title": "Coordinates",
+              "type": "string",
+              "description": "WGS 84 Coordinate pair in form latitude,longitude. Supports up to 4 decimal points of precision, additional decimal precision will be truncated in the query e.g. 38.9074,-77.0373",
+              "nullable": true
+            }
+          },
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000",
+            "schema": {
+              "title": "Radius",
+              "maximum": 25000,
+              "exclusiveMaximum": false,
+              "minimum": false,
+              "exclusiveMinimum": true,
+              "type": "integer",
+              "description": "Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000",
+              "nullable": true
+            }
+          },
+          {
+            "name": "providers_id",
+            "in": "query",
+            "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs",
+            "schema": {
+              "title": "Providers Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs",
+              "nullable": true
+            }
+          },
+          {
+            "name": "parameters_id",
+            "in": "query",
+            "schema": {
+              "title": "Parameters Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          },
+          {
+            "name": "owner_contacts_id",
+            "in": "query",
+            "description": "Limit the results to a specific owner by owner ID with a single owner ID or comma delimited list of IDs",
+            "schema": {
+              "title": "Owner Contacts Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Limit the results to a specific owner by owner ID with a single owner ID or comma delimited list of IDs",
+              "nullable": true
+            }
+          },
+          {
+            "name": "manufacturers_id",
+            "in": "query",
+            "schema": {
+              "title": "Manufacturers Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "",
+              "nullable": true
+            }
+          },
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "licenses_id",
+            "in": "query",
+            "schema": {
+              "title": "Licenses Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "",
+              "nullable": true
+            }
+          },
+          {
+            "name": "monitor",
+            "in": "query",
+            "description": "Is the location considered a reference monitor?",
+            "schema": {
+              "title": "Monitor",
+              "type": "boolean",
+              "description": "Is the location considered a reference monitor?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "mobile",
+            "in": "query",
+            "description": "Is the location considered a mobile location?",
+            "schema": {
+              "title": "Mobile",
+              "type": "boolean",
+              "description": "Is the location considered a mobile location?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "instruments_id",
+            "in": "query",
+            "schema": {
+              "title": "Instruments Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "",
+              "nullable": true
+            }
+          },
+          {
+            "name": "iso",
+            "in": "query",
+            "description": "Limit the results to a specific country using ISO 3166-1 alpha-2 code",
+            "schema": {
+              "title": "Iso",
+              "type": "string",
+              "description": "Limit the results to a specific country using ISO 3166-1 alpha-2 code",
+              "nullable": true
+            }
+          },
+          {
+            "name": "countries_id",
+            "in": "query",
+            "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
+            "schema": {
+              "title": "Countries Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
+              "nullable": true
+            }
+          },
+          {
+            "name": "bbox",
+            "in": "query",
+            "description": "geospatial bounding box of Min X, min Y, max X, max Y in WGS 84 coordinates. Up to 4 decimal points of precision, addtional decimal precision will be truncated to 4 decimal points precision e.g. -77.037,38.907,-77.0,39.910",
+            "schema": {
+              "title": "Bbox",
+              "type": "string",
+              "description": "geospatial bounding box of Min X, min Y, max X, max Y in WGS 84 coordinates. Up to 4 decimal points of precision, addtional decimal precision will be truncated to 4 decimal points precision e.g. -77.037,38.907,-77.0,39.910",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/licenses/{licenses_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a license by ID",
+        "description": "Provides a license by license ID",
+        "operationId": "license-get-v3-licenses-licenses-id-get",
+        "parameters": [
+          {
+            "name": "licenses_id",
+            "in": "path",
+            "description": "Limit the results to a specific licenses id",
+            "required": true,
+            "schema": {
+              "title": "Licenses Id",
+              "type": "integer",
+              "description": "Limit the results to a specific licenses id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicensesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/licenses": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get licenses",
+        "description": "Provides a list of licenses",
+        "operationId": "instruments-get-v3-licenses-get",
+        "parameters": [
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LicensesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/parameters/{parameters_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a parameter by ID",
+        "description": "Provides a parameter by parameter ID",
+        "operationId": "parameter-get-v3-parameters-parameters-id-get",
+        "parameters": [
+          {
+            "name": "parameters_id",
+            "in": "path",
+            "description": "Limit the results to a specific parameters id",
+            "required": true,
+            "schema": {
+              "title": "Parameters Id",
+              "type": "integer",
+              "description": "Limit the results to a specific parameters id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParametersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/parameters": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a parameters",
+        "description": "Provides a list of parameters",
+        "operationId": "parameters-get-v3-parameters-get",
+        "parameters": [
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "parameter_type",
+            "in": "query",
+            "description": "Limit the results to a specific parameters type",
+            "schema": {
+              "title": "Parameter Type",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Limit the results to a specific parameters type",
+              "nullable": true
+            }
+          },
+          {
+            "name": "coordinates",
+            "in": "query",
+            "description": "WGS 84 Coordinate pair in form latitude,longitude. Supports up to 4 decimal points of precision, additional decimal precision will be truncated in the query e.g. 38.9074,-77.0373",
+            "schema": {
+              "title": "Coordinates",
+              "type": "string",
+              "description": "WGS 84 Coordinate pair in form latitude,longitude. Supports up to 4 decimal points of precision, additional decimal precision will be truncated in the query e.g. 38.9074,-77.0373",
+              "nullable": true
+            }
+          },
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000",
+            "schema": {
+              "title": "Radius",
+              "maximum": 25000,
+              "exclusiveMaximum": false,
+              "minimum": false,
+              "exclusiveMinimum": true,
+              "type": "integer",
+              "description": "Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000",
+              "nullable": true
+            }
+          },
+          {
+            "name": "bbox",
+            "in": "query",
+            "description": "geospatial bounding box of Min X, min Y, max X, max Y in WGS 84 coordinates. Up to 4 decimal points of precision, addtional decimal precision will be truncated to 4 decimal points precision e.g. -77.037,38.907,-77.0,39.910",
+            "schema": {
+              "title": "Bbox",
+              "type": "string",
+              "description": "geospatial bounding box of Min X, min Y, max X, max Y in WGS 84 coordinates. Up to 4 decimal points of precision, addtional decimal precision will be truncated to 4 decimal points precision e.g. -77.037,38.907,-77.0,39.910",
+              "nullable": true
+            }
+          },
+          {
+            "name": "iso",
+            "in": "query",
+            "description": "Limit the results to a specific country using ISO 3166-1 alpha-2 code",
+            "schema": {
+              "title": "Iso",
+              "type": "string",
+              "description": "Limit the results to a specific country using ISO 3166-1 alpha-2 code",
+              "nullable": true
+            }
+          },
+          {
+            "name": "countries_id",
+            "in": "query",
+            "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
+            "schema": {
+              "title": "Countries Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParametersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/countries/{countries_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a country by ID",
+        "description": "Provides a country by country ID",
+        "operationId": "country-get-v3-countries-countries-id-get",
+        "parameters": [
+          {
+            "name": "countries_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Countries Id",
+              "minimum": 1,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountriesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/countries": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get countries",
+        "description": "Provides a list of countries",
+        "operationId": "countries-get-v3-countries-get",
+        "parameters": [
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "providers_id",
+            "in": "query",
+            "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs",
+            "schema": {
+              "title": "Providers Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs",
+              "nullable": true
+            }
+          },
+          {
+            "name": "parameters_id",
+            "in": "query",
+            "schema": {
+              "title": "Parameters Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CountriesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/manufacturers/{manufacturers_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a manufacturer by ID",
+        "description": "Provides a manufacturer by manufacturer ID",
+        "operationId": "manufacturer-get-v3-manufacturers-manufacturers-id-get",
+        "parameters": [
+          {
+            "name": "manufacturers_id",
+            "in": "path",
+            "description": "Limit the results to a specific manufacturers id",
+            "required": true,
+            "schema": {
+              "title": "Manufacturers Id",
+              "type": "integer",
+              "description": "Limit the results to a specific manufacturers id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManufacturersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/manufacturers": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get manufacturers",
+        "description": "Provides a list of manufacturers",
+        "operationId": "manufacturers-get-v3-manufacturers-get",
+        "parameters": [
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ManufacturersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/measurements": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements by sensor ID",
+        "description": "Provides a list of measurements by sensor ID",
+        "operationId": "sensor-measurements-get-v3-sensors-sensors-id-measurements-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeasurementsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/measurements/hourly": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated to hours by sensor ID",
+        "description": "Provides a list of measurements aggregated to hourly values         on the fly by sensor ID. For better performance but similar functionality,         `/sensors/{sensors_id}/hours` is the recommended endpoint.",
+        "operationId": "sensor-measurements-aggregated-get-hourly-v3-sensors-sensors-id-measurements-hourly-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeasurementsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/measurements/daily": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated to days by sensor ID",
+        "description": "Provides a list of measurements by sensor ID",
+        "operationId": "sensor-measurements-aggregated-get-daily-v3-sensors-sensors-id-measurements-daily-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MeasurementsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/hours": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get precomputed hourly measurements by sensor ID",
+        "description": "Provides a list of hourly measurements by sensor ID. If a sensor         is reporting at a higher frequency than hourly (e.g. one measurement         every 10 minutes), this endpoint returns the precomputed average         measurement value by the hour.",
+        "operationId": "sensor-hourly-measurements-get-v3-sensors-sensors-id-hours-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/hours/daily": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from hour to day by sensor ID",
+        "description": "Provides a list of daily summaries of hourly data by sensor ID",
+        "operationId": "sensor-hourly-measurements-aggregate-to-day-get-v3-sensors-sensors-id-hours-daily-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/hours/monthly": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from hour to month by sensor ID",
+        "description": "Provides a list of monthly summaries of hourly data by sensor ID",
+        "operationId": "sensor-hourly-measurements-aggregate-to-month-get-v3-sensors-sensors-id-hours-monthly-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/hours/yearly": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from hour to year by sensor ID",
+        "description": "Provides a list of yearly summaries of hourly data by sensor ID",
+        "operationId": "sensor-hourly-measurements-aggregate-to-year-get-v3-sensors-sensors-id-hours-yearly-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/hours/hourofday": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from hour to hour of day by sensor ID",
+        "description": "Provides a list of summaries of hourly data by hour of day value by sensor ID",
+        "operationId": "sensor-hourly-measurements-aggregate-to-hod-get-v3-sensors-sensors-id-hours-hourofday-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/hours/dayofweek": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from hour to day of week by sensor ID",
+        "description": "Provides a list of summaries of hourly data by day of week by sensor ID",
+        "operationId": "sensor-hourly-measurements-aggregate-to-dow-get-v3-sensors-sensors-id-hours-dayofweek-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/hours/monthofyear": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from hour to month of year by sensor ID",
+        "description": "Provides a list of summaries of hourly data by month of year by sensor ID",
+        "operationId": "sensor-hourly-measurements-aggregate-to-moy-get-v3-sensors-sensors-id-hours-monthofyear-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/days/dayofweek": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from day to day of week by sensor ID",
+        "description": "Provides a list of summaries of daily data by day of week by sensor ID",
+        "operationId": "sensor-daily-measurements-aggregate-to-dow-get-v3-sensors-sensors-id-days-dayofweek-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Date To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Date From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/days/monthofyear": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from day to month of year by sensor ID",
+        "description": "Provides a list of summaries of daily data by month of year by sensor ID",
+        "operationId": "sensor-daily-measurements-aggregate-to-moy-get-v3-sensors-sensors-id-days-monthofyear-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Date To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Date From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/days": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated to day by sensor ID",
+        "description": "Provides a list of daily data by sensor ID",
+        "operationId": "sensor-daily-get-v3-sensors-sensors-id-days-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Date To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Date From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DailyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/days/monthly": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from day to month by sensor ID",
+        "description": "Provides a list of monthly summaries of daily data by sensor ID",
+        "operationId": "sensor-daily-aggregate-to-month-get-v3-sensors-sensors-id-days-monthly-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Date To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Date From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/days/yearly": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated from day to year by sensor ID",
+        "description": "Provides a list of yearly summaries of daily data by sensor ID",
+        "operationId": "sensor-daily-aggregate-to-year-get-v3-sensors-sensors-id-days-yearly-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Date To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Date From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HourlyDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}/years": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get measurements aggregated to year by sensor ID",
+        "description": "Provides a list of annual data by sensor ID",
+        "operationId": "sensor-yearly-get-v3-sensors-sensors-id-years-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          },
+          {
+            "name": "date_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Date To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "date_from",
+            "in": "query",
+            "description": "From when?",
+            "schema": {
+              "title": "Date From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "From when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AnnualDataResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/owners/{owners_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a owner by ID",
+        "description": "Provides a owner by owner ID",
+        "operationId": "owner-get-v3-owners-owners-id-get",
+        "parameters": [
+          {
+            "name": "owners_id",
+            "in": "path",
+            "description": "Limit the results to a specific owner by id",
+            "required": true,
+            "schema": {
+              "title": "Owners Id",
+              "type": "integer",
+              "description": "Limit the results to a specific owner by id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OwnersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/owners": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get owners",
+        "description": "Provides a list of owners",
+        "operationId": "owners-get-v3-owners-get",
+        "parameters": [
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OwnersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/providers/{providers_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a provider by ID",
+        "description": "Provides a provider by provider ID",
+        "operationId": "provider-get-v3-providers-providers-id-get",
+        "parameters": [
+          {
+            "name": "providers_id",
+            "in": "path",
+            "description": "Limit the results to a specific provider by id",
+            "required": true,
+            "schema": {
+              "title": "Providers Id",
+              "type": "integer",
+              "description": "Limit the results to a specific provider by id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvidersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/providers": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get providers",
+        "description": "Provides a list of providers",
+        "operationId": "providers-get-v3-providers-get",
+        "parameters": [
+          {
+            "name": "order_by",
+            "in": "query",
+            "description": "The field by which to order results",
+            "schema": {
+              "title": "Order By",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "The field by which to order results",
+              "default": "id",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sort_order",
+            "in": "query",
+            "description": "Sort results ascending or descending. Default ASC",
+            "schema": {
+              "title": "Sort Order",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Sort results ascending or descending. Default ASC",
+              "default": "asc",
+              "nullable": true
+            }
+          },
+          {
+            "name": "parameters_id",
+            "in": "query",
+            "schema": {
+              "title": "Parameters Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "",
+              "nullable": true
+            }
+          },
+          {
+            "name": "monitor",
+            "in": "query",
+            "description": "Is the location considered a reference monitor?",
+            "schema": {
+              "title": "Monitor",
+              "type": "boolean",
+              "description": "Is the location considered a reference monitor?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "iso",
+            "in": "query",
+            "description": "Limit the results to a specific country using ISO 3166-1 alpha-2 code",
+            "schema": {
+              "title": "Iso",
+              "type": "string",
+              "description": "Limit the results to a specific country using ISO 3166-1 alpha-2 code",
+              "nullable": true
+            }
+          },
+          {
+            "name": "countries_id",
+            "in": "query",
+            "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
+            "schema": {
+              "title": "Countries Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
+              "nullable": true
+            }
+          },
+          {
+            "name": "bbox",
+            "in": "query",
+            "description": "geospatial bounding box of Min X, min Y, max X, max Y in WGS 84 coordinates. Up to 4 decimal points of precision, addtional decimal precision will be truncated to 4 decimal points precision e.g. -77.037,38.907,-77.0,39.910",
+            "schema": {
+              "title": "Bbox",
+              "type": "string",
+              "description": "geospatial bounding box of Min X, min Y, max X, max Y in WGS 84 coordinates. Up to 4 decimal points of precision, addtional decimal precision will be truncated to 4 decimal points precision e.g. -77.037,38.907,-77.0,39.910",
+              "nullable": true
+            }
+          },
+          {
+            "name": "coordinates",
+            "in": "query",
+            "description": "WGS 84 Coordinate pair in form latitude,longitude. Supports up to 4 decimal points of precision, additional decimal precision will be truncated in the query e.g. 38.9074,-77.0373",
+            "schema": {
+              "title": "Coordinates",
+              "type": "string",
+              "description": "WGS 84 Coordinate pair in form latitude,longitude. Supports up to 4 decimal points of precision, additional decimal precision will be truncated in the query e.g. 38.9074,-77.0373",
+              "nullable": true
+            }
+          },
+          {
+            "name": "radius",
+            "in": "query",
+            "description": "Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000",
+            "schema": {
+              "title": "Radius",
+              "maximum": 25000,
+              "exclusiveMaximum": false,
+              "minimum": false,
+              "exclusiveMinimum": true,
+              "type": "integer",
+              "description": "Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000",
+              "nullable": true
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvidersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/locations/{locations_id}/sensors": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get sensors by location ID",
+        "description": "Provides a list of sensors by location ID",
+        "operationId": "sensors-get-v3-locations-locations-id-sensors-get",
+        "parameters": [
+          {
+            "name": "locations_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Locations Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensors_id}": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a sensor by ID",
+        "description": "Provides a sensor by sensor ID",
+        "operationId": "sensor-get-v3-sensors-sensors-id-get",
+        "parameters": [
+          {
+            "name": "sensors_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensors id",
+            "required": true,
+            "schema": {
+              "title": "Sensors Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensors id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SensorsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/parameters/{parameters_id}/latest": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get latest measurements by parameters ID",
+        "description": "Provides a list of latest measurements of the indicated parameters ID",
+        "operationId": "parameters-latest-get-v3-parameters-parameters-id-latest-get",
+        "parameters": [
+          {
+            "name": "parameters_id",
+            "in": "path",
+            "description": "Limit the results to a specific parameters id",
+            "required": true,
+            "schema": {
+              "title": "Parameters Id",
+              "type": "integer",
+              "description": "Limit the results to a specific parameters id"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          },
+          {
+            "name": "datetime_min",
+            "in": "query",
+            "description": "Minimum datetime",
+            "schema": {
+              "title": "Datetime Min",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Minimum datetime",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LatestResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/locations/{locations_id}/latest": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get a location's latest measurements",
+        "description": "Providers a location's latest measurement values",
+        "operationId": "location-latest-get-v3-locations-locations-id-latest-get",
+        "parameters": [
+          {
+            "name": "locations_id",
+            "in": "path",
+            "description": "Limit the results to a specific location by id",
+            "required": true,
+            "schema": {
+              "title": "Locations Id",
+              "type": "integer",
+              "description": "Limit the results to a specific location by id"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          },
+          {
+            "name": "datetime_min",
+            "in": "query",
+            "description": "Minimum datetime",
+            "schema": {
+              "title": "Datetime Min",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "Minimum datetime",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LatestResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/locations/{locations_id}/flags": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get flags by location ID",
+        "description": "Provides a list of flags by location ID",
+        "operationId": "location-flags-get-v3-locations-locations-id-flags-get",
+        "parameters": [
+          {
+            "name": "locations_id",
+            "in": "path",
+            "description": "Limit the results to a specific locations",
+            "required": true,
+            "schema": {
+              "title": "Locations Id",
+              "type": "integer",
+              "description": "Limit the results to a specific locations"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationFlagsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    },
+    "/v3/sensors/{sensor_id}/flags": {
+      "get": {
+        "tags": [
+          "v3"
+        ],
+        "summary": "Get flags by sensor ID",
+        "description": "Provides a list of flags by sensor ID",
+        "operationId": "sensor-flags-get-v3-sensors-sensor-id-flags-get",
+        "parameters": [
+          {
+            "name": "sensor_id",
+            "in": "path",
+            "description": "Limit the results to a specific sensor",
+            "required": true,
+            "schema": {
+              "title": "Sensor Id",
+              "type": "integer",
+              "description": "Limit the results to a specific sensor"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+            "schema": {
+              "title": "Limit",
+              "type": "integer",
+              "description": "Change the number of results returned.\n        e.g. limit=100 will return up to 100 results",
+              "default": 100
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Paginate through results. e.g. page=1 will return first page of results",
+            "schema": {
+              "title": "Page",
+              "type": "integer",
+              "description": "Paginate through results. e.g. page=1 will return first page of results",
+              "default": 1
+            }
+          },
+          {
+            "name": "datetime_from",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime From",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          },
+          {
+            "name": "datetime_to",
+            "in": "query",
+            "description": "To when?",
+            "schema": {
+              "title": "Datetime To",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ],
+              "description": "To when?",
+              "nullable": true
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationFlagsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "APIKeyHeader": [ ]
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnnualData": {
+        "title": "AnnualData",
+        "required": [
+          "flagInfo",
+          "parameter"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "title": "Value",
+            "type": "number",
+            "nullable": true
+          },
+          "flagInfo": {
+            "$ref": "#/components/schemas/FlagInfo"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/ParameterBase"
+          },
+          "period": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Period"
+              }
+            ],
+            "nullable": true
+          },
+          "coordinates": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coordinates"
+              }
+            ],
+            "nullable": true
+          },
+          "summary": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Summary"
+              }
+            ],
+            "nullable": true
+          },
+          "coverage": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coverage"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "AnnualDataResponse": {
+        "title": "AnnualDataResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AnnualData"
+            }
+          }
+        }
+      },
+      "AttributionEntity": {
+        "title": "AttributionEntity",
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "Coordinates": {
+        "title": "Coordinates",
+        "type": "object",
+        "properties": {
+          "latitude": {
+            "title": "Latitude",
+            "type": "number",
+            "nullable": true
+          },
+          "longitude": {
+            "title": "Longitude",
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "CountriesResponse": {
+        "title": "CountriesResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Country"
+            }
+          }
+        }
+      },
+      "CountriesSortFields": {
+        "title": "CountriesSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Country": {
+        "title": "Country",
+        "required": [
+          "id",
+          "code",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "datetimeFirst": {
+            "title": "Datetimefirst",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "datetimeLast": {
+            "title": "Datetimelast",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "parameters": {
+            "title": "Parameters",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Parameters"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "CountryBase": {
+        "title": "CountryBase",
+        "required": [
+          "code",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer",
+            "nullable": true
+          },
+          "code": {
+            "title": "Code",
+            "type": "string"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        }
+      },
+      "Coverage": {
+        "title": "Coverage",
+        "required": [
+          "expectedCount",
+          "expectedInterval",
+          "observedCount",
+          "observedInterval",
+          "percentComplete",
+          "percentCoverage"
+        ],
+        "type": "object",
+        "properties": {
+          "expectedCount": {
+            "title": "Expectedcount",
+            "type": "integer"
+          },
+          "expectedInterval": {
+            "title": "Expectedinterval",
+            "type": "string"
+          },
+          "observedCount": {
+            "title": "Observedcount",
+            "type": "integer"
+          },
+          "observedInterval": {
+            "title": "Observedinterval",
+            "type": "string"
+          },
+          "percentComplete": {
+            "title": "Percentcomplete",
+            "type": "number"
+          },
+          "percentCoverage": {
+            "title": "Percentcoverage",
+            "type": "number"
+          },
+          "datetimeFrom": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          },
+          "datetimeTo": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "DailyData": {
+        "title": "DailyData",
+        "required": [
+          "flagInfo",
+          "parameter"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "title": "Value",
+            "type": "number",
+            "nullable": true
+          },
+          "flagInfo": {
+            "$ref": "#/components/schemas/FlagInfo"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/ParameterBase"
+          },
+          "period": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Period"
+              }
+            ],
+            "nullable": true
+          },
+          "coordinates": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coordinates"
+              }
+            ],
+            "nullable": true
+          },
+          "summary": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Summary"
+              }
+            ],
+            "nullable": true
+          },
+          "coverage": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coverage"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "DailyDataResponse": {
+        "title": "DailyDataResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DailyData"
+            }
+          }
+        }
+      },
+      "DatetimeObject": {
+        "title": "DatetimeObject",
+        "required": [
+          "utc",
+          "local"
+        ],
+        "type": "object",
+        "properties": {
+          "utc": {
+            "title": "Utc",
+            "type": "string",
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "EntityBase": {
+        "title": "EntityBase",
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        }
+      },
+      "FlagInfo": {
+        "title": "FlagInfo",
+        "required": [
+          "hasFlags"
+        ],
+        "type": "object",
+        "properties": {
+          "hasFlags": {
+            "title": "Hasflags",
+            "type": "boolean"
+          }
+        }
+      },
+      "FlagType": {
+        "title": "FlagType",
+        "required": [
+          "id",
+          "label",
+          "level"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "level": {
+            "title": "Level",
+            "type": "string"
+          }
+        }
+      },
+      "GeoJSON": {
+        "title": "GeoJSON",
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string"
+          },
+          "coordinates": {
+            "title": "Coordinates",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "default": [ ]
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "HourlyData": {
+        "title": "HourlyData",
+        "required": [
+          "flagInfo",
+          "parameter"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "title": "Value",
+            "type": "number",
+            "nullable": true
+          },
+          "flagInfo": {
+            "$ref": "#/components/schemas/FlagInfo"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/ParameterBase"
+          },
+          "period": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Period"
+              }
+            ],
+            "nullable": true
+          },
+          "coordinates": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coordinates"
+              }
+            ],
+            "nullable": true
+          },
+          "summary": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Summary"
+              }
+            ],
+            "nullable": true
+          },
+          "coverage": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coverage"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "HourlyDataResponse": {
+        "title": "HourlyDataResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HourlyData"
+            }
+          }
+        }
+      },
+      "Instrument": {
+        "title": "Instrument",
+        "required": [
+          "id",
+          "name",
+          "isMonitor",
+          "manufacturer"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "isMonitor": {
+            "title": "Ismonitor",
+            "type": "boolean"
+          },
+          "manufacturer": {
+            "$ref": "#/components/schemas/ManufacturerBase"
+          }
+        }
+      },
+      "InstrumentBase": {
+        "title": "InstrumentBase",
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        }
+      },
+      "InstrumentsResponse": {
+        "title": "InstrumentsResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Instrument"
+            }
+          }
+        }
+      },
+      "InstrumentsSortFields": {
+        "title": "InstrumentsSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Latest": {
+        "title": "Latest",
+        "required": [
+          "datetime",
+          "value",
+          "coordinates",
+          "sensorsId",
+          "locationsId"
+        ],
+        "type": "object",
+        "properties": {
+          "datetime": {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          },
+          "coordinates": {
+            "$ref": "#/components/schemas/Coordinates"
+          },
+          "sensorsId": {
+            "title": "Sensorsid",
+            "type": "integer"
+          },
+          "locationsId": {
+            "title": "Locationsid",
+            "type": "integer"
+          }
+        }
+      },
+      "LatestBase": {
+        "title": "LatestBase",
+        "required": [
+          "datetime",
+          "value",
+          "coordinates"
+        ],
+        "type": "object",
+        "properties": {
+          "datetime": {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          },
+          "coordinates": {
+            "$ref": "#/components/schemas/Coordinates"
+          }
+        }
+      },
+      "LatestResponse": {
+        "title": "LatestResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Latest"
+            }
+          }
+        }
+      },
+      "License": {
+        "title": "License",
+        "required": [
+          "id",
+          "name",
+          "commercialUseAllowed",
+          "attributionRequired",
+          "shareAlikeRequired",
+          "modificationAllowed",
+          "redistributionAllowed",
+          "sourceUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "commercialUseAllowed": {
+            "title": "Commercialuseallowed",
+            "type": "boolean"
+          },
+          "attributionRequired": {
+            "title": "Attributionrequired",
+            "type": "boolean"
+          },
+          "shareAlikeRequired": {
+            "title": "Sharealikerequired",
+            "type": "boolean"
+          },
+          "modificationAllowed": {
+            "title": "Modificationallowed",
+            "type": "boolean"
+          },
+          "redistributionAllowed": {
+            "title": "Redistributionallowed",
+            "type": "boolean"
+          },
+          "sourceUrl": {
+            "title": "Sourceurl",
+            "type": "string"
+          }
+        }
+      },
+      "LicensesResponse": {
+        "title": "LicensesResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/License"
+            }
+          }
+        }
+      },
+      "LicensesSortFields": {
+        "title": "LicensesSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Location": {
+        "title": "Location",
+        "required": [
+          "id",
+          "timezone",
+          "country",
+          "owner",
+          "provider",
+          "isMobile",
+          "isMonitor",
+          "instruments",
+          "sensors",
+          "coordinates",
+          "bounds"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "nullable": true
+          },
+          "locality": {
+            "title": "Locality",
+            "type": "string",
+            "nullable": true
+          },
+          "timezone": {
+            "title": "Timezone",
+            "type": "string"
+          },
+          "country": {
+            "$ref": "#/components/schemas/CountryBase"
+          },
+          "owner": {
+            "$ref": "#/components/schemas/EntityBase"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ProviderBase"
+          },
+          "isMobile": {
+            "title": "Ismobile",
+            "type": "boolean"
+          },
+          "isMonitor": {
+            "title": "Ismonitor",
+            "type": "boolean"
+          },
+          "instruments": {
+            "title": "Instruments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InstrumentBase"
+            }
+          },
+          "sensors": {
+            "title": "Sensors",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SensorBase"
+            }
+          },
+          "coordinates": {
+            "$ref": "#/components/schemas/Coordinates"
+          },
+          "licenses": {
+            "title": "Licenses",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Licenses"
+              }
+            ],
+            "nullable": true
+          },
+          "bounds": {
+            "title": "Bounds",
+            "maxItems": 4,
+            "minItems": 4,
+            "type": "array",
+            "items": {
+              "type": "number"
+            }
+          },
+          "distance": {
+            "title": "Distance",
+            "type": "number",
+            "nullable": true
+          },
+          "datetimeFirst": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          },
+          "datetimeLast": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "LocationFlag": {
+        "title": "LocationFlag",
+        "required": [
+          "locationId",
+          "flagType",
+          "datetimeFrom",
+          "datetimeTo"
+        ],
+        "type": "object",
+        "properties": {
+          "locationId": {
+            "title": "Locationid",
+            "type": "integer"
+          },
+          "flagType": {
+            "$ref": "#/components/schemas/FlagType"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          "sensorIds": {
+            "title": "Sensorids",
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "default": [ ]
+          },
+          "note": {
+            "title": "Note",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "LocationFlagsResponse": {
+        "title": "LocationFlagsResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationFlag"
+            }
+          }
+        }
+      },
+      "LocationLicense": {
+        "title": "LocationLicense",
+        "required": [
+          "id",
+          "name",
+          "attribution"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "attribution": {
+            "$ref": "#/components/schemas/AttributionEntity"
+          },
+          "dateFrom": {
+            "title": "Datefrom",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "dateTo": {
+            "title": "Dateto",
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          }
+        }
+      },
+      "LocationsResponse": {
+        "title": "LocationsResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Location"
+            }
+          }
+        }
+      },
+      "LocationsSortFields": {
+        "title": "LocationsSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Manufacturer": {
+        "title": "Manufacturer",
+        "required": [
+          "id",
+          "name",
+          "instruments"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "instruments": {
+            "title": "Instruments",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InstrumentBase"
+            }
+          }
+        }
+      },
+      "ManufacturerBase": {
+        "title": "ManufacturerBase",
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        }
+      },
+      "ManufacturersResponse": {
+        "title": "ManufacturersResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Manufacturer"
+            }
+          }
+        }
+      },
+      "ManufacturersSortFields": {
+        "title": "ManufacturersSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Measurement": {
+        "title": "Measurement",
+        "required": [
+          "flagInfo",
+          "parameter"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "title": "Value",
+            "type": "number",
+            "nullable": true
+          },
+          "flagInfo": {
+            "$ref": "#/components/schemas/FlagInfo"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/ParameterBase"
+          },
+          "period": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Period"
+              }
+            ],
+            "nullable": true
+          },
+          "coordinates": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coordinates"
+              }
+            ],
+            "nullable": true
+          },
+          "summary": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Summary"
+              }
+            ],
+            "nullable": true
+          },
+          "coverage": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coverage"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "MeasurementsResponse": {
+        "title": "MeasurementsResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Measurement"
+            }
+          }
+        }
+      },
+      "Meta": {
+        "title": "Meta",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Name",
+            "type": "string",
+            "default": "openaq-api"
+          },
+          "website": {
+            "title": "Website",
+            "type": "string",
+            "default": "/"
+          },
+          "page": {
+            "title": "Page",
+            "type": "integer",
+            "default": 1
+          },
+          "limit": {
+            "title": "Limit",
+            "type": "integer",
+            "default": 100
+          },
+          "found": {
+            "title": "Found",
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Found"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "Owner": {
+        "title": "Owner",
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        }
+      },
+      "OwnersResponse": {
+        "title": "OwnersResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Owner"
+            }
+          }
+        }
+      },
+      "OwnersSortFields": {
+        "title": "OwnersSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Parameter": {
+        "title": "Parameter",
+        "required": [
+          "id",
+          "name",
+          "units"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "units": {
+            "title": "Units",
+            "type": "string"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ParameterBase": {
+        "title": "ParameterBase",
+        "required": [
+          "id",
+          "name",
+          "units"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "units": {
+            "title": "Units",
+            "type": "string"
+          },
+          "displayName": {
+            "title": "Displayname",
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ParameterType": {
+        "title": "ParameterType",
+        "enum": [
+          "pollutant",
+          "meteorological"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "ParametersResponse": {
+        "title": "ParametersResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Parameter"
+            }
+          }
+        }
+      },
+      "ParametersSortFields": {
+        "title": "ParametersSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Period": {
+        "title": "Period",
+        "required": [
+          "label",
+          "interval"
+        ],
+        "type": "object",
+        "properties": {
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "interval": {
+            "title": "Interval",
+            "type": "string"
+          },
+          "datetimeFrom": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          },
+          "datetimeTo": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "Provider": {
+        "title": "Provider",
+        "required": [
+          "id",
+          "name",
+          "sourceName",
+          "exportPrefix",
+          "datetimeAdded",
+          "datetimeFirst",
+          "datetimeLast",
+          "entitiesId",
+          "parameters"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "sourceName": {
+            "title": "Sourcename",
+            "type": "string"
+          },
+          "exportPrefix": {
+            "title": "Exportprefix",
+            "type": "string"
+          },
+          "datetimeAdded": {
+            "title": "Datetimeadded",
+            "type": "string",
+            "format": "date-time"
+          },
+          "datetimeFirst": {
+            "title": "Datetimefirst",
+            "type": "string",
+            "format": "date-time"
+          },
+          "datetimeLast": {
+            "title": "Datetimelast",
+            "type": "string",
+            "format": "date-time"
+          },
+          "entitiesId": {
+            "title": "Entitiesid",
+            "type": "integer"
+          },
+          "parameters": {
+            "title": "Parameters",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParameterBase"
+            }
+          },
+          "bbox": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/GeoJSON"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "ProviderBase": {
+        "title": "ProviderBase",
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          }
+        }
+      },
+      "ProvidersResponse": {
+        "title": "ProvidersResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Provider"
+            }
+          }
+        }
+      },
+      "ProvidersSortFields": {
+        "title": "ProvidersSortFields",
+        "enum": [
+          "id"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Sensor": {
+        "title": "Sensor",
+        "required": [
+          "id",
+          "name",
+          "parameter"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/ParameterBase"
+          },
+          "datetimeFirst": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          },
+          "datetimeLast": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/DatetimeObject"
+              }
+            ],
+            "nullable": true
+          },
+          "coverage": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Coverage"
+              }
+            ],
+            "nullable": true
+          },
+          "latest": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LatestBase"
+              }
+            ],
+            "nullable": true
+          },
+          "summary": {
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Summary"
+              }
+            ],
+            "nullable": true
+          }
+        }
+      },
+      "SensorBase": {
+        "title": "SensorBase",
+        "required": [
+          "id",
+          "name",
+          "parameter"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "title": "Id",
+            "type": "integer"
+          },
+          "name": {
+            "title": "Name",
+            "type": "string"
+          },
+          "parameter": {
+            "$ref": "#/components/schemas/ParameterBase"
+          }
+        }
+      },
+      "SensorsResponse": {
+        "title": "SensorsResponse",
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "results": {
+            "title": "Results",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Sensor"
+            }
+          }
+        }
+      },
+      "SortOrder": {
+        "title": "SortOrder",
+        "enum": [
+          "asc",
+          "desc"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
+      "Summary": {
+        "title": "Summary",
+        "type": "object",
+        "properties": {
+          "min": {
+            "title": "Min",
+            "type": "number",
+            "nullable": true
+          },
+          "q02": {
+            "title": "Q02",
+            "type": "number",
+            "nullable": true
+          },
+          "q25": {
+            "title": "Q25",
+            "type": "number",
+            "nullable": true
+          },
+          "median": {
+            "title": "Median",
+            "type": "number",
+            "nullable": true
+          },
+          "q75": {
+            "title": "Q75",
+            "type": "number",
+            "nullable": true
+          },
+          "q98": {
+            "title": "Q98",
+            "type": "number",
+            "nullable": true
+          },
+          "max": {
+            "title": "Max",
+            "type": "number",
+            "nullable": true
+          },
+          "avg": {
+            "title": "Avg",
+            "type": "number",
+            "nullable": true
+          },
+          "sd": {
+            "title": "Sd",
+            "type": "number",
+            "nullable": true
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/UnionBranch"
+                }
+              ]
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      },
+      "ExamplePayload": {
+        "type": "object",
+        "description": "Placeholder schema for path example refs"
+      },
+      "Parameters": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParameterBase"
+            }
+          }
+        }
+      },
+      "Licenses": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationLicense"
+            }
+          }
+        }
+      },
+      "Found": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "UnionBranch": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "APIKeyHeader": {
+        "type": "apiKey",
+        "name": "X-API-Key",
+        "in": "header"
+      },
+      "assets_jwt": {
+        "type": "http",
+        "description": "JWT used for assets upload",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}

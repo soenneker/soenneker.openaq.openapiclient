@@ -23,21 +23,9 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public string Code { get; set; }
 #endif
         /// <summary>The datetimeFirst property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst? DatetimeFirst { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst DatetimeFirst { get; set; }
-#endif
+        public DateTimeOffset? DatetimeFirst { get; set; }
         /// <summary>The datetimeLast property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast? DatetimeLast { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast DatetimeLast { get; set; }
-#endif
+        public DateTimeOffset? DatetimeLast { get; set; }
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The name property</summary>
@@ -51,10 +39,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>? Parameters { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Parameters? Parameters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase> Parameters { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Parameters Parameters { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country"/> and sets the default values.
@@ -82,11 +70,11 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst>(global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst.CreateFromDiscriminatorValue); } },
-                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast>(global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast.CreateFromDiscriminatorValue); } },
+                { "datetimeFirst", n => { DatetimeFirst = n.GetDateTimeOffsetValue(); } },
+                { "datetimeLast", n => { DatetimeLast = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>(global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Parameters>(global::Soenneker.OpenAq.OpenApiClient.Models.Parameters.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,136 +85,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst>("datetimeFirst", DatetimeFirst);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast>("datetimeLast", DatetimeLast);
+            writer.WriteDateTimeOffsetValue("datetimeFirst", DatetimeFirst);
+            writer.WriteDateTimeOffsetValue("datetimeLast", DatetimeLast);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>("parameters", Parameters);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Parameters>("parameters", Parameters);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeFirstMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Country_datetimeFirst : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeFirstMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeFirstMember1? CountryDatetimeFirstMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeFirstMember1 CountryDatetimeFirstMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeFirst();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.CountryDatetimeFirstMember1 = new global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeFirstMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CountryDatetimeFirstMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CountryDatetimeFirstMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeFirstMember1>(null, CountryDatetimeFirstMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeLastMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Country_datetimeLast : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeLastMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeLastMember1? CountryDatetimeLastMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeLastMember1 CountryDatetimeLastMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.OpenAq.OpenApiClient.Models.Country.Country_datetimeLast();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.CountryDatetimeLastMember1 = new global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeLastMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CountryDatetimeLastMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CountryDatetimeLastMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country_datetimeLastMember1>(null, CountryDatetimeLastMember1);
-                }
-            }
         }
     }
 }

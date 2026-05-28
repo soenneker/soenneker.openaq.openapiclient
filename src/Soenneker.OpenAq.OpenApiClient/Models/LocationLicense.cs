@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -14,6 +15,28 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The attribution property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity? Attribution { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity Attribution { get; set; }
+#endif
+        /// <summary>The dateFrom property</summary>
+        public Date? DateFrom { get; set; }
+        /// <summary>The dateTo property</summary>
+        public Date? DateTo { get; set; }
+        /// <summary>The id property</summary>
+        public int? Id { get; set; }
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense"/> and sets the default values.
         /// </summary>
@@ -39,6 +62,11 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "attribution", n => { Attribution = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity>(global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity.CreateFromDiscriminatorValue); } },
+                { "dateFrom", n => { DateFrom = n.GetDateValue(); } },
+                { "dateTo", n => { DateTo = n.GetDateValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +76,11 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity>("attribution", Attribution);
+            writer.WriteDateValue("dateFrom", DateFrom);
+            writer.WriteDateValue("dateTo", DateTo);
+            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

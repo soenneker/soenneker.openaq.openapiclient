@@ -15,21 +15,9 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The latitude property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude? Latitude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude Latitude { get; set; }
-#endif
+        public double? Latitude { get; set; }
         /// <summary>The longitude property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude? Longitude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude Longitude { get; set; }
-#endif
+        public double? Longitude { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "latitude", n => { Latitude = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude>(global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude.CreateFromDiscriminatorValue); } },
-                { "longitude", n => { Longitude = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude>(global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude.CreateFromDiscriminatorValue); } },
+                { "latitude", n => { Latitude = n.GetDoubleValue(); } },
+                { "longitude", n => { Longitude = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -66,133 +54,9 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude>("latitude", Latitude);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude>("longitude", Longitude);
+            writer.WriteDoubleValue("latitude", Latitude);
+            writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_latitudeMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Coordinates_latitude : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_latitudeMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_latitudeMember1? CoordinatesLatitudeMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_latitudeMember1 CoordinatesLatitudeMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_latitude();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.CoordinatesLatitudeMember1 = new global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_latitudeMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CoordinatesLatitudeMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CoordinatesLatitudeMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_latitudeMember1>(null, CoordinatesLatitudeMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_longitudeMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Coordinates_longitude : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_longitudeMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_longitudeMember1? CoordinatesLongitudeMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_longitudeMember1 CoordinatesLongitudeMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.Coordinates_longitude();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.CoordinatesLongitudeMember1 = new global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_longitudeMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CoordinatesLongitudeMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CoordinatesLongitudeMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates_longitudeMember1>(null, CoordinatesLongitudeMember1);
-                }
-            }
         }
     }
 }
