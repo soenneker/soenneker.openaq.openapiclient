@@ -17,10 +17,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The loc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.UnionBranch>? Loc { get; set; }
+        public List<string>? Loc { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.UnionBranch> Loc { get; set; }
+        public List<string> Loc { get; set; }
 #endif
         /// <summary>The msg property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "loc", n => { Loc = n.GetCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.UnionBranch>(global::Soenneker.OpenAq.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "loc", n => { Loc = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "msg", n => { Msg = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.UnionBranch>("loc", Loc);
+            writer.WriteCollectionOfPrimitiveValues<string>("loc", Loc);
             writer.WriteStringValue("msg", Msg);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

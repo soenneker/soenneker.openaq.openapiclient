@@ -73,10 +73,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The licenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Licenses? Licenses { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses? Licenses { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Licenses Licenses { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses Licenses { get; set; }
 #endif
         /// <summary>The locality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -161,7 +161,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
                 { "instruments", n => { Instruments = n.GetCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>(global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isMobile", n => { IsMobile = n.GetBoolValue(); } },
                 { "isMonitor", n => { IsMonitor = n.GetBoolValue(); } },
-                { "licenses", n => { Licenses = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Licenses>(global::Soenneker.OpenAq.OpenApiClient.Models.Licenses.CreateFromDiscriminatorValue); } },
+                { "licenses", n => { Licenses = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses>(global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses.CreateFromDiscriminatorValue); } },
                 { "locality", n => { Locality = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase>(global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase.CreateFromDiscriminatorValue); } },
@@ -187,7 +187,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>("instruments", Instruments);
             writer.WriteBoolValue("isMobile", IsMobile);
             writer.WriteBoolValue("isMonitor", IsMonitor);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Licenses>("licenses", Licenses);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses>("licenses", Licenses);
             writer.WriteStringValue("locality", Locality);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase>("owner", Owner);
