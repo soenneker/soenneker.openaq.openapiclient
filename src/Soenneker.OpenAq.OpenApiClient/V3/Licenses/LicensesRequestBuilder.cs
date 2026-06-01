@@ -20,14 +20,14 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Licenses
     {
         /// <summary>Gets an item from the Soenneker.OpenAq.OpenApiClient.v3.licenses.item collection</summary>
         /// <param name="position">Limit the results to a specific licenses id</param>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item.WithLicenses_ItemRequestBuilder"/></returns>
-        public global::Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item.WithLicenses_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item.WithLicensesItemRequestBuilder"/></returns>
+        public global::Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item.WithLicensesItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("licenses_id", position);
-                return new global::Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item.WithLicenses_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("licensesId", position);
+                return new global::Soenneker.OpenAq.OpenApiClient.V3.Licenses.Item.WithLicensesItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Licenses
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LicensesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.OpenAq.OpenApiClient.Models.LicensesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenAq.OpenApiClient.V3.Licenses.LicensesRequestBuilder.LicensesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Licenses
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.LicensesResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.LicensesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

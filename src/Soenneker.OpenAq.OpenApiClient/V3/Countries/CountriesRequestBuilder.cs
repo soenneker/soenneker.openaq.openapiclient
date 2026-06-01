@@ -20,14 +20,14 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Countries
     {
         /// <summary>Gets an item from the Soenneker.OpenAq.OpenApiClient.v3.countries.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Countries.Item.WithCountries_ItemRequestBuilder"/></returns>
-        public global::Soenneker.OpenAq.OpenApiClient.V3.Countries.Item.WithCountries_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Countries.Item.WithCountriesItemRequestBuilder"/></returns>
+        public global::Soenneker.OpenAq.OpenApiClient.V3.Countries.Item.WithCountriesItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("countries_id", position);
-                return new global::Soenneker.OpenAq.OpenApiClient.V3.Countries.Item.WithCountries_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("countriesId", position);
+                return new global::Soenneker.OpenAq.OpenApiClient.V3.Countries.Item.WithCountriesItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Countries
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.CountriesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.OpenAq.OpenApiClient.Models.CountriesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenAq.OpenApiClient.V3.Countries.CountriesRequestBuilder.CountriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Countries
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.CountriesResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.CountriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

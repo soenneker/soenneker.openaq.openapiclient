@@ -10,7 +10,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class HTTPValidationError : ApiException, IAdditionalDataHolder, IParsable
+    public partial class HttpValidationError : ApiException, IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +26,21 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError"/> and sets the default values.
         /// </summary>
-        public HTTPValidationError()
+        public HttpValidationError()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError();
+            return new global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError();
         }
         /// <summary>
         /// The deserialization information for the current model

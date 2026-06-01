@@ -6,17 +6,17 @@
     "version": "3.0.0"
   },
   "paths": {
-    "/v3/instruments/{instruments_id}": {
+    "/v3/instruments/{instrumentsId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get an instrument by ID",
         "description": "Provides a instrument by instrument ID",
-        "operationId": "instrument-get-v3-instruments-instruments-id-get",
+        "operationId": "InstrumentGetV3InstrumentsInstrumentsIdGet",
         "parameters": [
           {
-            "name": "instruments_id",
+            "name": "instrumentsId",
             "in": "path",
             "description": "Limit the results to a specific instruments id",
             "required": true,
@@ -43,7 +43,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -51,7 +51,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -63,7 +63,7 @@
         ],
         "summary": "Get instruments",
         "description": "Provides a list of instruments",
-        "operationId": "instruments-get-v3-instruments-get",
+        "operationId": "InstrumentsGetV3InstrumentsGet",
         "parameters": [
           {
             "name": "order_by",
@@ -138,7 +138,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -146,22 +146,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/manufacturers/{manufacturers_id}/instruments": {
+    "/v3/manufacturers/{manufacturersId}/instruments": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get instruments by manufacturer ID",
         "description": "Provides a list of instruments for a specific manufacturer",
-        "operationId": "get-instruments-by-manufacturer-v3-manufacturers-manufacturers-id-instruments-get",
+        "operationId": "GetInstrumentsByManufacturerV3ManufacturersManufacturersIdInstrumentsGet",
         "parameters": [
           {
-            "name": "manufacturers_id",
+            "name": "manufacturersId",
             "in": "path",
             "description": "Limit results to a specific manufacturer id",
             "required": true,
@@ -188,7 +188,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -196,22 +196,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/locations/{locations_id}": {
+    "/v3/locations/{locationsId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a location by ID",
         "description": "Provides a location by location ID",
-        "operationId": "location-get-v3-locations-locations-id-get",
+        "operationId": "LocationGetV3LocationsLocationsIdGet",
         "parameters": [
           {
-            "name": "locations_id",
+            "name": "locationsId",
             "in": "path",
             "description": "Limit the results to a specific location by id",
             "required": true,
@@ -238,7 +238,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -246,7 +246,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -258,7 +258,7 @@
         ],
         "summary": "Get locations",
         "description": "Provides a list of locations",
-        "operationId": "locations-get-v3-locations-get",
+        "operationId": "LocationsGetV3LocationsGet",
         "parameters": [
           {
             "name": "coordinates",
@@ -532,7 +532,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -540,22 +540,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/licenses/{licenses_id}": {
+    "/v3/licenses/{licensesId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a license by ID",
         "description": "Provides a license by license ID",
-        "operationId": "license-get-v3-licenses-licenses-id-get",
+        "operationId": "LicenseGetV3LicensesLicensesIdGet",
         "parameters": [
           {
-            "name": "licenses_id",
+            "name": "licensesId",
             "in": "path",
             "description": "Limit the results to a specific licenses id",
             "required": true,
@@ -582,7 +582,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -590,7 +590,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -602,7 +602,7 @@
         ],
         "summary": "Get licenses",
         "description": "Provides a list of licenses",
-        "operationId": "instruments-get-v3-licenses-get",
+        "operationId": "InstrumentsGetV3LicensesGet",
         "parameters": [
           {
             "name": "order_by",
@@ -677,7 +677,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -685,22 +685,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/parameters/{parameters_id}": {
+    "/v3/parameters/{parametersId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a parameter by ID",
         "description": "Provides a parameter by parameter ID",
-        "operationId": "parameter-get-v3-parameters-parameters-id-get",
+        "operationId": "ParameterGetV3ParametersParametersIdGet",
         "parameters": [
           {
-            "name": "parameters_id",
+            "name": "parametersId",
             "in": "path",
             "description": "Limit the results to a specific parameters id",
             "required": true,
@@ -727,7 +727,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -735,7 +735,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -747,7 +747,7 @@
         ],
         "summary": "Get a parameters",
         "description": "Provides a list of parameters",
-        "operationId": "parameters-get-v3-parameters-get",
+        "operationId": "ParametersGetV3ParametersGet",
         "parameters": [
           {
             "name": "order_by",
@@ -905,7 +905,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -913,22 +913,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/countries/{countries_id}": {
+    "/v3/countries/{countriesId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a country by ID",
         "description": "Provides a country by country ID",
-        "operationId": "country-get-v3-countries-countries-id-get",
+        "operationId": "CountryGetV3CountriesCountriesIdGet",
         "parameters": [
           {
-            "name": "countries_id",
+            "name": "countriesId",
             "in": "path",
             "required": true,
             "schema": {
@@ -954,7 +954,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -962,7 +962,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -974,7 +974,7 @@
         ],
         "summary": "Get countries",
         "description": "Provides a list of countries",
-        "operationId": "countries-get-v3-countries-get",
+        "operationId": "CountriesGetV3CountriesGet",
         "parameters": [
           {
             "name": "order_by",
@@ -1086,7 +1086,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1094,22 +1094,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/manufacturers/{manufacturers_id}": {
+    "/v3/manufacturers/{manufacturersId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a manufacturer by ID",
         "description": "Provides a manufacturer by manufacturer ID",
-        "operationId": "manufacturer-get-v3-manufacturers-manufacturers-id-get",
+        "operationId": "ManufacturerGetV3ManufacturersManufacturersIdGet",
         "parameters": [
           {
-            "name": "manufacturers_id",
+            "name": "manufacturersId",
             "in": "path",
             "description": "Limit the results to a specific manufacturers id",
             "required": true,
@@ -1136,7 +1136,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1144,7 +1144,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -1156,7 +1156,7 @@
         ],
         "summary": "Get manufacturers",
         "description": "Provides a list of manufacturers",
-        "operationId": "manufacturers-get-v3-manufacturers-get",
+        "operationId": "ManufacturersGetV3ManufacturersGet",
         "parameters": [
           {
             "name": "order_by",
@@ -1231,7 +1231,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1239,22 +1239,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/measurements": {
+    "/v3/sensors/{sensorsId}/measurements": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements by sensor ID",
         "description": "Provides a list of measurements by sensor ID",
-        "operationId": "sensor-measurements-get-v3-sensors-sensors-id-measurements-get",
+        "operationId": "SensorMeasurementsGetV3SensorsSensorsIdMeasurementsGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -1345,7 +1345,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1353,22 +1353,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/measurements/hourly": {
+    "/v3/sensors/{sensorsId}/measurements/hourly": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated to hours by sensor ID",
-        "description": "Provides a list of measurements aggregated to hourly values         on the fly by sensor ID. For better performance but similar functionality,         `/sensors/{sensors_id}/hours` is the recommended endpoint.",
-        "operationId": "sensor-measurements-aggregated-get-hourly-v3-sensors-sensors-id-measurements-hourly-get",
+        "description": "Provides a list of measurements aggregated to hourly values         on the fly by sensor ID. For better performance but similar functionality,         \u0060/sensors/{sensors_id}/hours\u0060 is the recommended endpoint.",
+        "operationId": "SensorMeasurementsAggregatedGetHourlyV3SensorsSensorsIdMeasurementsHourlyGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -1459,7 +1459,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1467,22 +1467,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/measurements/daily": {
+    "/v3/sensors/{sensorsId}/measurements/daily": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated to days by sensor ID",
         "description": "Provides a list of measurements by sensor ID",
-        "operationId": "sensor-measurements-aggregated-get-daily-v3-sensors-sensors-id-measurements-daily-get",
+        "operationId": "SensorMeasurementsAggregatedGetDailyV3SensorsSensorsIdMeasurementsDailyGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -1573,7 +1573,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1581,22 +1581,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/hours": {
+    "/v3/sensors/{sensorsId}/hours": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get precomputed hourly measurements by sensor ID",
         "description": "Provides a list of hourly measurements by sensor ID. If a sensor         is reporting at a higher frequency than hourly (e.g. one measurement         every 10 minutes), this endpoint returns the precomputed average         measurement value by the hour.",
-        "operationId": "sensor-hourly-measurements-get-v3-sensors-sensors-id-hours-get",
+        "operationId": "SensorHourlyMeasurementsGetV3SensorsSensorsIdHoursGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -1687,7 +1687,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1695,22 +1695,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/hours/daily": {
+    "/v3/sensors/{sensorsId}/hours/daily": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from hour to day by sensor ID",
         "description": "Provides a list of daily summaries of hourly data by sensor ID",
-        "operationId": "sensor-hourly-measurements-aggregate-to-day-get-v3-sensors-sensors-id-hours-daily-get",
+        "operationId": "SensorHourlyMeasurementsAggregateToDayGetV3SensorsSensorsIdHoursDailyGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -1801,7 +1801,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1809,22 +1809,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/hours/monthly": {
+    "/v3/sensors/{sensorsId}/hours/monthly": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from hour to month by sensor ID",
         "description": "Provides a list of monthly summaries of hourly data by sensor ID",
-        "operationId": "sensor-hourly-measurements-aggregate-to-month-get-v3-sensors-sensors-id-hours-monthly-get",
+        "operationId": "SensorHourlyMeasurementsAggregateToMonthGetV3SensorsSensorsIdHoursMonthlyGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -1915,7 +1915,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -1923,22 +1923,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/hours/yearly": {
+    "/v3/sensors/{sensorsId}/hours/yearly": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from hour to year by sensor ID",
         "description": "Provides a list of yearly summaries of hourly data by sensor ID",
-        "operationId": "sensor-hourly-measurements-aggregate-to-year-get-v3-sensors-sensors-id-hours-yearly-get",
+        "operationId": "SensorHourlyMeasurementsAggregateToYearGetV3SensorsSensorsIdHoursYearlyGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2029,7 +2029,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2037,22 +2037,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/hours/hourofday": {
+    "/v3/sensors/{sensorsId}/hours/hourofday": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from hour to hour of day by sensor ID",
         "description": "Provides a list of summaries of hourly data by hour of day value by sensor ID",
-        "operationId": "sensor-hourly-measurements-aggregate-to-hod-get-v3-sensors-sensors-id-hours-hourofday-get",
+        "operationId": "SensorHourlyMeasurementsAggregateToHodGetV3SensorsSensorsIdHoursHourofdayGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2121,7 +2121,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2129,22 +2129,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/hours/dayofweek": {
+    "/v3/sensors/{sensorsId}/hours/dayofweek": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from hour to day of week by sensor ID",
         "description": "Provides a list of summaries of hourly data by day of week by sensor ID",
-        "operationId": "sensor-hourly-measurements-aggregate-to-dow-get-v3-sensors-sensors-id-hours-dayofweek-get",
+        "operationId": "SensorHourlyMeasurementsAggregateToDowGetV3SensorsSensorsIdHoursDayofweekGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2213,7 +2213,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2221,22 +2221,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/hours/monthofyear": {
+    "/v3/sensors/{sensorsId}/hours/monthofyear": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from hour to month of year by sensor ID",
         "description": "Provides a list of summaries of hourly data by month of year by sensor ID",
-        "operationId": "sensor-hourly-measurements-aggregate-to-moy-get-v3-sensors-sensors-id-hours-monthofyear-get",
+        "operationId": "SensorHourlyMeasurementsAggregateToMoyGetV3SensorsSensorsIdHoursMonthofyearGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2305,7 +2305,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2313,22 +2313,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/days/dayofweek": {
+    "/v3/sensors/{sensorsId}/days/dayofweek": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from day to day of week by sensor ID",
         "description": "Provides a list of summaries of daily data by day of week by sensor ID",
-        "operationId": "sensor-daily-measurements-aggregate-to-dow-get-v3-sensors-sensors-id-days-dayofweek-get",
+        "operationId": "SensorDailyMeasurementsAggregateToDowGetV3SensorsSensorsIdDaysDayofweekGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2397,7 +2397,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2405,22 +2405,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/days/monthofyear": {
+    "/v3/sensors/{sensorsId}/days/monthofyear": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from day to month of year by sensor ID",
         "description": "Provides a list of summaries of daily data by month of year by sensor ID",
-        "operationId": "sensor-daily-measurements-aggregate-to-moy-get-v3-sensors-sensors-id-days-monthofyear-get",
+        "operationId": "SensorDailyMeasurementsAggregateToMoyGetV3SensorsSensorsIdDaysMonthofyearGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2489,7 +2489,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2497,22 +2497,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/days": {
+    "/v3/sensors/{sensorsId}/days": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated to day by sensor ID",
         "description": "Provides a list of daily data by sensor ID",
-        "operationId": "sensor-daily-get-v3-sensors-sensors-id-days-get",
+        "operationId": "SensorDailyGetV3SensorsSensorsIdDaysGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2603,7 +2603,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2611,22 +2611,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/days/monthly": {
+    "/v3/sensors/{sensorsId}/days/monthly": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from day to month by sensor ID",
         "description": "Provides a list of monthly summaries of daily data by sensor ID",
-        "operationId": "sensor-daily-aggregate-to-month-get-v3-sensors-sensors-id-days-monthly-get",
+        "operationId": "SensorDailyAggregateToMonthGetV3SensorsSensorsIdDaysMonthlyGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2717,7 +2717,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2725,22 +2725,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/days/yearly": {
+    "/v3/sensors/{sensorsId}/days/yearly": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated from day to year by sensor ID",
         "description": "Provides a list of yearly summaries of daily data by sensor ID",
-        "operationId": "sensor-daily-aggregate-to-year-get-v3-sensors-sensors-id-days-yearly-get",
+        "operationId": "SensorDailyAggregateToYearGetV3SensorsSensorsIdDaysYearlyGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2831,7 +2831,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2839,22 +2839,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}/years": {
+    "/v3/sensors/{sensorsId}/years": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get measurements aggregated to year by sensor ID",
         "description": "Provides a list of annual data by sensor ID",
-        "operationId": "sensor-yearly-get-v3-sensors-sensors-id-years-get",
+        "operationId": "SensorYearlyGetV3SensorsSensorsIdYearsGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -2945,7 +2945,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -2953,22 +2953,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/owners/{owners_id}": {
+    "/v3/owners/{ownersId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a owner by ID",
         "description": "Provides a owner by owner ID",
-        "operationId": "owner-get-v3-owners-owners-id-get",
+        "operationId": "OwnerGetV3OwnersOwnersIdGet",
         "parameters": [
           {
-            "name": "owners_id",
+            "name": "ownersId",
             "in": "path",
             "description": "Limit the results to a specific owner by id",
             "required": true,
@@ -2995,7 +2995,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3003,7 +3003,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -3015,7 +3015,7 @@
         ],
         "summary": "Get owners",
         "description": "Provides a list of owners",
-        "operationId": "owners-get-v3-owners-get",
+        "operationId": "OwnersGetV3OwnersGet",
         "parameters": [
           {
             "name": "order_by",
@@ -3090,7 +3090,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3098,22 +3098,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/providers/{providers_id}": {
+    "/v3/providers/{providersId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a provider by ID",
         "description": "Provides a provider by provider ID",
-        "operationId": "provider-get-v3-providers-providers-id-get",
+        "operationId": "ProviderGetV3ProvidersProvidersIdGet",
         "parameters": [
           {
-            "name": "providers_id",
+            "name": "providersId",
             "in": "path",
             "description": "Limit the results to a specific provider by id",
             "required": true,
@@ -3140,7 +3140,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3148,7 +3148,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -3160,7 +3160,7 @@
         ],
         "summary": "Get providers",
         "description": "Provides a list of providers",
-        "operationId": "providers-get-v3-providers-get",
+        "operationId": "ProvidersGetV3ProvidersGet",
         "parameters": [
           {
             "name": "order_by",
@@ -3331,7 +3331,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3339,22 +3339,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/locations/{locations_id}/sensors": {
+    "/v3/locations/{locationsId}/sensors": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get sensors by location ID",
         "description": "Provides a list of sensors by location ID",
-        "operationId": "sensors-get-v3-locations-locations-id-sensors-get",
+        "operationId": "SensorsGetV3LocationsLocationsIdSensorsGet",
         "parameters": [
           {
-            "name": "locations_id",
+            "name": "locationsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -3381,7 +3381,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3389,22 +3389,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensors_id}": {
+    "/v3/sensors/{sensorsId}": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get a sensor by ID",
         "description": "Provides a sensor by sensor ID",
-        "operationId": "sensor-get-v3-sensors-sensors-id-get",
+        "operationId": "SensorGetV3SensorsSensorsIdGet",
         "parameters": [
           {
-            "name": "sensors_id",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensors id",
             "required": true,
@@ -3431,7 +3431,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3439,22 +3439,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/parameters/{parameters_id}/latest": {
+    "/v3/parameters/{parametersId}/latest": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get latest measurements by parameters ID",
         "description": "Provides a list of latest measurements of the indicated parameters ID",
-        "operationId": "parameters-latest-get-v3-parameters-parameters-id-latest-get",
+        "operationId": "ParametersLatestGetV3ParametersParametersIdLatestGet",
         "parameters": [
           {
-            "name": "parameters_id",
+            "name": "parametersId",
             "in": "path",
             "description": "Limit the results to a specific parameters id",
             "required": true,
@@ -3524,7 +3524,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3532,22 +3532,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/locations/{locations_id}/latest": {
+    "/v3/locations/{locationsId}/latest": {
       "get": {
         "tags": [
           "v3"
         ],
-        "summary": "Get a location's latest measurements",
-        "description": "Providers a location's latest measurement values",
-        "operationId": "location-latest-get-v3-locations-locations-id-latest-get",
+        "summary": "Get a location\u0027s latest measurements",
+        "description": "Providers a location\u0027s latest measurement values",
+        "operationId": "LocationLatestGetV3LocationsLocationsIdLatestGet",
         "parameters": [
           {
-            "name": "locations_id",
+            "name": "locationsId",
             "in": "path",
             "description": "Limit the results to a specific location by id",
             "required": true,
@@ -3617,7 +3617,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3625,22 +3625,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/locations/{locations_id}/flags": {
+    "/v3/locations/{locationsId}/flags": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get flags by location ID",
         "description": "Provides a list of flags by location ID",
-        "operationId": "location-flags-get-v3-locations-locations-id-flags-get",
+        "operationId": "LocationFlagsGetV3LocationsLocationsIdFlagsGet",
         "parameters": [
           {
-            "name": "locations_id",
+            "name": "locationsId",
             "in": "path",
             "description": "Limit the results to a specific locations",
             "required": true,
@@ -3731,7 +3731,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3739,22 +3739,22 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
     },
-    "/v3/sensors/{sensor_id}/flags": {
+    "/v3/sensors/{sensorId}/flags": {
       "get": {
         "tags": [
           "v3"
         ],
         "summary": "Get flags by sensor ID",
         "description": "Provides a list of flags by sensor ID",
-        "operationId": "sensor-flags-get-v3-sensors-sensor-id-flags-get",
+        "operationId": "SensorFlagsGetV3SensorsSensorIdFlagsGet",
         "parameters": [
           {
-            "name": "sensor_id",
+            "name": "sensorId",
             "in": "path",
             "description": "Limit the results to a specific sensor",
             "required": true,
@@ -3845,7 +3845,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
+                  "$ref": "#/components/schemas/HttpValidationError"
                 }
               }
             }
@@ -3853,7 +3853,7 @@
         },
         "security": [
           {
-            "APIKeyHeader": [ ]
+            "APIKeyHeader": []
           }
         ]
       }
@@ -3870,9 +3870,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "title": "Value",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/AnnualDataValue"
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -3881,40 +3879,16 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "period": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Period"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/AnnualDataPeriod"
           },
           "coordinates": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coordinates"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/AnnualDataCoordinates"
           },
           "summary": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Summary"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/AnnualDataSummary"
           },
           "coverage": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coverage"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/AnnualDataCoverage"
           }
         }
       },
@@ -3949,9 +3923,7 @@
             "type": "string"
           },
           "url": {
-            "title": "Url",
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/AttributionEntityUrl"
           }
         }
       },
@@ -3960,14 +3932,10 @@
         "type": "object",
         "properties": {
           "latitude": {
-            "title": "Latitude",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/CoordinatesLatitude"
           },
           "longitude": {
-            "title": "Longitude",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/CoordinatesLongitude"
           }
         }
       },
@@ -3996,7 +3964,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CountriesSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Country": {
         "title": "Country",
@@ -4020,29 +3998,13 @@
             "type": "string"
           },
           "datetimeFirst": {
-            "title": "Datetimefirst",
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/CountryDatetimeFirst"
           },
           "datetimeLast": {
-            "title": "Datetimelast",
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
+            "$ref": "#/components/schemas/CountryDatetimeLast"
           },
           "parameters": {
-            "title": "Parameters",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ParameterBase"
-                }
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/CountryParameters"
           }
         }
       },
@@ -4055,9 +4017,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "title": "Id",
-            "type": "integer",
-            "nullable": true
+            "$ref": "#/components/schemas/CountryBaseId"
           },
           "code": {
             "title": "Code",
@@ -4106,22 +4066,10 @@
             "type": "number"
           },
           "datetimeFrom": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           },
           "datetimeTo": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/CoverageDatetimeTo"
           }
         }
       },
@@ -4134,9 +4082,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "title": "Value",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/DailyDataValue"
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -4145,40 +4091,16 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "period": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Period"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/DailyDataPeriod"
           },
           "coordinates": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coordinates"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/DailyDataCoordinates"
           },
           "summary": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Summary"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/DailyDataSummary"
           },
           "coverage": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coverage"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/DailyDataCoverage"
           }
         }
       },
@@ -4275,7 +4197,7 @@
           }
         }
       },
-      "GeoJSON": {
+      "GeoJson": {
         "title": "GeoJSON",
         "required": [
           "type"
@@ -4290,13 +4212,13 @@
             "title": "Coordinates",
             "type": "array",
             "items": {
-              "type": "object"
+              "$ref": "#/components/schemas/GeoJsonCoordinatesItem"
             },
-            "default": [ ]
+            "default": []
           }
         }
       },
-      "HTTPValidationError": {
+      "HttpValidationError": {
         "title": "HTTPValidationError",
         "type": "object",
         "properties": {
@@ -4318,9 +4240,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "title": "Value",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/HourlyDataValue"
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -4329,40 +4249,16 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "period": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Period"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/HourlyDataPeriod"
           },
           "coordinates": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coordinates"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/HourlyDataCoordinates"
           },
           "summary": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Summary"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/HourlyDataSummary"
           },
           "coverage": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coverage"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/HourlyDataCoverage"
           }
         }
       },
@@ -4455,7 +4351,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "InstrumentsSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Latest": {
         "title": "Latest",
@@ -4601,7 +4507,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "LicensesSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Location": {
         "title": "Location",
@@ -4625,14 +4541,10 @@
             "type": "integer"
           },
           "name": {
-            "title": "Name",
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/LocationName"
           },
           "locality": {
-            "title": "Locality",
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/LocationLocality"
           },
           "timezone": {
             "title": "Timezone",
@@ -4673,17 +4585,7 @@
             "$ref": "#/components/schemas/Coordinates"
           },
           "licenses": {
-            "title": "Licenses",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/LocationLicense"
-                }
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/LocationLicenses"
           },
           "bounds": {
             "title": "Bounds",
@@ -4695,27 +4597,13 @@
             }
           },
           "distance": {
-            "title": "Distance",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/LocationDistance"
           },
           "datetimeFirst": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/LocationDatetimeFirst"
           },
           "datetimeLast": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/LocationDatetimeLast"
           }
         }
       },
@@ -4748,12 +4636,10 @@
             "items": {
               "type": "integer"
             },
-            "default": [ ]
+            "default": []
           },
           "note": {
-            "title": "Note",
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/LocationFlagNote"
           }
         }
       },
@@ -4797,16 +4683,10 @@
             "$ref": "#/components/schemas/AttributionEntity"
           },
           "dateFrom": {
-            "title": "Datefrom",
-            "type": "string",
-            "format": "date",
-            "nullable": true
+            "$ref": "#/components/schemas/LocationLicenseDateFrom"
           },
           "dateTo": {
-            "title": "Dateto",
-            "type": "string",
-            "format": "date",
-            "nullable": true
+            "$ref": "#/components/schemas/LocationLicenseDateTo"
           }
         }
       },
@@ -4835,7 +4715,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "LocationsSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Manufacturer": {
         "title": "Manufacturer",
@@ -4906,7 +4796,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ManufacturersSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Measurement": {
         "title": "Measurement",
@@ -4917,9 +4817,7 @@
         "type": "object",
         "properties": {
           "value": {
-            "title": "Value",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/MeasurementValue"
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -4928,40 +4826,16 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "period": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Period"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/MeasurementPeriod"
           },
           "coordinates": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coordinates"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/MeasurementCoordinates"
           },
           "summary": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Summary"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/MeasurementSummary"
           },
           "coverage": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coverage"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/MeasurementCoverage"
           }
         }
       },
@@ -5009,17 +4883,7 @@
             "default": 100
           },
           "found": {
-            "title": "Found",
-            "type": "object",
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "string"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/MetaFound"
           }
         }
       },
@@ -5066,7 +4930,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "OwnersSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Parameter": {
         "title": "Parameter",
@@ -5090,14 +4964,10 @@
             "type": "string"
           },
           "displayName": {
-            "title": "Displayname",
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/ParameterDisplayName"
           },
           "description": {
-            "title": "Description",
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/ParameterDescription"
           }
         }
       },
@@ -5123,9 +4993,7 @@
             "type": "string"
           },
           "displayName": {
-            "title": "Displayname",
-            "type": "string",
-            "nullable": true
+            "$ref": "#/components/schemas/ParameterBaseDisplayName"
           }
         }
       },
@@ -5136,7 +5004,21 @@
           "meteorological"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ParameterType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pollutant",
+              "name": "Pollutant"
+            },
+            {
+              "value": "meteorological",
+              "name": "Meteorological"
+            }
+          ]
+        }
       },
       "ParametersResponse": {
         "title": "ParametersResponse",
@@ -5163,7 +5045,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ParametersSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Period": {
         "title": "Period",
@@ -5182,22 +5074,10 @@
             "type": "string"
           },
           "datetimeFrom": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodDatetimeFrom"
           },
           "datetimeTo": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/PeriodDatetimeTo"
           }
         }
       },
@@ -5259,13 +5139,7 @@
             }
           },
           "bbox": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/GeoJSON"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/ProviderBbox"
           }
         }
       },
@@ -5312,7 +5186,17 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ProvidersSortFields",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            }
+          ]
+        }
       },
       "Sensor": {
         "title": "Sensor",
@@ -5335,49 +5219,19 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "datetimeFirst": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/SensorDatetimeFirst"
           },
           "datetimeLast": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/DatetimeObject"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/SensorDatetimeLast"
           },
           "coverage": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Coverage"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/SensorCoverage"
           },
           "latest": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/LatestBase"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/SensorLatest"
           },
           "summary": {
-            "type": "object",
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/Summary"
-              }
-            ],
-            "nullable": true
+            "$ref": "#/components/schemas/SensorSummary"
           }
         }
       },
@@ -5429,56 +5283,52 @@
           "desc"
         ],
         "type": "string",
-        "additionalProperties": false
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SortOrder",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "asc",
+              "name": "Asc"
+            },
+            {
+              "value": "desc",
+              "name": "Desc"
+            }
+          ]
+        }
       },
       "Summary": {
         "title": "Summary",
         "type": "object",
         "properties": {
           "min": {
-            "title": "Min",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryMin"
           },
           "q02": {
-            "title": "Q02",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryQ02"
           },
           "q25": {
-            "title": "Q25",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryQ25"
           },
           "median": {
-            "title": "Median",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryMedian"
           },
           "q75": {
-            "title": "Q75",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryQ75"
           },
           "q98": {
-            "title": "Q98",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryQ98"
           },
           "max": {
-            "title": "Max",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryMax"
           },
           "avg": {
-            "title": "Avg",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummaryAvg"
           },
           "sd": {
-            "title": "Sd",
-            "type": "number",
-            "nullable": true
+            "$ref": "#/components/schemas/SummarySd"
           }
         }
       },
@@ -5495,15 +5345,7 @@
             "title": "Location",
             "type": "array",
             "items": {
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
+              "$ref": "#/components/schemas/ValidationErrorLocItem"
             }
           },
           "msg": {
@@ -5516,9 +5358,878 @@
           }
         }
       },
+      "AnnualDataValue": {
+        "title": "Value",
+        "type": "number",
+        "nullable": true
+      },
+      "AnnualDataPeriod": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Period"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Period": "#/components/schemas/Period"
+          }
+        }
+      },
+      "AnnualDataCoordinates": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coordinates"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coordinates": "#/components/schemas/Coordinates"
+          }
+        }
+      },
+      "AnnualDataSummary": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Summary": "#/components/schemas/Summary"
+          }
+        }
+      },
+      "AnnualDataCoverage": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coverage": "#/components/schemas/Coverage"
+          }
+        }
+      },
+      "AttributionEntityUrl": {
+        "title": "Url",
+        "type": "string",
+        "nullable": true
+      },
+      "CoordinatesLatitude": {
+        "title": "Latitude",
+        "type": "number",
+        "nullable": true
+      },
+      "CoordinatesLongitude": {
+        "title": "Longitude",
+        "type": "number",
+        "nullable": true
+      },
+      "CountryDatetimeFirst": {
+        "title": "Datetimefirst",
+        "type": "string",
+        "format": "date-time",
+        "nullable": true
+      },
+      "CountryDatetimeLast": {
+        "title": "Datetimelast",
+        "type": "string",
+        "format": "date-time",
+        "nullable": true
+      },
+      "CountryParameters": {
+        "title": "Parameters",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ParameterBase"
+            }
+          }
+        ],
+        "nullable": true
+      },
+      "CountryBaseId": {
+        "title": "Id",
+        "type": "integer",
+        "nullable": true
+      },
+      "CoverageDatetimeFrom": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "CoverageDatetimeTo": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "DailyDataValue": {
+        "title": "Value",
+        "type": "number",
+        "nullable": true
+      },
+      "DailyDataPeriod": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Period"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Period": "#/components/schemas/Period"
+          }
+        }
+      },
+      "DailyDataCoordinates": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coordinates"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coordinates": "#/components/schemas/Coordinates"
+          }
+        }
+      },
+      "DailyDataSummary": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Summary": "#/components/schemas/Summary"
+          }
+        }
+      },
+      "DailyDataCoverage": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coverage": "#/components/schemas/Coverage"
+          }
+        }
+      },
+      "HourlyDataValue": {
+        "title": "Value",
+        "type": "number",
+        "nullable": true
+      },
+      "HourlyDataPeriod": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Period"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Period": "#/components/schemas/Period"
+          }
+        }
+      },
+      "HourlyDataCoordinates": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coordinates"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coordinates": "#/components/schemas/Coordinates"
+          }
+        }
+      },
+      "HourlyDataSummary": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Summary": "#/components/schemas/Summary"
+          }
+        }
+      },
+      "HourlyDataCoverage": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coverage": "#/components/schemas/Coverage"
+          }
+        }
+      },
+      "LocationName": {
+        "title": "Name",
+        "type": "string",
+        "nullable": true
+      },
+      "LocationLocality": {
+        "title": "Locality",
+        "type": "string",
+        "nullable": true
+      },
+      "LocationLicenses": {
+        "title": "Licenses",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationLicense"
+            }
+          }
+        ],
+        "nullable": true
+      },
+      "LocationDistance": {
+        "title": "Distance",
+        "type": "number",
+        "nullable": true
+      },
+      "LocationDatetimeFirst": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "LocationDatetimeLast": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "LocationFlagNote": {
+        "title": "Note",
+        "type": "string",
+        "nullable": true
+      },
+      "LocationLicenseDateFrom": {
+        "title": "Datefrom",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "LocationLicenseDateTo": {
+        "title": "Dateto",
+        "type": "string",
+        "format": "date",
+        "nullable": true
+      },
+      "MeasurementValue": {
+        "title": "Value",
+        "type": "number",
+        "nullable": true
+      },
+      "MeasurementPeriod": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Period"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Period": "#/components/schemas/Period"
+          }
+        }
+      },
+      "MeasurementCoordinates": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coordinates"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coordinates": "#/components/schemas/Coordinates"
+          }
+        }
+      },
+      "MeasurementSummary": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Summary": "#/components/schemas/Summary"
+          }
+        }
+      },
+      "MeasurementCoverage": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coverage": "#/components/schemas/Coverage"
+          }
+        }
+      },
+      "MetaFound": {
+        "title": "Found",
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "integer"
+          },
+          {
+            "type": "string"
+          }
+        ],
+        "nullable": true
+      },
+      "ParameterDisplayName": {
+        "title": "Displayname",
+        "type": "string",
+        "nullable": true
+      },
+      "ParameterDescription": {
+        "title": "Description",
+        "type": "string",
+        "nullable": true
+      },
+      "ParameterBaseDisplayName": {
+        "title": "Displayname",
+        "type": "string",
+        "nullable": true
+      },
+      "PeriodDatetimeFrom": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "PeriodDatetimeTo": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "ProviderBbox": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/GeoJson"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "GeoJson": "#/components/schemas/GeoJson"
+          }
+        }
+      },
+      "SensorDatetimeFirst": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "SensorDatetimeLast": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "DatetimeObject": "#/components/schemas/DatetimeObject"
+          }
+        }
+      },
+      "SensorCoverage": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Coverage": "#/components/schemas/Coverage"
+          }
+        }
+      },
+      "SensorLatest": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/LatestBase"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "LatestBase": "#/components/schemas/LatestBase"
+          }
+        }
+      },
+      "SensorSummary": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "nullable": true,
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "Summary": "#/components/schemas/Summary"
+          }
+        }
+      },
+      "SummaryMin": {
+        "title": "Min",
+        "type": "number",
+        "nullable": true
+      },
+      "SummaryQ02": {
+        "title": "Q02",
+        "type": "number",
+        "nullable": true
+      },
+      "SummaryQ25": {
+        "title": "Q25",
+        "type": "number",
+        "nullable": true
+      },
+      "SummaryMedian": {
+        "title": "Median",
+        "type": "number",
+        "nullable": true
+      },
+      "SummaryQ75": {
+        "title": "Q75",
+        "type": "number",
+        "nullable": true
+      },
+      "SummaryQ98": {
+        "title": "Q98",
+        "type": "number",
+        "nullable": true
+      },
+      "SummaryMax": {
+        "title": "Max",
+        "type": "number",
+        "nullable": true
+      },
+      "SummaryAvg": {
+        "title": "Avg",
+        "type": "number",
+        "nullable": true
+      },
+      "SummarySd": {
+        "title": "Sd",
+        "type": "number",
+        "nullable": true
+      },
+      "ValidationErrorLocItem": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          }
+        ]
+      },
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
+      },
+      "GeoJsonCoordinatesItem": {
+        "type": "object"
       }
     },
     "securitySchemes": {

@@ -41,18 +41,18 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The datetimeFirst property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFirst { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeFirst? DatetimeFirst { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFirst { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeFirst DatetimeFirst { get; set; }
 #endif
         /// <summary>The datetimeLast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeLast { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast? DatetimeLast { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeLast { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast DatetimeLast { get; set; }
 #endif
         /// <summary>The distance property</summary>
         public double? Distance { get; set; }
@@ -73,10 +73,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The licenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses? Licenses { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicenses? Licenses { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses Licenses { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicenses Licenses { get; set; }
 #endif
         /// <summary>The locality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,14 +154,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
                 { "bounds", n => { Bounds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "coordinates", n => { Coordinates = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>(global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.CreateFromDiscriminatorValue); } },
                 { "country", n => { Country = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase>(global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase.CreateFromDiscriminatorValue); } },
-                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
-                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
+                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeFirst>(global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeFirst.CreateFromDiscriminatorValue); } },
+                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast>(global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast.CreateFromDiscriminatorValue); } },
                 { "distance", n => { Distance = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "instruments", n => { Instruments = n.GetCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>(global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isMobile", n => { IsMobile = n.GetBoolValue(); } },
                 { "isMonitor", n => { IsMonitor = n.GetBoolValue(); } },
-                { "licenses", n => { Licenses = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses>(global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses.CreateFromDiscriminatorValue); } },
+                { "licenses", n => { Licenses = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicenses>(global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicenses.CreateFromDiscriminatorValue); } },
                 { "locality", n => { Locality = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase>(global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase.CreateFromDiscriminatorValue); } },
@@ -180,14 +180,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("bounds", Bounds);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>("coordinates", Coordinates);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase>("country", Country);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeFirst", DatetimeFirst);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeLast", DatetimeLast);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeFirst>("datetimeFirst", DatetimeFirst);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast>("datetimeLast", DatetimeLast);
             writer.WriteDoubleValue("distance", Distance);
             writer.WriteIntValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>("instruments", Instruments);
             writer.WriteBoolValue("isMobile", IsMobile);
             writer.WriteBoolValue("isMonitor", IsMonitor);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Location_licenses>("licenses", Licenses);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicenses>("licenses", Licenses);
             writer.WriteStringValue("locality", Locality);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase>("owner", Owner);

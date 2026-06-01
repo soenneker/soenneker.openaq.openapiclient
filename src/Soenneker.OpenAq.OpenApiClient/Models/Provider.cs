@@ -17,10 +17,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The bbox property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.GeoJSON? Bbox { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBbox? Bbox { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.GeoJSON Bbox { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBbox Bbox { get; set; }
 #endif
         /// <summary>The datetimeAdded property</summary>
         public DateTimeOffset? DatetimeAdded { get; set; }
@@ -89,7 +89,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bbox", n => { Bbox = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJSON>(global::Soenneker.OpenAq.OpenApiClient.Models.GeoJSON.CreateFromDiscriminatorValue); } },
+                { "bbox", n => { Bbox = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBbox>(global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBbox.CreateFromDiscriminatorValue); } },
                 { "datetimeAdded", n => { DatetimeAdded = n.GetDateTimeOffsetValue(); } },
                 { "datetimeFirst", n => { DatetimeFirst = n.GetDateTimeOffsetValue(); } },
                 { "datetimeLast", n => { DatetimeLast = n.GetDateTimeOffsetValue(); } },
@@ -108,7 +108,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJSON>("bbox", Bbox);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBbox>("bbox", Bbox);
             writer.WriteDateTimeOffsetValue("datetimeAdded", DatetimeAdded);
             writer.WriteDateTimeOffsetValue("datetimeFirst", DatetimeFirst);
             writer.WriteDateTimeOffsetValue("datetimeLast", DatetimeLast);

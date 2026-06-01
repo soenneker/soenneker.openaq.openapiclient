@@ -9,7 +9,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Period : IAdditionalDataHolder, IParsable
+    public partial class AnnualDataPeriod : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,18 +17,18 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The datetimeFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeFrom? DatetimeFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeFrom DatetimeFrom { get; set; }
 #endif
         /// <summary>The datetimeTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo? DatetimeTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo DatetimeTo { get; set; }
 #endif
         /// <summary>The interval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,22 +46,30 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 #else
         public string Label { get; set; }
 #endif
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Period"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod"/> and sets the default values.
         /// </summary>
-        public Period()
+        public AnnualDataPeriod()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Period"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.OpenAq.OpenApiClient.Models.Period CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.Period();
+            return new global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,10 +79,11 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "datetimeFrom", n => { DatetimeFrom = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
-                { "datetimeTo", n => { DatetimeTo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
+                { "datetimeFrom", n => { DatetimeFrom = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeFrom.CreateFromDiscriminatorValue); } },
+                { "datetimeTo", n => { DatetimeTo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo>(global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +93,11 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeFrom", DatetimeFrom);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeTo", DatetimeTo);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeFrom>("datetimeFrom", DatetimeFrom);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo>("datetimeTo", DatetimeTo);
             writer.WriteStringValue("interval", Interval);
             writer.WriteStringValue("label", Label);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

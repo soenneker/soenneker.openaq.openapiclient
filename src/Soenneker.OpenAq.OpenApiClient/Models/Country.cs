@@ -39,10 +39,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Country_parameters? Parameters { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CountryParameters? Parameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Country_parameters Parameters { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CountryParameters Parameters { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Country"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
                 { "datetimeLast", n => { DatetimeLast = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country_parameters>(global::Soenneker.OpenAq.OpenApiClient.Models.Country_parameters.CreateFromDiscriminatorValue); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CountryParameters>(global::Soenneker.OpenAq.OpenApiClient.Models.CountryParameters.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("datetimeLast", DatetimeLast);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Country_parameters>("parameters", Parameters);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CountryParameters>("parameters", Parameters);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

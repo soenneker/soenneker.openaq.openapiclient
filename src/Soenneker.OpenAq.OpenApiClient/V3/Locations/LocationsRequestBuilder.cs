@@ -20,14 +20,14 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
     {
         /// <summary>Gets an item from the Soenneker.OpenAq.OpenApiClient.v3.locations.item collection</summary>
         /// <param name="position">Limit the results to a specific location by id</param>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Locations.Item.WithLocations_ItemRequestBuilder"/></returns>
-        public global::Soenneker.OpenAq.OpenApiClient.V3.Locations.Item.WithLocations_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Locations.Item.WithLocationsItemRequestBuilder"/></returns>
+        public global::Soenneker.OpenAq.OpenApiClient.V3.Locations.Item.WithLocationsItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("locations_id", position);
-                return new global::Soenneker.OpenAq.OpenApiClient.V3.Locations.Item.WithLocations_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("locationsId", position);
+                return new global::Soenneker.OpenAq.OpenApiClient.V3.Locations.Item.WithLocationsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LocationsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.OpenAq.OpenApiClient.Models.LocationsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenAq.OpenApiClient.V3.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.LocationsResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.LocationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -17,10 +17,10 @@ using System;
 namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v3\sensors\{sensors_-id}
+    /// Builds and executes requests for operations under \v3\sensors\{sensor-id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Sensors_ItemRequestBuilder : BaseRequestBuilder
+    public partial class SensorItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The days property</summary>
         public global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Days.DaysRequestBuilder Days
@@ -48,19 +48,19 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item
             get => new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Years.YearsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Sensors_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensors_%2Did}", pathParameters)
+        public SensorItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Sensors_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensors_%2Did}", rawUrl)
+        public SensorItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.SensorsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.OpenAq.OpenApiClient.Models.SensorsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -82,7 +82,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.SensorsResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.SensorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -108,11 +108,11 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Sensors_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

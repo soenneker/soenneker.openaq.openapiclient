@@ -20,14 +20,14 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Providers
     {
         /// <summary>Gets an item from the Soenneker.OpenAq.OpenApiClient.v3.providers.item collection</summary>
         /// <param name="position">Limit the results to a specific provider by id</param>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Providers.Item.WithProviders_ItemRequestBuilder"/></returns>
-        public global::Soenneker.OpenAq.OpenApiClient.V3.Providers.Item.WithProviders_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Providers.Item.WithProvidersItemRequestBuilder"/></returns>
+        public global::Soenneker.OpenAq.OpenApiClient.V3.Providers.Item.WithProvidersItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("providers_id", position);
-                return new global::Soenneker.OpenAq.OpenApiClient.V3.Providers.Item.WithProviders_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("providersId", position);
+                return new global::Soenneker.OpenAq.OpenApiClient.V3.Providers.Item.WithProvidersItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Providers
         /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.ProvidersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.OpenAq.OpenApiClient.Models.ProvidersResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.OpenAq.OpenApiClient.V3.Providers.ProvidersRequestBuilder.ProvidersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Providers
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.ProvidersResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.ProvidersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
