@@ -48,7 +48,9 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public Meta()
         {
             AdditionalData = new Dictionary<string, object>();
+            Limit = 100;
             Name = "openaq-api";
+            Page = 1;
             Website = "/";
         }
         /// <summary>
