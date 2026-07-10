@@ -2,7 +2,7 @@
   "descriptionHash": "F1BF189A8F89C6119BB768A00699317D5BC1C8D32DBA0F52082514E059E5AACDE5574C1BC39AD2D447DED01D90C5409BED560C4E1BB7F5A00B457FB287A69CD9",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.34.0",
+  "kiotaVersion": "1.34.1",
   "clientClassName": "OpenAqOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.OpenAq.OpenApiClient",
