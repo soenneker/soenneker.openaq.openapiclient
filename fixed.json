@@ -75,11 +75,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/InstrumentsSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -92,11 +96,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -299,10 +307,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs",
-              "nullable": true
+              "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs"
             }
           },
           {
@@ -317,10 +329,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "",
-              "nullable": true
+              "description": ""
             }
           },
           {
@@ -358,10 +374,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Limit the results to a specific owner by owner ID with a single owner ID or comma delimited list of IDs",
-              "nullable": true
+              "description": "Limit the results to a specific owner by owner ID with a single owner ID or comma delimited list of IDs"
             }
           },
           {
@@ -376,10 +396,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "",
-              "nullable": true
+              "description": ""
             }
           },
           {
@@ -392,11 +416,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/LocationsSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -409,11 +437,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -428,10 +460,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "",
-              "nullable": true
+              "description": ""
             }
           },
           {
@@ -468,10 +504,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "",
-              "nullable": true
+              "description": ""
             }
           },
           {
@@ -498,10 +538,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
-              "nullable": true
+              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs"
             }
           },
           {
@@ -614,11 +658,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/LicensesSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -631,11 +679,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -759,11 +811,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/ParametersSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -776,11 +832,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -793,10 +853,14 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/ParameterType"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Limit the results to a specific parameters type",
-              "nullable": true
+              "description": "Limit the results to a specific parameters type"
             }
           },
           {
@@ -860,10 +924,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
-              "nullable": true
+              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs"
             }
           },
           {
@@ -986,11 +1054,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/CountriesSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -1003,11 +1075,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -1023,10 +1099,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs",
-              "nullable": true
+              "description": "Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs"
             }
           },
           {
@@ -1041,10 +1121,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "",
-              "nullable": true
+              "description": ""
             }
           },
           {
@@ -1168,11 +1252,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/ManufacturersSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -1185,11 +1273,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -1279,10 +1371,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -1300,10 +1396,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -1393,10 +1493,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -1414,10 +1518,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -1507,10 +1615,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -1528,10 +1640,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -1621,10 +1737,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -1642,10 +1762,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -1735,10 +1859,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -1756,10 +1884,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -1849,10 +1981,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -1870,10 +2006,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -1963,10 +2103,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -1984,10 +2128,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -2077,10 +2225,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2098,10 +2250,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           }
         ],
@@ -2169,10 +2325,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2190,10 +2350,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           }
         ],
@@ -2261,10 +2425,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2282,10 +2450,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           }
         ],
@@ -2353,10 +2525,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2374,10 +2550,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           }
         ],
@@ -2445,10 +2625,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2466,10 +2650,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           }
         ],
@@ -2537,10 +2725,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2558,10 +2750,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -2651,10 +2847,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2672,10 +2872,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -2765,10 +2969,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2786,10 +2994,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -2879,10 +3091,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -2900,10 +3116,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "From when?",
-              "nullable": true
+              "description": "From when?"
             }
           },
           {
@@ -3027,11 +3247,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/OwnersSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -3044,11 +3268,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -3172,11 +3400,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/ProvidersSortFields"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "The field by which to order results",
-              "default": "id",
-              "nullable": true
+              "default": "id"
             }
           },
           {
@@ -3189,11 +3421,15 @@
               "anyOf": [
                 {
                   "$ref": "#/components/schemas/SortOrder"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
               "description": "Sort results ascending or descending. Default ASC",
-              "default": "asc",
-              "nullable": true
+              "default": "asc"
             }
           },
           {
@@ -3208,10 +3444,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "",
-              "nullable": true
+              "description": ""
             }
           },
           {
@@ -3249,10 +3489,14 @@
                   "items": {
                     "type": "integer"
                   }
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs",
-              "nullable": true
+              "description": "Limit the results to a specific country or countries by country ID as a single country ID or a comma delimited list of IDs"
             }
           },
           {
@@ -3501,10 +3745,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Minimum datetime",
-              "nullable": true
+              "description": "Minimum datetime"
             }
           }
         ],
@@ -3594,10 +3842,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "Minimum datetime",
-              "nullable": true
+              "description": "Minimum datetime"
             }
           }
         ],
@@ -3687,10 +3939,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -3708,10 +3964,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           }
         ],
@@ -3801,10 +4061,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           },
           {
@@ -3822,10 +4086,14 @@
                 {
                   "type": "string",
                   "format": "date"
+                },
+                {
+                  "enum": [
+                    null
+                  ]
                 }
               ],
-              "description": "To when?",
-              "nullable": true
+              "description": "To when?"
             }
           }
         ],
@@ -5371,6 +5639,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5379,7 +5652,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5395,6 +5667,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5403,7 +5680,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5419,6 +5695,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5427,7 +5708,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5443,6 +5723,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5451,7 +5736,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5495,9 +5779,13 @@
             "items": {
               "$ref": "#/components/schemas/ParameterBase"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "CountryBaseId": {
         "title": "Id",
@@ -5512,6 +5800,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5520,7 +5813,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5536,6 +5828,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5544,7 +5841,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5565,6 +5861,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5573,7 +5874,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5589,6 +5889,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5597,7 +5902,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5613,6 +5917,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5621,7 +5930,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5637,6 +5945,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5645,7 +5958,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5666,6 +5978,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5674,7 +5991,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5690,6 +6006,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5698,7 +6019,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5714,6 +6034,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5722,7 +6047,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5738,6 +6062,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5746,7 +6075,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5773,9 +6101,13 @@
             "items": {
               "$ref": "#/components/schemas/LocationLicense"
             }
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "LocationDistance": {
         "title": "Distance",
@@ -5790,6 +6122,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5798,7 +6135,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5814,6 +6150,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5822,7 +6163,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5860,6 +6200,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5868,7 +6213,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5884,6 +6228,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5892,7 +6241,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5908,6 +6256,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5916,7 +6269,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5932,6 +6284,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5940,7 +6297,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -5957,9 +6313,13 @@
           },
           {
             "type": "string"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
-        ],
-        "nullable": true
+        ]
       },
       "ParameterDisplayName": {
         "title": "Displayname",
@@ -5984,6 +6344,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -5992,7 +6357,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -6008,6 +6372,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -6016,7 +6385,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -6032,6 +6400,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/GeoJson"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -6040,7 +6413,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -6056,6 +6428,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -6064,7 +6441,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -6080,6 +6456,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -6088,7 +6469,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -6104,6 +6484,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -6112,7 +6497,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -6128,6 +6512,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/LatestBase"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -6136,7 +6525,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
@@ -6152,6 +6540,11 @@
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "enum": [
+              null
+            ]
           }
         ],
         "properties": {
@@ -6160,7 +6553,6 @@
             "description": "Union discriminator"
           }
         },
-        "nullable": true,
         "discriminator": {
           "propertyName": "type",
           "mapping": {
