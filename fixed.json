@@ -4138,7 +4138,9 @@
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/AnnualDataValue"
+            "title": "Value",
+            "type": "number",
+            "nullable": true
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -4191,7 +4193,9 @@
             "type": "string"
           },
           "url": {
-            "$ref": "#/components/schemas/AttributionEntityUrl"
+            "title": "Url",
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -4200,10 +4204,14 @@
         "type": "object",
         "properties": {
           "latitude": {
-            "$ref": "#/components/schemas/CoordinatesLatitude"
+            "title": "Latitude",
+            "type": "number",
+            "nullable": true
           },
           "longitude": {
-            "$ref": "#/components/schemas/CoordinatesLongitude"
+            "title": "Longitude",
+            "type": "number",
+            "nullable": true
           }
         }
       },
@@ -4266,10 +4274,16 @@
             "type": "string"
           },
           "datetimeFirst": {
-            "$ref": "#/components/schemas/CountryDatetimeFirst"
+            "title": "Datetimefirst",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           },
           "datetimeLast": {
-            "$ref": "#/components/schemas/CountryDatetimeLast"
+            "title": "Datetimelast",
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           },
           "parameters": {
             "$ref": "#/components/schemas/CountryParameters"
@@ -4285,7 +4299,9 @@
         "type": "object",
         "properties": {
           "id": {
-            "$ref": "#/components/schemas/CountryBaseId"
+            "title": "Id",
+            "type": "integer",
+            "nullable": true
           },
           "code": {
             "title": "Code",
@@ -4350,7 +4366,9 @@
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/DailyDataValue"
+            "title": "Value",
+            "type": "number",
+            "nullable": true
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -4508,7 +4526,9 @@
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/HourlyDataValue"
+            "title": "Value",
+            "type": "number",
+            "nullable": true
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -4809,10 +4829,14 @@
             "type": "integer"
           },
           "name": {
-            "$ref": "#/components/schemas/LocationName"
+            "title": "Name",
+            "type": "string",
+            "nullable": true
           },
           "locality": {
-            "$ref": "#/components/schemas/LocationLocality"
+            "title": "Locality",
+            "type": "string",
+            "nullable": true
           },
           "timezone": {
             "title": "Timezone",
@@ -4865,7 +4889,9 @@
             }
           },
           "distance": {
-            "$ref": "#/components/schemas/LocationDistance"
+            "title": "Distance",
+            "type": "number",
+            "nullable": true
           },
           "datetimeFirst": {
             "$ref": "#/components/schemas/LocationDatetimeFirst"
@@ -4907,7 +4933,9 @@
             "default": []
           },
           "note": {
-            "$ref": "#/components/schemas/LocationFlagNote"
+            "title": "Note",
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -4951,10 +4979,16 @@
             "$ref": "#/components/schemas/AttributionEntity"
           },
           "dateFrom": {
-            "$ref": "#/components/schemas/LocationLicenseDateFrom"
+            "title": "Datefrom",
+            "type": "string",
+            "format": "date",
+            "nullable": true
           },
           "dateTo": {
-            "$ref": "#/components/schemas/LocationLicenseDateTo"
+            "title": "Dateto",
+            "type": "string",
+            "format": "date",
+            "nullable": true
           }
         }
       },
@@ -5085,7 +5119,9 @@
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/MeasurementValue"
+            "title": "Value",
+            "type": "number",
+            "nullable": true
           },
           "flagInfo": {
             "$ref": "#/components/schemas/FlagInfo"
@@ -5232,10 +5268,14 @@
             "type": "string"
           },
           "displayName": {
-            "$ref": "#/components/schemas/ParameterDisplayName"
+            "title": "Displayname",
+            "type": "string",
+            "nullable": true
           },
           "description": {
-            "$ref": "#/components/schemas/ParameterDescription"
+            "title": "Description",
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -5261,7 +5301,9 @@
             "type": "string"
           },
           "displayName": {
-            "$ref": "#/components/schemas/ParameterBaseDisplayName"
+            "title": "Displayname",
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -5572,31 +5614,49 @@
         "type": "object",
         "properties": {
           "min": {
-            "$ref": "#/components/schemas/SummaryMin"
+            "title": "Min",
+            "type": "number",
+            "nullable": true
           },
           "q02": {
-            "$ref": "#/components/schemas/SummaryQ02"
+            "title": "Q02",
+            "type": "number",
+            "nullable": true
           },
           "q25": {
-            "$ref": "#/components/schemas/SummaryQ25"
+            "title": "Q25",
+            "type": "number",
+            "nullable": true
           },
           "median": {
-            "$ref": "#/components/schemas/SummaryMedian"
+            "title": "Median",
+            "type": "number",
+            "nullable": true
           },
           "q75": {
-            "$ref": "#/components/schemas/SummaryQ75"
+            "title": "Q75",
+            "type": "number",
+            "nullable": true
           },
           "q98": {
-            "$ref": "#/components/schemas/SummaryQ98"
+            "title": "Q98",
+            "type": "number",
+            "nullable": true
           },
           "max": {
-            "$ref": "#/components/schemas/SummaryMax"
+            "title": "Max",
+            "type": "number",
+            "nullable": true
           },
           "avg": {
-            "$ref": "#/components/schemas/SummaryAvg"
+            "title": "Avg",
+            "type": "number",
+            "nullable": true
           },
           "sd": {
-            "$ref": "#/components/schemas/SummarySd"
+            "title": "Sd",
+            "type": "number",
+            "nullable": true
           }
         }
       },
@@ -5625,11 +5685,6 @@
             "type": "string"
           }
         }
-      },
-      "AnnualDataValue": {
-        "title": "Value",
-        "type": "number",
-        "nullable": true
       },
       "AnnualDataPeriod": {
         "required": [
@@ -5743,33 +5798,6 @@
           }
         }
       },
-      "AttributionEntityUrl": {
-        "title": "Url",
-        "type": "string",
-        "nullable": true
-      },
-      "CoordinatesLatitude": {
-        "title": "Latitude",
-        "type": "number",
-        "nullable": true
-      },
-      "CoordinatesLongitude": {
-        "title": "Longitude",
-        "type": "number",
-        "nullable": true
-      },
-      "CountryDatetimeFirst": {
-        "title": "Datetimefirst",
-        "type": "string",
-        "format": "date-time",
-        "nullable": true
-      },
-      "CountryDatetimeLast": {
-        "title": "Datetimelast",
-        "type": "string",
-        "format": "date-time",
-        "nullable": true
-      },
       "CountryParameters": {
         "title": "Parameters",
         "type": "object",
@@ -5786,11 +5814,6 @@
             ]
           }
         ]
-      },
-      "CountryBaseId": {
-        "title": "Id",
-        "type": "integer",
-        "nullable": true
       },
       "CoverageDatetimeFrom": {
         "required": [
@@ -5847,11 +5870,6 @@
             "DatetimeObject": "#/components/schemas/DatetimeObject"
           }
         }
-      },
-      "DailyDataValue": {
-        "title": "Value",
-        "type": "number",
-        "nullable": true
       },
       "DailyDataPeriod": {
         "required": [
@@ -5965,11 +5983,6 @@
           }
         }
       },
-      "HourlyDataValue": {
-        "title": "Value",
-        "type": "number",
-        "nullable": true
-      },
       "HourlyDataPeriod": {
         "required": [
           "type"
@@ -6082,16 +6095,6 @@
           }
         }
       },
-      "LocationName": {
-        "title": "Name",
-        "type": "string",
-        "nullable": true
-      },
-      "LocationLocality": {
-        "title": "Locality",
-        "type": "string",
-        "nullable": true
-      },
       "LocationLicenses": {
         "title": "Licenses",
         "type": "object",
@@ -6108,11 +6111,6 @@
             ]
           }
         ]
-      },
-      "LocationDistance": {
-        "title": "Distance",
-        "type": "number",
-        "nullable": true
       },
       "LocationDatetimeFirst": {
         "required": [
@@ -6169,28 +6167,6 @@
             "DatetimeObject": "#/components/schemas/DatetimeObject"
           }
         }
-      },
-      "LocationFlagNote": {
-        "title": "Note",
-        "type": "string",
-        "nullable": true
-      },
-      "LocationLicenseDateFrom": {
-        "title": "Datefrom",
-        "type": "string",
-        "format": "date",
-        "nullable": true
-      },
-      "LocationLicenseDateTo": {
-        "title": "Dateto",
-        "type": "string",
-        "format": "date",
-        "nullable": true
-      },
-      "MeasurementValue": {
-        "title": "Value",
-        "type": "number",
-        "nullable": true
       },
       "MeasurementPeriod": {
         "required": [
@@ -6320,21 +6296,6 @@
             ]
           }
         ]
-      },
-      "ParameterDisplayName": {
-        "title": "Displayname",
-        "type": "string",
-        "nullable": true
-      },
-      "ParameterDescription": {
-        "title": "Description",
-        "type": "string",
-        "nullable": true
-      },
-      "ParameterBaseDisplayName": {
-        "title": "Displayname",
-        "type": "string",
-        "nullable": true
       },
       "PeriodDatetimeFrom": {
         "required": [
@@ -6559,51 +6520,6 @@
             "Summary": "#/components/schemas/Summary"
           }
         }
-      },
-      "SummaryMin": {
-        "title": "Min",
-        "type": "number",
-        "nullable": true
-      },
-      "SummaryQ02": {
-        "title": "Q02",
-        "type": "number",
-        "nullable": true
-      },
-      "SummaryQ25": {
-        "title": "Q25",
-        "type": "number",
-        "nullable": true
-      },
-      "SummaryMedian": {
-        "title": "Median",
-        "type": "number",
-        "nullable": true
-      },
-      "SummaryQ75": {
-        "title": "Q75",
-        "type": "number",
-        "nullable": true
-      },
-      "SummaryQ98": {
-        "title": "Q98",
-        "type": "number",
-        "nullable": true
-      },
-      "SummaryMax": {
-        "title": "Max",
-        "type": "number",
-        "nullable": true
-      },
-      "SummaryAvg": {
-        "title": "Avg",
-        "type": "number",
-        "nullable": true
-      },
-      "SummarySd": {
-        "title": "Sd",
-        "type": "number",
-        "nullable": true
       },
       "ValidationErrorLocItem": {
         "type": "object",
