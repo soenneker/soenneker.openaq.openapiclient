@@ -9,14 +9,20 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PeriodDatetimeTo : IAdditionalDataHolder, IParsable
+    public partial class GeoJson : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The local property</summary>
-        public DateTimeOffset? Local { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>The coordinates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem>? Coordinates { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem> Coordinates { get; set; }
+#endif
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -24,24 +30,22 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The utc property</summary>
-        public DateTimeOffset? Utc { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.GeoJson"/> and sets the default values.
         /// </summary>
-        public PeriodDatetimeTo()
+        public GeoJson()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.GeoJson"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.OpenAq.OpenApiClient.Models.GeoJson CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.PeriodDatetimeTo();
+            return new global::Soenneker.OpenAq.OpenApiClient.Models.GeoJson();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,9 +55,8 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "local", n => { Local = n.GetDateTimeOffsetValue(); } },
+                { "coordinates", n => { Coordinates = n.GetCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem>(global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "utc", n => { Utc = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +66,8 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("local", Local);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem>("coordinates", Coordinates);
             writer.WriteStringValue("type", Type);
-            writer.WriteDateTimeOffsetValue("utc", Utc);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

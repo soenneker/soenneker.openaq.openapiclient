@@ -17,36 +17,36 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The coverage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorCoverage? Coverage { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? Coverage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorCoverage Coverage { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage Coverage { get; set; }
 #endif
         /// <summary>The datetimeFirst property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeFirst? DatetimeFirst { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFirst { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeFirst DatetimeFirst { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFirst { get; set; }
 #endif
         /// <summary>The datetimeLast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeLast? DatetimeLast { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeLast { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeLast DatetimeLast { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeLast { get; set; }
 #endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
         /// <summary>The latest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest? Latest { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase? Latest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest Latest { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase Latest { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorSummary? Summary { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary? Summary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorSummary Summary { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary Summary { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Sensor"/> and sets the default values.
@@ -97,14 +97,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorCoverage>(global::Soenneker.OpenAq.OpenApiClient.Models.SensorCoverage.CreateFromDiscriminatorValue); } },
-                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeFirst>(global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeFirst.CreateFromDiscriminatorValue); } },
-                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeLast>(global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeLast.CreateFromDiscriminatorValue); } },
+                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>(global::Soenneker.OpenAq.OpenApiClient.Models.Coverage.CreateFromDiscriminatorValue); } },
+                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
+                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "latest", n => { Latest = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest>(global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest.CreateFromDiscriminatorValue); } },
+                { "latest", n => { Latest = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase>(global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parameter", n => { Parameter = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>(global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorSummary>(global::Soenneker.OpenAq.OpenApiClient.Models.SensorSummary.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>(global::Soenneker.OpenAq.OpenApiClient.Models.Summary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -114,14 +114,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorCoverage>("coverage", Coverage);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeFirst>("datetimeFirst", DatetimeFirst);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorDatetimeLast>("datetimeLast", DatetimeLast);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>("coverage", Coverage);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeFirst", DatetimeFirst);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeLast", DatetimeLast);
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest>("latest", Latest);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase>("latest", Latest);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>("parameter", Parameter);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorSummary>("summary", Summary);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>("summary", Summary);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

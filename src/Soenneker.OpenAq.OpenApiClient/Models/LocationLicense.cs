@@ -9,39 +9,27 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LocationDatetimeLast : IAdditionalDataHolder, IParsable
+    public partial class LocationLicense : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The local property</summary>
-        public DateTimeOffset? Local { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The utc property</summary>
-        public DateTimeOffset? Utc { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense"/> and sets the default values.
         /// </summary>
-        public LocationDatetimeLast()
+        public LocationLicense()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.LocationDatetimeLast();
+            return new global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,9 +39,6 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "local", n => { Local = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "utc", n => { Utc = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -63,9 +48,6 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("local", Local);
-            writer.WriteStringValue("type", Type);
-            writer.WriteDateTimeOffsetValue("utc", Utc);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,18 +17,18 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The coordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoordinates? Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoordinates Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get; set; }
 #endif
         /// <summary>The coverage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoverage? Coverage { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? Coverage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoverage Coverage { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage Coverage { get; set; }
 #endif
         /// <summary>The flagInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,18 +49,18 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The period property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataPeriod? Period { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Period? Period { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataPeriod Period { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Period Period { get; set; }
 #endif
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataSummary? Summary { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary? Summary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataSummary Summary { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary Summary { get; set; }
 #endif
         /// <summary>The value property</summary>
         public double? Value { get; set; }
@@ -89,12 +89,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coordinates", n => { Coordinates = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoordinates>(global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoordinates.CreateFromDiscriminatorValue); } },
-                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoverage>(global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoverage.CreateFromDiscriminatorValue); } },
+                { "coordinates", n => { Coordinates = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>(global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.CreateFromDiscriminatorValue); } },
+                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>(global::Soenneker.OpenAq.OpenApiClient.Models.Coverage.CreateFromDiscriminatorValue); } },
                 { "flagInfo", n => { FlagInfo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo>(global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo.CreateFromDiscriminatorValue); } },
                 { "parameter", n => { Parameter = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>(global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase.CreateFromDiscriminatorValue); } },
-                { "period", n => { Period = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataPeriod>(global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataPeriod.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataSummary>(global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataSummary.CreateFromDiscriminatorValue); } },
+                { "period", n => { Period = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Period>(global::Soenneker.OpenAq.OpenApiClient.Models.Period.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>(global::Soenneker.OpenAq.OpenApiClient.Models.Summary.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
@@ -105,12 +105,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoordinates>("coordinates", Coordinates);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataCoverage>("coverage", Coverage);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>("coordinates", Coordinates);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>("coverage", Coverage);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo>("flagInfo", FlagInfo);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>("parameter", Parameter);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataPeriod>("period", Period);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.HourlyDataSummary>("summary", Summary);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Period>("period", Period);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>("summary", Summary);
             writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -9,7 +9,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DailyDataCoverage : IAdditionalDataHolder, IParsable
+    public partial class Coverage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,18 +17,18 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The datetimeFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? DatetimeFrom { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom DatetimeFrom { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get; set; }
 #endif
         /// <summary>The datetimeTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeTo? DatetimeTo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeTo DatetimeTo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get; set; }
 #endif
         /// <summary>The expectedCount property</summary>
         public int? ExpectedCount { get; set; }
@@ -54,30 +54,22 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public double? PercentComplete { get; set; }
         /// <summary>The percentCoverage property</summary>
         public double? PercentCoverage { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.DailyDataCoverage"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coverage"/> and sets the default values.
         /// </summary>
-        public DailyDataCoverage()
+        public Coverage()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.DailyDataCoverage"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coverage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.OpenAq.OpenApiClient.Models.DailyDataCoverage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.OpenAq.OpenApiClient.Models.Coverage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.DailyDataCoverage();
+            return new global::Soenneker.OpenAq.OpenApiClient.Models.Coverage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,15 +79,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "datetimeFrom", n => { DatetimeFrom = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },
-                { "datetimeTo", n => { DatetimeTo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeTo>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeTo.CreateFromDiscriminatorValue); } },
+                { "datetimeFrom", n => { DatetimeFrom = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
+                { "datetimeTo", n => { DatetimeTo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
                 { "expectedCount", n => { ExpectedCount = n.GetIntValue(); } },
                 { "expectedInterval", n => { ExpectedInterval = n.GetStringValue(); } },
                 { "observedCount", n => { ObservedCount = n.GetIntValue(); } },
                 { "observedInterval", n => { ObservedInterval = n.GetStringValue(); } },
                 { "percentComplete", n => { PercentComplete = n.GetDoubleValue(); } },
                 { "percentCoverage", n => { PercentCoverage = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -105,15 +96,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>("datetimeFrom", DatetimeFrom);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeTo>("datetimeTo", DatetimeTo);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeFrom", DatetimeFrom);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeTo", DatetimeTo);
             writer.WriteIntValue("expectedCount", ExpectedCount);
             writer.WriteStringValue("expectedInterval", ExpectedInterval);
             writer.WriteIntValue("observedCount", ObservedCount);
             writer.WriteStringValue("observedInterval", ObservedInterval);
             writer.WriteDoubleValue("percentComplete", PercentComplete);
             writer.WriteDoubleValue("percentCoverage", PercentCoverage);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
