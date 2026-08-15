@@ -6121,9 +6121,6 @@
         }
       },
       "AnnualDataPeriod": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6134,22 +6131,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Period": "#/components/schemas/Period"
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "interval": {
+            "title": "Interval",
+            "type": "string"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/PeriodDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/PeriodDatetimeTo"
           }
         }
       },
       "AnnualDataCoordinates": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6160,22 +6158,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coordinates": "#/components/schemas/Coordinates"
+          "latitude": {
+            "title": "Latitude",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "longitude": {
+            "title": "Longitude",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "AnnualDataSummary": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6186,22 +6185,72 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Summary": "#/components/schemas/Summary"
+          "min": {
+            "title": "Min",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q02": {
+            "title": "Q02",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q25": {
+            "title": "Q25",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "median": {
+            "title": "Median",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q75": {
+            "title": "Q75",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q98": {
+            "title": "Q98",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "max": {
+            "title": "Max",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "avg": {
+            "title": "Avg",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "sd": {
+            "title": "Sd",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "AnnualDataCoverage": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6212,15 +6261,35 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coverage": "#/components/schemas/Coverage"
+          "expectedCount": {
+            "title": "Expectedcount",
+            "type": "integer"
+          },
+          "expectedInterval": {
+            "title": "Expectedinterval",
+            "type": "string"
+          },
+          "observedCount": {
+            "title": "Observedcount",
+            "type": "integer"
+          },
+          "observedInterval": {
+            "title": "Observedinterval",
+            "type": "string"
+          },
+          "percentComplete": {
+            "title": "Percentcomplete",
+            "type": "number"
+          },
+          "percentCoverage": {
+            "title": "Percentcoverage",
+            "type": "number"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/CoverageDatetimeTo"
           }
         }
       },
@@ -6240,9 +6309,6 @@
         ]
       },
       "CoverageDatetimeFrom": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6253,22 +6319,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "CoverageDatetimeTo": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6279,22 +6342,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "DailyDataPeriod": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6305,22 +6365,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Period": "#/components/schemas/Period"
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "interval": {
+            "title": "Interval",
+            "type": "string"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/PeriodDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/PeriodDatetimeTo"
           }
         }
       },
       "DailyDataCoordinates": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6331,22 +6392,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coordinates": "#/components/schemas/Coordinates"
+          "latitude": {
+            "title": "Latitude",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "longitude": {
+            "title": "Longitude",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "DailyDataSummary": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6357,22 +6419,72 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Summary": "#/components/schemas/Summary"
+          "min": {
+            "title": "Min",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q02": {
+            "title": "Q02",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q25": {
+            "title": "Q25",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "median": {
+            "title": "Median",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q75": {
+            "title": "Q75",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q98": {
+            "title": "Q98",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "max": {
+            "title": "Max",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "avg": {
+            "title": "Avg",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "sd": {
+            "title": "Sd",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "DailyDataCoverage": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6383,22 +6495,39 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coverage": "#/components/schemas/Coverage"
+          "expectedCount": {
+            "title": "Expectedcount",
+            "type": "integer"
+          },
+          "expectedInterval": {
+            "title": "Expectedinterval",
+            "type": "string"
+          },
+          "observedCount": {
+            "title": "Observedcount",
+            "type": "integer"
+          },
+          "observedInterval": {
+            "title": "Observedinterval",
+            "type": "string"
+          },
+          "percentComplete": {
+            "title": "Percentcomplete",
+            "type": "number"
+          },
+          "percentCoverage": {
+            "title": "Percentcoverage",
+            "type": "number"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/CoverageDatetimeTo"
           }
         }
       },
       "HourlyDataPeriod": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6409,22 +6538,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Period": "#/components/schemas/Period"
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "interval": {
+            "title": "Interval",
+            "type": "string"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/PeriodDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/PeriodDatetimeTo"
           }
         }
       },
       "HourlyDataCoordinates": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6435,22 +6565,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coordinates": "#/components/schemas/Coordinates"
+          "latitude": {
+            "title": "Latitude",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "longitude": {
+            "title": "Longitude",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "HourlyDataSummary": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6461,22 +6592,72 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Summary": "#/components/schemas/Summary"
+          "min": {
+            "title": "Min",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q02": {
+            "title": "Q02",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q25": {
+            "title": "Q25",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "median": {
+            "title": "Median",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q75": {
+            "title": "Q75",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q98": {
+            "title": "Q98",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "max": {
+            "title": "Max",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "avg": {
+            "title": "Avg",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "sd": {
+            "title": "Sd",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "HourlyDataCoverage": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6487,15 +6668,35 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coverage": "#/components/schemas/Coverage"
+          "expectedCount": {
+            "title": "Expectedcount",
+            "type": "integer"
+          },
+          "expectedInterval": {
+            "title": "Expectedinterval",
+            "type": "string"
+          },
+          "observedCount": {
+            "title": "Observedcount",
+            "type": "integer"
+          },
+          "observedInterval": {
+            "title": "Observedinterval",
+            "type": "string"
+          },
+          "percentComplete": {
+            "title": "Percentcomplete",
+            "type": "number"
+          },
+          "percentCoverage": {
+            "title": "Percentcoverage",
+            "type": "number"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/CoverageDatetimeTo"
           }
         }
       },
@@ -6515,9 +6716,6 @@
         ]
       },
       "LocationDatetimeFirst": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6528,22 +6726,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "LocationDatetimeLast": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6554,22 +6749,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "MeasurementPeriod": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6580,22 +6772,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Period": "#/components/schemas/Period"
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "interval": {
+            "title": "Interval",
+            "type": "string"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/PeriodDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/PeriodDatetimeTo"
           }
         }
       },
       "MeasurementCoordinates": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6606,22 +6799,23 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coordinates": "#/components/schemas/Coordinates"
+          "latitude": {
+            "title": "Latitude",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "longitude": {
+            "title": "Longitude",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "MeasurementSummary": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6632,22 +6826,72 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Summary": "#/components/schemas/Summary"
+          "min": {
+            "title": "Min",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q02": {
+            "title": "Q02",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q25": {
+            "title": "Q25",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "median": {
+            "title": "Median",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q75": {
+            "title": "Q75",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q98": {
+            "title": "Q98",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "max": {
+            "title": "Max",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "avg": {
+            "title": "Avg",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "sd": {
+            "title": "Sd",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
       "MeasurementCoverage": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6658,15 +6902,35 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coverage": "#/components/schemas/Coverage"
+          "expectedCount": {
+            "title": "Expectedcount",
+            "type": "integer"
+          },
+          "expectedInterval": {
+            "title": "Expectedinterval",
+            "type": "string"
+          },
+          "observedCount": {
+            "title": "Observedcount",
+            "type": "integer"
+          },
+          "observedInterval": {
+            "title": "Observedinterval",
+            "type": "string"
+          },
+          "percentComplete": {
+            "title": "Percentcomplete",
+            "type": "number"
+          },
+          "percentCoverage": {
+            "title": "Percentcoverage",
+            "type": "number"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/CoverageDatetimeTo"
           }
         }
       },
@@ -6686,9 +6950,6 @@
         ]
       },
       "PeriodDatetimeFrom": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6699,22 +6960,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "PeriodDatetimeTo": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6725,22 +6983,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "ProviderBbox": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6752,21 +7007,20 @@
         ],
         "properties": {
           "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "GeoJson": "#/components/schemas/GeoJson"
+            "title": "Type",
+            "type": "string"
+          },
+          "coordinates": {
+            "title": "Coordinates",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GeoJsonCoordinatesItem"
+            },
+            "default": []
           }
         }
       },
       "SensorDatetimeFirst": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6777,22 +7031,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "SensorDatetimeLast": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6803,22 +7054,19 @@
           }
         ],
         "properties": {
-          "type": {
+          "utc": {
+            "title": "Utc",
             "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "DatetimeObject": "#/components/schemas/DatetimeObject"
+            "format": "date-time"
+          },
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
       "SensorCoverage": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6829,22 +7077,39 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Coverage": "#/components/schemas/Coverage"
+          "expectedCount": {
+            "title": "Expectedcount",
+            "type": "integer"
+          },
+          "expectedInterval": {
+            "title": "Expectedinterval",
+            "type": "string"
+          },
+          "observedCount": {
+            "title": "Observedcount",
+            "type": "integer"
+          },
+          "observedInterval": {
+            "title": "Observedinterval",
+            "type": "string"
+          },
+          "percentComplete": {
+            "title": "Percentcomplete",
+            "type": "number"
+          },
+          "percentCoverage": {
+            "title": "Percentcoverage",
+            "type": "number"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/CoverageDatetimeTo"
           }
         }
       },
       "SensorLatest": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6855,22 +7120,19 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "LatestBase": "#/components/schemas/LatestBase"
+          "datetime": {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          "value": {
+            "title": "Value",
+            "type": "number"
+          },
+          "coordinates": {
+            "$ref": "#/components/schemas/Coordinates"
           }
         }
       },
       "SensorSummary": {
-        "required": [
-          "type"
-        ],
         "type": "object",
         "anyOf": [
           {
@@ -6881,15 +7143,68 @@
           }
         ],
         "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "Summary": "#/components/schemas/Summary"
+          "min": {
+            "title": "Min",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q02": {
+            "title": "Q02",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q25": {
+            "title": "Q25",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "median": {
+            "title": "Median",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q75": {
+            "title": "Q75",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "q98": {
+            "title": "Q98",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "max": {
+            "title": "Max",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "avg": {
+            "title": "Avg",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "sd": {
+            "title": "Sd",
+            "type": [
+              "null",
+              "number"
+            ]
           }
         }
       },
@@ -6917,12 +7232,6 @@
         "type": "apiKey",
         "name": "X-API-Key",
         "in": "header"
-      },
-      "assets_jwt": {
-        "type": "http",
-        "description": "JWT used for assets upload",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
       }
     }
   }
