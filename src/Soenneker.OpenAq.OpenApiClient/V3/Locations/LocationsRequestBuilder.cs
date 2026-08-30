@@ -127,20 +127,20 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("countries_id")]
-            public string? CountriesId { get; set; }
+            public int?[]? CountriesId { get; set; }
 #nullable restore
 #else
             [QueryParameter("countries_id")]
-            public string CountriesId { get; set; }
+            public int?[] CountriesId { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("instruments_id")]
-            public string? InstrumentsId { get; set; }
+            public int?[]? InstrumentsId { get; set; }
 #nullable restore
 #else
             [QueryParameter("instruments_id")]
-            public string InstrumentsId { get; set; }
+            public int?[] InstrumentsId { get; set; }
 #endif
             /// <summary>Limit the results to a specific country using ISO 3166-1 alpha-2 code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,11 +155,11 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("licenses_id")]
-            public string? LicensesId { get; set; }
+            public int?[]? LicensesId { get; set; }
 #nullable restore
 #else
             [QueryParameter("licenses_id")]
-            public string LicensesId { get; set; }
+            public int?[] LicensesId { get; set; }
 #endif
             /// <summary>Change the number of results returned.        e.g. limit=100 will return up to 100 results</summary>
             [QueryParameter("limit")]
@@ -167,11 +167,11 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("manufacturers_id")]
-            public string? ManufacturersId { get; set; }
+            public int?[]? ManufacturersId { get; set; }
 #nullable restore
 #else
             [QueryParameter("manufacturers_id")]
-            public string ManufacturersId { get; set; }
+            public int?[] ManufacturersId { get; set; }
 #endif
             /// <summary>Is the location considered a mobile location?</summary>
             [QueryParameter("mobile")]
@@ -193,11 +193,11 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("owner_contacts_id")]
-            public string? OwnerContactsId { get; set; }
+            public int?[]? OwnerContactsId { get; set; }
 #nullable restore
 #else
             [QueryParameter("owner_contacts_id")]
-            public string OwnerContactsId { get; set; }
+            public int?[] OwnerContactsId { get; set; }
 #endif
             /// <summary>Paginate through results. e.g. page=1 will return first page of results</summary>
             [QueryParameter("page")]
@@ -205,21 +205,21 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("parameters_id")]
-            public string? ParametersId { get; set; }
+            public int?[]? ParametersId { get; set; }
 #nullable restore
 #else
             [QueryParameter("parameters_id")]
-            public string ParametersId { get; set; }
+            public int?[] ParametersId { get; set; }
 #endif
             /// <summary>Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("providers_id")]
-            public string? ProvidersId { get; set; }
+            public int?[]? ProvidersId { get; set; }
 #nullable restore
 #else
             [QueryParameter("providers_id")]
-            public string ProvidersId { get; set; }
+            public int?[] ProvidersId { get; set; }
 #endif
             /// <summary>Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000</summary>
             [QueryParameter("radius")]

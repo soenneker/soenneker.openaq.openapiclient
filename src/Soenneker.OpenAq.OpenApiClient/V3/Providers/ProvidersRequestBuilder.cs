@@ -127,11 +127,11 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Providers
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("countries_id")]
-            public string? CountriesId { get; set; }
+            public int?[]? CountriesId { get; set; }
 #nullable restore
 #else
             [QueryParameter("countries_id")]
-            public string CountriesId { get; set; }
+            public int?[] CountriesId { get; set; }
 #endif
             /// <summary>Limit the results to a specific country using ISO 3166-1 alpha-2 code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,11 +165,11 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Providers
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("parameters_id")]
-            public string? ParametersId { get; set; }
+            public int?[]? ParametersId { get; set; }
 #nullable restore
 #else
             [QueryParameter("parameters_id")]
-            public string ParametersId { get; set; }
+            public int?[] ParametersId { get; set; }
 #endif
             /// <summary>Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000</summary>
             [QueryParameter("radius")]

@@ -122,21 +122,21 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Countries
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("parameters_id")]
-            public string? ParametersId { get; set; }
+            public int?[]? ParametersId { get; set; }
 #nullable restore
 #else
             [QueryParameter("parameters_id")]
-            public string ParametersId { get; set; }
+            public int?[] ParametersId { get; set; }
 #endif
             /// <summary>Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("providers_id")]
-            public string? ProvidersId { get; set; }
+            public int?[]? ProvidersId { get; set; }
 #nullable restore
 #else
             [QueryParameter("providers_id")]
-            public string ProvidersId { get; set; }
+            public int?[] ProvidersId { get; set; }
 #endif
             /// <summary>Sort results ascending or descending. Default ASC</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
