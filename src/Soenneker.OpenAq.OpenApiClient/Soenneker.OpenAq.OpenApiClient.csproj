@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A .NET client generated from the OpenAQ OpenAPI schema, updated daily</Description>
+        <Description>Typed request builders and models for querying OpenAQ air-quality data from .NET.</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.OpenAq.OpenApiClient</AssemblyName>
