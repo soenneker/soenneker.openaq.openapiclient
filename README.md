@@ -26,6 +26,7 @@ httpClient.DefaultRequestHeaders.Add("X-API-Key", apiKey);
 var adapter = new HttpClientRequestAdapter(
     new AnonymousAuthenticationProvider(),
     httpClient: httpClient);
+adapter.BaseUrl = "https://api.openaq.org";
 
 var client = new OpenAqOpenApiClient(adapter);
 var locations = await client.V3.Locations.GetAsync(request =>
@@ -35,6 +36,6 @@ var locations = await client.V3.Locations.GetAsync(request =>
 }, cancellationToken);
 ```
 
-The client defaults to `https://api.openaq.org`. It exposes locations, measurements, sensors, countries, parameters, providers, and other OpenAQ v3 resources through Kiota request builders.
+Set the request adapter's base URL before constructing the client. The client exposes locations, measurements, sensors, countries, parameters, providers, and other OpenAQ v3 resources through Kiota request builders.
 
 For configuration-based credentials and managed client reuse, use [`Soenneker.OpenAq.OpenApiClientUtil`](https://github.com/soenneker/soenneker.openaq.openapiclientutil).
