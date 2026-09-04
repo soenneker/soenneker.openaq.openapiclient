@@ -135,12 +135,16 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("instruments_id")]
             public int?[]? InstrumentsId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("instruments_id")]
             public int?[] InstrumentsId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Limit the results to a specific country using ISO 3166-1 alpha-2 code</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -154,24 +158,32 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("licenses_id")]
             public int?[]? LicensesId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("licenses_id")]
             public int?[] LicensesId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Change the number of results returned.        e.g. limit=100 will return up to 100 results</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("manufacturers_id")]
             public int?[]? ManufacturersId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("manufacturers_id")]
             public int?[] ManufacturersId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Is the location considered a mobile location?</summary>
             [QueryParameter("mobile")]
@@ -204,12 +216,16 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Locations
             public int? Page { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("parameters_id")]
             public int?[]? ParametersId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("parameters_id")]
             public int?[] ParametersId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Limit the results to a specific provider or multiple providers  with a single provider ID or a comma delimited list of IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -164,12 +164,16 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Providers
             public int? Page { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("parameters_id")]
             public int?[]? ParametersId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("parameters_id")]
             public int?[] ParametersId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Search radius from coordinates as center in meters. Maximum of 25,000 (25km) defaults to 1000 (1km) e.g. radius=1000</summary>
             [QueryParameter("radius")]
