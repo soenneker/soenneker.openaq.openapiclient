@@ -300,7 +300,7 @@
               ],
               "title": "Radius",
               "maximum": 25000,
-              "exclusiveMinimum": false,
+              "exclusiveMinimum": 0,
               "type": [
                 "null",
                 "integer"
@@ -889,7 +889,7 @@
               ],
               "title": "Radius",
               "maximum": 25000,
-              "exclusiveMinimum": false,
+              "exclusiveMinimum": 0,
               "type": [
                 "null",
                 "integer"
@@ -3665,7 +3665,7 @@
               ],
               "title": "Radius",
               "maximum": 25000,
-              "exclusiveMinimum": false,
+              "exclusiveMinimum": 0,
               "type": [
                 "null",
                 "integer"
