@@ -17,10 +17,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The coordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem>? Coordinates { get; set; }
+        public UntypedNode? Coordinates { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem> Coordinates { get; set; }
+        public UntypedNode Coordinates { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coordinates", n => { Coordinates = n.GetCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem>(global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "coordinates", n => { Coordinates = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.GeoJsonCoordinatesItem>("coordinates", Coordinates);
+            writer.WriteObjectValue<UntypedNode>("coordinates", Coordinates);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

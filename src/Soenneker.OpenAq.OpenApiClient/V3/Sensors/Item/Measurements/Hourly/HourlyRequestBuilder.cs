@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Measurements.Hourly
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v3\sensors\{sensor-id}\measurements\hourly
+    /// Builds and executes requests for operations under \v3\sensors\{sensorsId}\measurements\hourly
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HourlyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Measurements.Hourly
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HourlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/measurements/hourly{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
+        public HourlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/measurements/hourly{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Measurements.Hourly
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HourlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/measurements/hourly{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
+        public HourlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/measurements/hourly{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
         {
         }
         /// <summary>

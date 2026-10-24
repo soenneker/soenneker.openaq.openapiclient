@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours.Monthly
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v3\sensors\{sensor-id}\hours\monthly
+    /// Builds and executes requests for operations under \v3\sensors\{sensorsId}\hours\monthly
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonthlyRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours.Monthly
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/hours/monthly{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
+        public MonthlyRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/hours/monthly{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours.Monthly
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonthlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/hours/monthly{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
+        public MonthlyRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/hours/monthly{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
         {
         }
         /// <summary>

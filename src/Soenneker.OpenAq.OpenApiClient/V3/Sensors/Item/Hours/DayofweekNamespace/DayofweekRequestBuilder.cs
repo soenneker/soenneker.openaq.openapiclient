@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours.DayofweekNamespace
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v3\sensors\{sensor-id}\hours\dayofweek
+    /// Builds and executes requests for operations under \v3\sensors\{sensorsId}\hours\dayofweek
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DayofweekRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours.DayofweekNamespac
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DayofweekRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/hours/dayofweek{?datetime_from*,datetime_to*}", pathParameters)
+        public DayofweekRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/hours/dayofweek{?datetime_from*,datetime_to*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours.DayofweekNamespac
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DayofweekRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/hours/dayofweek{?datetime_from*,datetime_to*}", rawUrl)
+        public DayofweekRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/hours/dayofweek{?datetime_from*,datetime_to*}", rawUrl)
         {
         }
         /// <summary>

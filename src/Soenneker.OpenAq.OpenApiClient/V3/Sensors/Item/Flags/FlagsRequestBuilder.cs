@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Flags
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v3\sensors\{sensor-id}\flags
+    /// Builds and executes requests for operations under \v3\sensors\{sensorsId}\flags
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FlagsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Flags
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FlagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/flags{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
+        public FlagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/flags{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Flags
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FlagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/flags{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
+        public FlagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/flags{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
         {
         }
         /// <summary>

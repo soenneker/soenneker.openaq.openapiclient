@@ -4169,7 +4169,7 @@
         ]
       }
     },
-    "/v3/sensors/{sensorId}/flags": {
+    "/v3/sensors/{sensorsId}/flags": {
       "get": {
         "tags": [
           "v3"
@@ -4179,7 +4179,7 @@
         "operationId": "SensorFlagsGetV3SensorsSensorIdFlagsGet",
         "parameters": [
           {
-            "name": "sensorId",
+            "name": "sensorsId",
             "in": "path",
             "description": "Limit the results to a specific sensor",
             "required": true,
@@ -4433,7 +4433,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "CountriesSortFields",
           "modelAsString": false,
@@ -4711,9 +4710,7 @@
           "coordinates": {
             "title": "Coordinates",
             "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonCoordinatesItem"
-            },
+            "items": {},
             "default": []
           }
         }
@@ -4867,7 +4864,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "InstrumentsSortFields",
           "modelAsString": false,
@@ -5035,7 +5031,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "LicensesSortFields",
           "modelAsString": false,
@@ -5288,7 +5283,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "LocationsSortFields",
           "modelAsString": false,
@@ -5375,7 +5369,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ManufacturersSortFields",
           "modelAsString": false,
@@ -5525,7 +5518,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "OwnersSortFields",
           "modelAsString": false,
@@ -5611,7 +5603,6 @@
           "meteorological"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ParameterType",
           "modelAsString": false,
@@ -5658,7 +5649,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ParametersSortFields",
           "modelAsString": false,
@@ -5805,7 +5795,6 @@
           "id"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "ProvidersSortFields",
           "modelAsString": false,
@@ -5908,7 +5897,6 @@
           "desc"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SortOrder",
           "modelAsString": false,
@@ -6020,7 +6008,6 @@
         }
       },
       "AnnualDataPeriod": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
@@ -6028,26 +6015,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "label": {
-            "title": "Label",
-            "type": "string"
-          },
-          "interval": {
-            "title": "Interval",
-            "type": "string"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/PeriodDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/PeriodDatetimeTo"
-          }
-        }
+        ]
       },
       "AnnualDataCoordinates": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
@@ -6055,26 +6025,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "latitude": {
-            "title": "Latitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "longitude": {
-            "title": "Longitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "AnnualDataSummary": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
@@ -6082,75 +6035,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "min": {
-            "title": "Min",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q02": {
-            "title": "Q02",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q25": {
-            "title": "Q25",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "median": {
-            "title": "Median",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q75": {
-            "title": "Q75",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q98": {
-            "title": "Q98",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "max": {
-            "title": "Max",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "avg": {
-            "title": "Avg",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "sd": {
-            "title": "Sd",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "AnnualDataCoverage": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
@@ -6158,42 +6045,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "expectedCount": {
-            "title": "Expectedcount",
-            "type": "integer"
-          },
-          "expectedInterval": {
-            "title": "Expectedinterval",
-            "type": "string"
-          },
-          "observedCount": {
-            "title": "Observedcount",
-            "type": "integer"
-          },
-          "observedInterval": {
-            "title": "Observedinterval",
-            "type": "string"
-          },
-          "percentComplete": {
-            "title": "Percentcomplete",
-            "type": "number"
-          },
-          "percentCoverage": {
-            "title": "Percentcoverage",
-            "type": "number"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeTo"
-          }
-        }
+        ]
       },
       "CoverageDatetimeFrom": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6201,22 +6055,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "CoverageDatetimeTo": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6224,22 +6065,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "DailyDataPeriod": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
@@ -6247,26 +6075,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "label": {
-            "title": "Label",
-            "type": "string"
-          },
-          "interval": {
-            "title": "Interval",
-            "type": "string"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/PeriodDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/PeriodDatetimeTo"
-          }
-        }
+        ]
       },
       "DailyDataCoordinates": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
@@ -6274,26 +6085,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "latitude": {
-            "title": "Latitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "longitude": {
-            "title": "Longitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "DailyDataSummary": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
@@ -6301,75 +6095,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "min": {
-            "title": "Min",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q02": {
-            "title": "Q02",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q25": {
-            "title": "Q25",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "median": {
-            "title": "Median",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q75": {
-            "title": "Q75",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q98": {
-            "title": "Q98",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "max": {
-            "title": "Max",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "avg": {
-            "title": "Avg",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "sd": {
-            "title": "Sd",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "DailyDataCoverage": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
@@ -6377,42 +6105,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "expectedCount": {
-            "title": "Expectedcount",
-            "type": "integer"
-          },
-          "expectedInterval": {
-            "title": "Expectedinterval",
-            "type": "string"
-          },
-          "observedCount": {
-            "title": "Observedcount",
-            "type": "integer"
-          },
-          "observedInterval": {
-            "title": "Observedinterval",
-            "type": "string"
-          },
-          "percentComplete": {
-            "title": "Percentcomplete",
-            "type": "number"
-          },
-          "percentCoverage": {
-            "title": "Percentcoverage",
-            "type": "number"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeTo"
-          }
-        }
+        ]
       },
       "HourlyDataPeriod": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
@@ -6420,26 +6115,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "label": {
-            "title": "Label",
-            "type": "string"
-          },
-          "interval": {
-            "title": "Interval",
-            "type": "string"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/PeriodDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/PeriodDatetimeTo"
-          }
-        }
+        ]
       },
       "HourlyDataCoordinates": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
@@ -6447,26 +6125,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "latitude": {
-            "title": "Latitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "longitude": {
-            "title": "Longitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "HourlyDataSummary": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
@@ -6474,75 +6135,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "min": {
-            "title": "Min",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q02": {
-            "title": "Q02",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q25": {
-            "title": "Q25",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "median": {
-            "title": "Median",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q75": {
-            "title": "Q75",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q98": {
-            "title": "Q98",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "max": {
-            "title": "Max",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "avg": {
-            "title": "Avg",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "sd": {
-            "title": "Sd",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "HourlyDataCoverage": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
@@ -6550,42 +6145,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "expectedCount": {
-            "title": "Expectedcount",
-            "type": "integer"
-          },
-          "expectedInterval": {
-            "title": "Expectedinterval",
-            "type": "string"
-          },
-          "observedCount": {
-            "title": "Observedcount",
-            "type": "integer"
-          },
-          "observedInterval": {
-            "title": "Observedinterval",
-            "type": "string"
-          },
-          "percentComplete": {
-            "title": "Percentcomplete",
-            "type": "number"
-          },
-          "percentCoverage": {
-            "title": "Percentcoverage",
-            "type": "number"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeTo"
-          }
-        }
+        ]
       },
       "LocationDatetimeFirst": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6593,22 +6155,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "LocationDatetimeLast": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6616,22 +6165,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "MeasurementPeriod": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Period"
@@ -6639,26 +6175,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "label": {
-            "title": "Label",
-            "type": "string"
-          },
-          "interval": {
-            "title": "Interval",
-            "type": "string"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/PeriodDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/PeriodDatetimeTo"
-          }
-        }
+        ]
       },
       "MeasurementCoordinates": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coordinates"
@@ -6666,26 +6185,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "latitude": {
-            "title": "Latitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "longitude": {
-            "title": "Longitude",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "MeasurementSummary": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
@@ -6693,75 +6195,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "min": {
-            "title": "Min",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q02": {
-            "title": "Q02",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q25": {
-            "title": "Q25",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "median": {
-            "title": "Median",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q75": {
-            "title": "Q75",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q98": {
-            "title": "Q98",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "max": {
-            "title": "Max",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "avg": {
-            "title": "Avg",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "sd": {
-            "title": "Sd",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "MeasurementCoverage": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
@@ -6769,43 +6205,10 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "expectedCount": {
-            "title": "Expectedcount",
-            "type": "integer"
-          },
-          "expectedInterval": {
-            "title": "Expectedinterval",
-            "type": "string"
-          },
-          "observedCount": {
-            "title": "Observedcount",
-            "type": "integer"
-          },
-          "observedInterval": {
-            "title": "Observedinterval",
-            "type": "string"
-          },
-          "percentComplete": {
-            "title": "Percentcomplete",
-            "type": "number"
-          },
-          "percentCoverage": {
-            "title": "Percentcoverage",
-            "type": "number"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeTo"
-          }
-        }
+        ]
       },
       "MetaFound": {
         "title": "Found",
-        "type": "object",
         "anyOf": [
           {
             "type": "integer"
@@ -6819,7 +6222,6 @@
         ]
       },
       "PeriodDatetimeFrom": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6827,22 +6229,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "PeriodDatetimeTo": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6850,22 +6239,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "ProviderBbox": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/GeoJson"
@@ -6873,24 +6249,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "type": {
-            "title": "Type",
-            "type": "string"
-          },
-          "coordinates": {
-            "title": "Coordinates",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GeoJsonCoordinatesItem"
-            },
-            "default": []
-          }
-        }
+        ]
       },
       "SensorDatetimeFirst": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6898,22 +6259,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "SensorDatetimeLast": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/DatetimeObject"
@@ -6921,22 +6269,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "utc": {
-            "title": "Utc",
-            "type": "string",
-            "format": "date-time"
-          },
-          "local": {
-            "title": "Local",
-            "type": "string",
-            "format": "date-time"
-          }
-        }
+        ]
       },
       "SensorCoverage": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Coverage"
@@ -6944,42 +6279,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "expectedCount": {
-            "title": "Expectedcount",
-            "type": "integer"
-          },
-          "expectedInterval": {
-            "title": "Expectedinterval",
-            "type": "string"
-          },
-          "observedCount": {
-            "title": "Observedcount",
-            "type": "integer"
-          },
-          "observedInterval": {
-            "title": "Observedinterval",
-            "type": "string"
-          },
-          "percentComplete": {
-            "title": "Percentcomplete",
-            "type": "number"
-          },
-          "percentCoverage": {
-            "title": "Percentcoverage",
-            "type": "number"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeTo"
-          }
-        }
+        ]
       },
       "SensorLatest": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/LatestBase"
@@ -6987,22 +6289,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "datetime": {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          "value": {
-            "title": "Value",
-            "type": "number"
-          },
-          "coordinates": {
-            "$ref": "#/components/schemas/Coordinates"
-          }
-        }
+        ]
       },
       "SensorSummary": {
-        "type": "object",
         "anyOf": [
           {
             "$ref": "#/components/schemas/Summary"
@@ -7010,75 +6299,9 @@
           {
             "type": "null"
           }
-        ],
-        "properties": {
-          "min": {
-            "title": "Min",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q02": {
-            "title": "Q02",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q25": {
-            "title": "Q25",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "median": {
-            "title": "Median",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q75": {
-            "title": "Q75",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "q98": {
-            "title": "Q98",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "max": {
-            "title": "Max",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "avg": {
-            "title": "Avg",
-            "type": [
-              "null",
-              "number"
-            ]
-          },
-          "sd": {
-            "title": "Sd",
-            "type": [
-              "null",
-              "number"
-            ]
-          }
-        }
+        ]
       },
       "ValidationErrorLocItem": {
-        "type": "object",
         "anyOf": [
           {
             "type": "string"
@@ -7091,9 +6314,6 @@
       "ExamplePayload": {
         "type": "object",
         "description": "Placeholder schema for path example refs"
-      },
-      "GeoJsonCoordinatesItem": {
-        "type": "object"
       }
     },
     "securitySchemes": {

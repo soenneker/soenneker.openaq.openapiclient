@@ -18,7 +18,7 @@ using System;
 namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v3\sensors\{sensor-id}\hours
+    /// Builds and executes requests for operations under \v3\sensors\{sensorsId}\hours
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HoursRequestBuilder : BaseRequestBuilder
@@ -58,7 +58,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HoursRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/hours{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
+        public HoursRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/hours{?datetime_from*,datetime_to*,limit*,page*}", pathParameters)
         {
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Hours
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HoursRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensor%2Did}/hours{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
+        public HoursRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v3/sensors/{sensorsId}/hours{?datetime_from*,datetime_to*,limit*,page*}", rawUrl)
         {
         }
         /// <summary>

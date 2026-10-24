@@ -17,14 +17,14 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors
     {
         /// <summary>Gets an item from the Soenneker.OpenAq.OpenApiClient.v3.sensors.item collection</summary>
         /// <param name="position">Limit the results to a specific sensors id</param>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder"/></returns>
-        public global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.WithSensorsItemRequestBuilder"/></returns>
+        public global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.WithSensorsItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("sensor%2Did", position);
-                return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.SensorItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("sensorsId", position);
+                return new global::Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.WithSensorsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
