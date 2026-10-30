@@ -11,36 +11,61 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class License : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attributionRequired") is { } nullNodeAttributionRequired && nullNodeAttributionRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributionRequired = null;
+            if (parseNode.GetChildNode("commercialUseAllowed") is { } nullNodeCommercialUseAllowed && nullNodeCommercialUseAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommercialUseAllowed = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("modificationAllowed") is { } nullNodeModificationAllowed && nullNodeModificationAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModificationAllowed = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("redistributionAllowed") is { } nullNodeRedistributionAllowed && nullNodeRedistributionAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RedistributionAllowed = null;
+            if (parseNode.GetChildNode("shareAlikeRequired") is { } nullNodeShareAlikeRequired && nullNodeShareAlikeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareAlikeRequired = null;
+            if (parseNode.GetChildNode("sourceUrl") is { } nullNodeSourceUrl && nullNodeSourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attributionRequired property</summary>
-        public bool? AttributionRequired { get; set; }
+        public bool? AttributionRequired { get => _explicitNullValueAttributionRequired; set { _explicitNullValueAttributionRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributionRequired"); else _explicitNullProperties?.Remove("attributionRequired"); } }
+        private bool? _explicitNullValueAttributionRequired = default!;
         /// <summary>The commercialUseAllowed property</summary>
-        public bool? CommercialUseAllowed { get; set; }
+        public bool? CommercialUseAllowed { get => _explicitNullValueCommercialUseAllowed; set { _explicitNullValueCommercialUseAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commercialUseAllowed"); else _explicitNullProperties?.Remove("commercialUseAllowed"); } }
+        private bool? _explicitNullValueCommercialUseAllowed = default!;
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>The modificationAllowed property</summary>
-        public bool? ModificationAllowed { get; set; }
+        public bool? ModificationAllowed { get => _explicitNullValueModificationAllowed; set { _explicitNullValueModificationAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modificationAllowed"); else _explicitNullProperties?.Remove("modificationAllowed"); } }
+        private bool? _explicitNullValueModificationAllowed = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The redistributionAllowed property</summary>
-        public bool? RedistributionAllowed { get; set; }
+        public bool? RedistributionAllowed { get => _explicitNullValueRedistributionAllowed; set { _explicitNullValueRedistributionAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redistributionAllowed"); else _explicitNullProperties?.Remove("redistributionAllowed"); } }
+        private bool? _explicitNullValueRedistributionAllowed = default!;
         /// <summary>The shareAlikeRequired property</summary>
-        public bool? ShareAlikeRequired { get; set; }
+        public bool? ShareAlikeRequired { get => _explicitNullValueShareAlikeRequired; set { _explicitNullValueShareAlikeRequired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareAlikeRequired"); else _explicitNullProperties?.Remove("shareAlikeRequired"); } }
+        private bool? _explicitNullValueShareAlikeRequired = default!;
         /// <summary>The sourceUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUrl { get; set; }
+        public string? SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceUrl"); else _explicitNullProperties?.Remove("sourceUrl"); } }
+        private string? _explicitNullValueSourceUrl = default!;
 #nullable restore
 #else
-        public string SourceUrl { get; set; }
+        public string SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceUrl"); else _explicitNullProperties?.Remove("sourceUrl"); } }
+        private string _explicitNullValueSourceUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.License"/> and sets the default values.
@@ -57,7 +82,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public static global::Soenneker.OpenAq.OpenApiClient.Models.License CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.License();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.License(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +117,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteBoolValue("redistributionAllowed", RedistributionAllowed);
             writer.WriteBoolValue("shareAlikeRequired", ShareAlikeRequired);
             writer.WriteStringValue("sourceUrl", SourceUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

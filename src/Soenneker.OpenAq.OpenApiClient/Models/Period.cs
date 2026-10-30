@@ -11,40 +11,59 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Period : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("datetimeFrom") is { } nullNodeDatetimeFrom && nullNodeDatetimeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeFrom = null;
+            if (parseNode.GetChildNode("datetimeTo") is { } nullNodeDatetimeTo && nullNodeDatetimeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeTo = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The datetimeFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeFrom = default!;
 #endif
         /// <summary>The datetimeTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeTo = default!;
 #endif
         /// <summary>The interval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Interval { get; set; }
+        public string? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private string? _explicitNullValueInterval = default!;
 #nullable restore
 #else
-        public string Interval { get; set; }
+        public string Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private string _explicitNullValueInterval = default!;
 #endif
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get; set; }
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string? _explicitNullValueLabel = default!;
 #nullable restore
 #else
-        public string Label { get; set; }
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Period"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public static global::Soenneker.OpenAq.OpenApiClient.Models.Period CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.Period();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.Period(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeTo", DatetimeTo);
             writer.WriteStringValue("interval", Interval);
             writer.WriteStringValue("label", Label);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

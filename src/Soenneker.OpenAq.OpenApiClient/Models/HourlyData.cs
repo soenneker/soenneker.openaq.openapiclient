@@ -11,59 +11,86 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class HourlyData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("coordinates") is { } nullNodeCoordinates && nullNodeCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coordinates = null;
+            if (parseNode.GetChildNode("coverage") is { } nullNodeCoverage && nullNodeCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coverage = null;
+            if (parseNode.GetChildNode("flagInfo") is { } nullNodeFlagInfo && nullNodeFlagInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagInfo = null;
+            if (parseNode.GetChildNode("parameter") is { } nullNodeParameter && nullNodeParameter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parameter = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("summary") is { } nullNodeSummary && nullNodeSummary.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Summary = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The coordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? _explicitNullValueCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates _explicitNullValueCoordinates = default!;
 #endif
         /// <summary>The coverage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? Coverage { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? _explicitNullValueCoverage = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage Coverage { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coverage _explicitNullValueCoverage = default!;
 #endif
         /// <summary>The flagInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo? FlagInfo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo? FlagInfo { get => _explicitNullValueFlagInfo; set { _explicitNullValueFlagInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagInfo"); else _explicitNullProperties?.Remove("flagInfo"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo? _explicitNullValueFlagInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo FlagInfo { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo FlagInfo { get => _explicitNullValueFlagInfo; set { _explicitNullValueFlagInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagInfo"); else _explicitNullProperties?.Remove("flagInfo"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo _explicitNullValueFlagInfo = default!;
 #endif
         /// <summary>The parameter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase? Parameter { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase? Parameter { get => _explicitNullValueParameter; set { _explicitNullValueParameter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter"); else _explicitNullProperties?.Remove("parameter"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase? _explicitNullValueParameter = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase Parameter { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase Parameter { get => _explicitNullValueParameter; set { _explicitNullValueParameter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parameter"); else _explicitNullProperties?.Remove("parameter"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase _explicitNullValueParameter = default!;
 #endif
         /// <summary>The period property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Period? Period { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Period? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Period? _explicitNullValuePeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Period Period { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Period Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Period _explicitNullValuePeriod = default!;
 #endif
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary? Summary { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Summary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary Summary { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Summary _explicitNullValueSummary = default!;
 #endif
         /// <summary>The value property</summary>
-        public double? Value { get; set; }
+        public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private double? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.HourlyData"/> and sets the default values.
         /// </summary>
@@ -79,7 +106,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public static global::Soenneker.OpenAq.OpenApiClient.Models.HourlyData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.HourlyData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.HourlyData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Period>("period", Period);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>("summary", Summary);
             writer.WriteDoubleValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,48 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ValidationError : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("loc") is { } nullNodeLoc && nullNodeLoc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loc = null;
+            if (parseNode.GetChildNode("msg") is { } nullNodeMsg && nullNodeMsg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Msg = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The loc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Loc { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Loc { get => _explicitNullValueLoc; set { _explicitNullValueLoc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loc"); else _explicitNullProperties?.Remove("loc"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? _explicitNullValueLoc = default!;
 #nullable restore
 #else
-        public List<string> Loc { get; set; }
+        public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Loc { get => _explicitNullValueLoc; set { _explicitNullValueLoc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loc"); else _explicitNullProperties?.Remove("loc"); } }
+        private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueLoc = default!;
 #endif
         /// <summary>The msg property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Msg { get; set; }
+        public string? Msg { get => _explicitNullValueMsg; set { _explicitNullValueMsg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg"); else _explicitNullProperties?.Remove("msg"); } }
+        private string? _explicitNullValueMsg = default!;
 #nullable restore
 #else
-        public string Msg { get; set; }
+        public string Msg { get => _explicitNullValueMsg; set { _explicitNullValueMsg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("msg"); else _explicitNullProperties?.Remove("msg"); } }
+        private string _explicitNullValueMsg = default!;
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.ValidationError"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public static global::Soenneker.OpenAq.OpenApiClient.Models.ValidationError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.ValidationError();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.ValidationError(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +79,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "loc", n => { Loc = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "loc", n => { Loc = n.GetCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "msg", n => { Msg = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -75,9 +91,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("loc", Loc);
+            writer.WriteCollectionOfObjectValues<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("loc", Loc);
             writer.WriteStringValue("msg", Msg);
             writer.WriteStringValue("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

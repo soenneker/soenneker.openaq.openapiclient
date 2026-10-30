@@ -11,27 +11,42 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LatestBase : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("coordinates") is { } nullNodeCoordinates && nullNodeCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coordinates = null;
+            if (parseNode.GetChildNode("datetime") is { } nullNodeDatetime && nullNodeDatetime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Datetime = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The coordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? _explicitNullValueCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates _explicitNullValueCoordinates = default!;
 #endif
         /// <summary>The datetime property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? Datetime { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? Datetime { get => _explicitNullValueDatetime; set { _explicitNullValueDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetime"); else _explicitNullProperties?.Remove("datetime"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetime = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject Datetime { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject Datetime { get => _explicitNullValueDatetime; set { _explicitNullValueDatetime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetime"); else _explicitNullProperties?.Remove("datetime"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetime = default!;
 #endif
         /// <summary>The value property</summary>
-        public double? Value { get; set; }
+        public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private double? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase"/> and sets the default values.
         /// </summary>
@@ -47,7 +62,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public static global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>("coordinates", Coordinates);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetime", Datetime);
             writer.WriteDoubleValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

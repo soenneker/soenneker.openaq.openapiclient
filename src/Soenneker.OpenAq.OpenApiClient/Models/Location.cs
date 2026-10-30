@@ -11,120 +11,174 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Location : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bounds") is { } nullNodeBounds && nullNodeBounds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bounds = null;
+            if (parseNode.GetChildNode("coordinates") is { } nullNodeCoordinates && nullNodeCoordinates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Coordinates = null;
+            if (parseNode.GetChildNode("country") is { } nullNodeCountry && nullNodeCountry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Country = null;
+            if (parseNode.GetChildNode("datetimeFirst") is { } nullNodeDatetimeFirst && nullNodeDatetimeFirst.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeFirst = null;
+            if (parseNode.GetChildNode("datetimeLast") is { } nullNodeDatetimeLast && nullNodeDatetimeLast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeLast = null;
+            if (parseNode.GetChildNode("distance") is { } nullNodeDistance && nullNodeDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Distance = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("instruments") is { } nullNodeInstruments && nullNodeInstruments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Instruments = null;
+            if (parseNode.GetChildNode("isMobile") is { } nullNodeIsMobile && nullNodeIsMobile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMobile = null;
+            if (parseNode.GetChildNode("isMonitor") is { } nullNodeIsMonitor && nullNodeIsMonitor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMonitor = null;
+            if (parseNode.GetChildNode("licenses") is { } nullNodeLicenses && nullNodeLicenses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Licenses = null;
+            if (parseNode.GetChildNode("locality") is { } nullNodeLocality && nullNodeLocality.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locality = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("sensors") is { } nullNodeSensors && nullNodeSensors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sensors = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bounds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Bounds { get; set; }
+        public List<double?>? Bounds { get => _explicitNullValueBounds; set { _explicitNullValueBounds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounds"); else _explicitNullProperties?.Remove("bounds"); } }
+        private List<double?>? _explicitNullValueBounds = default!;
 #nullable restore
 #else
-        public List<double?> Bounds { get; set; }
+        public List<double?> Bounds { get => _explicitNullValueBounds; set { _explicitNullValueBounds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bounds"); else _explicitNullProperties?.Remove("bounds"); } }
+        private List<double?> _explicitNullValueBounds = default!;
 #endif
         /// <summary>The coordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? _explicitNullValueCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates _explicitNullValueCoordinates = default!;
 #endif
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase? Country { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase? Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase? _explicitNullValueCountry = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase Country { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase Country { get => _explicitNullValueCountry; set { _explicitNullValueCountry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country"); else _explicitNullProperties?.Remove("country"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase _explicitNullValueCountry = default!;
 #endif
         /// <summary>The datetimeFirst property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFirst { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeFirst = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFirst { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeFirst = default!;
 #endif
         /// <summary>The datetimeLast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeLast { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeLast = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeLast { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeLast = default!;
 #endif
         /// <summary>The distance property</summary>
-        public double? Distance { get; set; }
+        public double? Distance { get => _explicitNullValueDistance; set { _explicitNullValueDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance"); else _explicitNullProperties?.Remove("distance"); } }
+        private double? _explicitNullValueDistance = default!;
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>The instruments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>? Instruments { get; set; }
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>? Instruments { get => _explicitNullValueInstruments; set { _explicitNullValueInstruments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instruments"); else _explicitNullProperties?.Remove("instruments"); } }
+        private List<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>? _explicitNullValueInstruments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase> Instruments { get; set; }
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase> Instruments { get => _explicitNullValueInstruments; set { _explicitNullValueInstruments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("instruments"); else _explicitNullProperties?.Remove("instruments"); } }
+        private List<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase> _explicitNullValueInstruments = default!;
 #endif
         /// <summary>The isMobile property</summary>
-        public bool? IsMobile { get; set; }
+        public bool? IsMobile { get => _explicitNullValueIsMobile; set { _explicitNullValueIsMobile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMobile"); else _explicitNullProperties?.Remove("isMobile"); } }
+        private bool? _explicitNullValueIsMobile = default!;
         /// <summary>The isMonitor property</summary>
-        public bool? IsMonitor { get; set; }
+        public bool? IsMonitor { get => _explicitNullValueIsMonitor; set { _explicitNullValueIsMonitor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMonitor"); else _explicitNullProperties?.Remove("isMonitor"); } }
+        private bool? _explicitNullValueIsMonitor = default!;
         /// <summary>The licenses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense>? Licenses { get; set; }
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense>? Licenses { get => _explicitNullValueLicenses; set { _explicitNullValueLicenses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("licenses"); else _explicitNullProperties?.Remove("licenses"); } }
+        private List<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense>? _explicitNullValueLicenses = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense> Licenses { get; set; }
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense> Licenses { get => _explicitNullValueLicenses; set { _explicitNullValueLicenses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("licenses"); else _explicitNullProperties?.Remove("licenses"); } }
+        private List<global::Soenneker.OpenAq.OpenApiClient.Models.LocationLicense> _explicitNullValueLicenses = default!;
 #endif
         /// <summary>The locality property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Locality { get; set; }
+        public string? Locality { get => _explicitNullValueLocality; set { _explicitNullValueLocality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locality"); else _explicitNullProperties?.Remove("locality"); } }
+        private string? _explicitNullValueLocality = default!;
 #nullable restore
 #else
-        public string Locality { get; set; }
+        public string Locality { get => _explicitNullValueLocality; set { _explicitNullValueLocality = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locality"); else _explicitNullProperties?.Remove("locality"); } }
+        private string _explicitNullValueLocality = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase? Owner { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase Owner { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.EntityBase _explicitNullValueOwner = default!;
 #endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBase? Provider { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBase? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBase? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBase Provider { get; set; }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBase Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBase _explicitNullValueProvider = default!;
 #endif
         /// <summary>The sensors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.SensorBase>? Sensors { get; set; }
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.SensorBase>? Sensors { get => _explicitNullValueSensors; set { _explicitNullValueSensors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensors"); else _explicitNullProperties?.Remove("sensors"); } }
+        private List<global::Soenneker.OpenAq.OpenApiClient.Models.SensorBase>? _explicitNullValueSensors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.OpenAq.OpenApiClient.Models.SensorBase> Sensors { get; set; }
+        public List<global::Soenneker.OpenAq.OpenApiClient.Models.SensorBase> Sensors { get => _explicitNullValueSensors; set { _explicitNullValueSensors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensors"); else _explicitNullProperties?.Remove("sensors"); } }
+        private List<global::Soenneker.OpenAq.OpenApiClient.Models.SensorBase> _explicitNullValueSensors = default!;
 #endif
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Location"/> and sets the default values.
@@ -141,7 +195,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public static global::Soenneker.OpenAq.OpenApiClient.Models.Location CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.Location();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.Location(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -194,6 +248,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBase>("provider", Provider);
             writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.SensorBase>("sensors", Sensors);
             writer.WriteStringValue("timezone", Timezone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

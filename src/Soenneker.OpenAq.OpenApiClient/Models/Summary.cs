@@ -11,27 +11,52 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Summary : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("avg") is { } nullNodeAvg && nullNodeAvg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avg = null;
+            if (parseNode.GetChildNode("max") is { } nullNodeMax && nullNodeMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Max = null;
+            if (parseNode.GetChildNode("median") is { } nullNodeMedian && nullNodeMedian.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Median = null;
+            if (parseNode.GetChildNode("min") is { } nullNodeMin && nullNodeMin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Min = null;
+            if (parseNode.GetChildNode("q02") is { } nullNodeQ02 && nullNodeQ02.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Q02 = null;
+            if (parseNode.GetChildNode("q25") is { } nullNodeQ25 && nullNodeQ25.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Q25 = null;
+            if (parseNode.GetChildNode("q75") is { } nullNodeQ75 && nullNodeQ75.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Q75 = null;
+            if (parseNode.GetChildNode("q98") is { } nullNodeQ98 && nullNodeQ98.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Q98 = null;
+            if (parseNode.GetChildNode("sd") is { } nullNodeSd && nullNodeSd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sd = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The avg property</summary>
-        public double? Avg { get; set; }
+        public double? Avg { get => _explicitNullValueAvg; set { _explicitNullValueAvg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avg"); else _explicitNullProperties?.Remove("avg"); } }
+        private double? _explicitNullValueAvg = default!;
         /// <summary>The max property</summary>
-        public double? Max { get; set; }
+        public double? Max { get => _explicitNullValueMax; set { _explicitNullValueMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max"); else _explicitNullProperties?.Remove("max"); } }
+        private double? _explicitNullValueMax = default!;
         /// <summary>The median property</summary>
-        public double? Median { get; set; }
+        public double? Median { get => _explicitNullValueMedian; set { _explicitNullValueMedian = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("median"); else _explicitNullProperties?.Remove("median"); } }
+        private double? _explicitNullValueMedian = default!;
         /// <summary>The min property</summary>
-        public double? Min { get; set; }
+        public double? Min { get => _explicitNullValueMin; set { _explicitNullValueMin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min"); else _explicitNullProperties?.Remove("min"); } }
+        private double? _explicitNullValueMin = default!;
         /// <summary>The q02 property</summary>
-        public double? Q02 { get; set; }
+        public double? Q02 { get => _explicitNullValueQ02; set { _explicitNullValueQ02 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("q02"); else _explicitNullProperties?.Remove("q02"); } }
+        private double? _explicitNullValueQ02 = default!;
         /// <summary>The q25 property</summary>
-        public double? Q25 { get; set; }
+        public double? Q25 { get => _explicitNullValueQ25; set { _explicitNullValueQ25 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("q25"); else _explicitNullProperties?.Remove("q25"); } }
+        private double? _explicitNullValueQ25 = default!;
         /// <summary>The q75 property</summary>
-        public double? Q75 { get; set; }
+        public double? Q75 { get => _explicitNullValueQ75; set { _explicitNullValueQ75 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("q75"); else _explicitNullProperties?.Remove("q75"); } }
+        private double? _explicitNullValueQ75 = default!;
         /// <summary>The q98 property</summary>
-        public double? Q98 { get; set; }
+        public double? Q98 { get => _explicitNullValueQ98; set { _explicitNullValueQ98 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("q98"); else _explicitNullProperties?.Remove("q98"); } }
+        private double? _explicitNullValueQ98 = default!;
         /// <summary>The sd property</summary>
-        public double? Sd { get; set; }
+        public double? Sd { get => _explicitNullValueSd; set { _explicitNullValueSd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sd"); else _explicitNullProperties?.Remove("sd"); } }
+        private double? _explicitNullValueSd = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Summary"/> and sets the default values.
         /// </summary>
@@ -47,7 +72,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public static global::Soenneker.OpenAq.OpenApiClient.Models.Summary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.OpenAq.OpenApiClient.Models.Summary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.Summary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +109,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteDoubleValue("q75", Q75);
             writer.WriteDoubleValue("q98", Q98);
             writer.WriteDoubleValue("sd", Sd);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

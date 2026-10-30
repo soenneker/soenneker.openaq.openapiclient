@@ -53,6 +53,8 @@ namespace Soenneker.OpenAq.OpenApiClient.V3.Sensors.Item.Years
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.OpenAq.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataResponse>(requestInfo, global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

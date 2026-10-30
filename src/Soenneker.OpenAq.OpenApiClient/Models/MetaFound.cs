@@ -12,7 +12,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetaFound : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="int"/></summary>
         public int? Integer { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.MetaFoundMember1"/></summary>
@@ -40,18 +45,21 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.OpenAq.OpenApiClient.Models.MetaFound();
-            if(parseNode.GetIntValue() is int integerValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger && parseNode.GetIntValue() is int integerValue)
             {
                 result.Integer = integerValue;
             }
-            else if(parseNode.GetStringValue() is string stringValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
             {
                 result.String = stringValue;
             }
             else {
-                result.MetaFoundMember1 = new global::Soenneker.OpenAq.OpenApiClient.Models.MetaFoundMember1();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.Integer == null && result.MetaFoundMember1 == null && result.String == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,6 +79,10 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Integer == null && MetaFoundMember1 == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (MetaFoundMember1 != null && Integer == null && String == null) { if (MetaFoundMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, MetaFoundMember1); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(Integer != null)
             {
@@ -81,6 +93,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
                 writer.WriteStringValue(null, String);
             }
             else {
+                if (MetaFoundMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.MetaFoundMember1>(null, MetaFoundMember1);
             }
         }
