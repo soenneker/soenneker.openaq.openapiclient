@@ -17,14 +17,22 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("datetimeFrom") is { } nullNodeDatetimeFrom && nullNodeDatetimeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeFrom = null;
-            if (parseNode.GetChildNode("datetimeTo") is { } nullNodeDatetimeTo && nullNodeDatetimeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeTo = null;
-            if (parseNode.GetChildNode("expectedCount") is { } nullNodeExpectedCount && nullNodeExpectedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedCount = null;
-            if (parseNode.GetChildNode("expectedInterval") is { } nullNodeExpectedInterval && nullNodeExpectedInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedInterval = null;
-            if (parseNode.GetChildNode("observedCount") is { } nullNodeObservedCount && nullNodeObservedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservedCount = null;
-            if (parseNode.GetChildNode("observedInterval") is { } nullNodeObservedInterval && nullNodeObservedInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservedInterval = null;
-            if (parseNode.GetChildNode("percentComplete") is { } nullNodePercentComplete && nullNodePercentComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentComplete = null;
-            if (parseNode.GetChildNode("percentCoverage") is { } nullNodePercentCoverage && nullNodePercentCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentCoverage = null;
+            if (parseNode.GetChildNode("datetimeFrom") is null) { _explicitNullValueDatetimeFrom = default!; _explicitNullProperties?.Remove("datetimeFrom"); }
+            else if (parseNode.GetChildNode("datetimeFrom") is { } nullNodeDatetimeFrom && nullNodeDatetimeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeFrom = null;
+            if (parseNode.GetChildNode("datetimeTo") is null) { _explicitNullValueDatetimeTo = default!; _explicitNullProperties?.Remove("datetimeTo"); }
+            else if (parseNode.GetChildNode("datetimeTo") is { } nullNodeDatetimeTo && nullNodeDatetimeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeTo = null;
+            if (parseNode.GetChildNode("expectedCount") is null) { _explicitNullValueExpectedCount = default!; _explicitNullProperties?.Remove("expectedCount"); }
+            else if (parseNode.GetChildNode("expectedCount") is { } nullNodeExpectedCount && nullNodeExpectedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedCount = null;
+            if (parseNode.GetChildNode("expectedInterval") is null) { _explicitNullValueExpectedInterval = default!; _explicitNullProperties?.Remove("expectedInterval"); }
+            else if (parseNode.GetChildNode("expectedInterval") is { } nullNodeExpectedInterval && nullNodeExpectedInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedInterval = null;
+            if (parseNode.GetChildNode("observedCount") is null) { _explicitNullValueObservedCount = default!; _explicitNullProperties?.Remove("observedCount"); }
+            else if (parseNode.GetChildNode("observedCount") is { } nullNodeObservedCount && nullNodeObservedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservedCount = null;
+            if (parseNode.GetChildNode("observedInterval") is null) { _explicitNullValueObservedInterval = default!; _explicitNullProperties?.Remove("observedInterval"); }
+            else if (parseNode.GetChildNode("observedInterval") is { } nullNodeObservedInterval && nullNodeObservedInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ObservedInterval = null;
+            if (parseNode.GetChildNode("percentComplete") is null) { _explicitNullValuePercentComplete = default!; _explicitNullProperties?.Remove("percentComplete"); }
+            else if (parseNode.GetChildNode("percentComplete") is { } nullNodePercentComplete && nullNodePercentComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentComplete = null;
+            if (parseNode.GetChildNode("percentCoverage") is null) { _explicitNullValuePercentCoverage = default!; _explicitNullProperties?.Remove("percentCoverage"); }
+            else if (parseNode.GetChildNode("percentCoverage") is { } nullNodePercentCoverage && nullNodePercentCoverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PercentCoverage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,54 +40,54 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The datetimeFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeFrom = default!;
 #endif
         /// <summary>The datetimeTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeTo = default!;
 #endif
         /// <summary>The expectedCount property</summary>
-        public int? ExpectedCount { get => _explicitNullValueExpectedCount; set { _explicitNullValueExpectedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedCount"); else _explicitNullProperties?.Remove("expectedCount"); } }
+        public int? ExpectedCount { get => _explicitNullValueExpectedCount; set { _explicitNullValueExpectedCount = value; AdditionalData?.Remove("expectedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedCount"); else _explicitNullProperties?.Remove("expectedCount"); } }
         private int? _explicitNullValueExpectedCount = default!;
         /// <summary>The expectedInterval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedInterval { get => _explicitNullValueExpectedInterval; set { _explicitNullValueExpectedInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedInterval"); else _explicitNullProperties?.Remove("expectedInterval"); } }
+        public string? ExpectedInterval { get => _explicitNullValueExpectedInterval; set { _explicitNullValueExpectedInterval = value; AdditionalData?.Remove("expectedInterval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedInterval"); else _explicitNullProperties?.Remove("expectedInterval"); } }
         private string? _explicitNullValueExpectedInterval = default!;
 #nullable restore
 #else
-        public string ExpectedInterval { get => _explicitNullValueExpectedInterval; set { _explicitNullValueExpectedInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedInterval"); else _explicitNullProperties?.Remove("expectedInterval"); } }
+        public string ExpectedInterval { get => _explicitNullValueExpectedInterval; set { _explicitNullValueExpectedInterval = value; AdditionalData?.Remove("expectedInterval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedInterval"); else _explicitNullProperties?.Remove("expectedInterval"); } }
         private string _explicitNullValueExpectedInterval = default!;
 #endif
         /// <summary>The observedCount property</summary>
-        public int? ObservedCount { get => _explicitNullValueObservedCount; set { _explicitNullValueObservedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observedCount"); else _explicitNullProperties?.Remove("observedCount"); } }
+        public int? ObservedCount { get => _explicitNullValueObservedCount; set { _explicitNullValueObservedCount = value; AdditionalData?.Remove("observedCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observedCount"); else _explicitNullProperties?.Remove("observedCount"); } }
         private int? _explicitNullValueObservedCount = default!;
         /// <summary>The observedInterval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ObservedInterval { get => _explicitNullValueObservedInterval; set { _explicitNullValueObservedInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observedInterval"); else _explicitNullProperties?.Remove("observedInterval"); } }
+        public string? ObservedInterval { get => _explicitNullValueObservedInterval; set { _explicitNullValueObservedInterval = value; AdditionalData?.Remove("observedInterval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observedInterval"); else _explicitNullProperties?.Remove("observedInterval"); } }
         private string? _explicitNullValueObservedInterval = default!;
 #nullable restore
 #else
-        public string ObservedInterval { get => _explicitNullValueObservedInterval; set { _explicitNullValueObservedInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observedInterval"); else _explicitNullProperties?.Remove("observedInterval"); } }
+        public string ObservedInterval { get => _explicitNullValueObservedInterval; set { _explicitNullValueObservedInterval = value; AdditionalData?.Remove("observedInterval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("observedInterval"); else _explicitNullProperties?.Remove("observedInterval"); } }
         private string _explicitNullValueObservedInterval = default!;
 #endif
         /// <summary>The percentComplete property</summary>
-        public double? PercentComplete { get => _explicitNullValuePercentComplete; set { _explicitNullValuePercentComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentComplete"); else _explicitNullProperties?.Remove("percentComplete"); } }
+        public double? PercentComplete { get => _explicitNullValuePercentComplete; set { _explicitNullValuePercentComplete = value; AdditionalData?.Remove("percentComplete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentComplete"); else _explicitNullProperties?.Remove("percentComplete"); } }
         private double? _explicitNullValuePercentComplete = default!;
         /// <summary>The percentCoverage property</summary>
-        public double? PercentCoverage { get => _explicitNullValuePercentCoverage; set { _explicitNullValuePercentCoverage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentCoverage"); else _explicitNullProperties?.Remove("percentCoverage"); } }
+        public double? PercentCoverage { get => _explicitNullValuePercentCoverage; set { _explicitNullValuePercentCoverage = value; AdditionalData?.Remove("percentCoverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("percentCoverage"); else _explicitNullProperties?.Remove("percentCoverage"); } }
         private double? _explicitNullValuePercentCoverage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Coverage"/> and sets the default values.

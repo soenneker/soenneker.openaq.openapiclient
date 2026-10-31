@@ -17,13 +17,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hasFlags") is { } nullNodeHasFlags && nullNodeHasFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasFlags = null;
+            if (parseNode.GetChildNode("hasFlags") is null) { _explicitNullValueHasFlags = default!; _explicitNullProperties?.Remove("hasFlags"); }
+            else if (parseNode.GetChildNode("hasFlags") is { } nullNodeHasFlags && nullNodeHasFlags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasFlags = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hasFlags property</summary>
-        public bool? HasFlags { get => _explicitNullValueHasFlags; set { _explicitNullValueHasFlags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFlags"); else _explicitNullProperties?.Remove("hasFlags"); } }
+        public bool? HasFlags { get => _explicitNullValueHasFlags; set { _explicitNullValueHasFlags = value; AdditionalData?.Remove("hasFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFlags"); else _explicitNullProperties?.Remove("hasFlags"); } }
         private bool? _explicitNullValueHasFlags = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo"/> and sets the default values.

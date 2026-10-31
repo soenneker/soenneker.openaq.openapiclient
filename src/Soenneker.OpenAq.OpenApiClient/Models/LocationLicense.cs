@@ -18,11 +18,16 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attribution") is { } nullNodeAttribution && nullNodeAttribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attribution = null;
-            if (parseNode.GetChildNode("dateFrom") is { } nullNodeDateFrom && nullNodeDateFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateFrom = null;
-            if (parseNode.GetChildNode("dateTo") is { } nullNodeDateTo && nullNodeDateTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateTo = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("attribution") is null) { _explicitNullValueAttribution = default!; _explicitNullProperties?.Remove("attribution"); }
+            else if (parseNode.GetChildNode("attribution") is { } nullNodeAttribution && nullNodeAttribution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attribution = null;
+            if (parseNode.GetChildNode("dateFrom") is null) { _explicitNullValueDateFrom = default!; _explicitNullProperties?.Remove("dateFrom"); }
+            else if (parseNode.GetChildNode("dateFrom") is { } nullNodeDateFrom && nullNodeDateFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateFrom = null;
+            if (parseNode.GetChildNode("dateTo") is null) { _explicitNullValueDateTo = default!; _explicitNullProperties?.Remove("dateTo"); }
+            else if (parseNode.GetChildNode("dateTo") is { } nullNodeDateTo && nullNodeDateTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateTo = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,30 +35,30 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The attribution property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity? Attribution { get => _explicitNullValueAttribution; set { _explicitNullValueAttribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribution"); else _explicitNullProperties?.Remove("attribution"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity? Attribution { get => _explicitNullValueAttribution; set { _explicitNullValueAttribution = value; AdditionalData?.Remove("attribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribution"); else _explicitNullProperties?.Remove("attribution"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity? _explicitNullValueAttribution = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity Attribution { get => _explicitNullValueAttribution; set { _explicitNullValueAttribution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribution"); else _explicitNullProperties?.Remove("attribution"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity Attribution { get => _explicitNullValueAttribution; set { _explicitNullValueAttribution = value; AdditionalData?.Remove("attribution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attribution"); else _explicitNullProperties?.Remove("attribution"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.AttributionEntity _explicitNullValueAttribution = default!;
 #endif
         /// <summary>The dateFrom property</summary>
-        public Date? DateFrom { get => _explicitNullValueDateFrom; set { _explicitNullValueDateFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateFrom"); else _explicitNullProperties?.Remove("dateFrom"); } }
+        public Date? DateFrom { get => _explicitNullValueDateFrom; set { _explicitNullValueDateFrom = value; AdditionalData?.Remove("dateFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateFrom"); else _explicitNullProperties?.Remove("dateFrom"); } }
         private Date? _explicitNullValueDateFrom = default!;
         /// <summary>The dateTo property</summary>
-        public Date? DateTo { get => _explicitNullValueDateTo; set { _explicitNullValueDateTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateTo"); else _explicitNullProperties?.Remove("dateTo"); } }
+        public Date? DateTo { get => _explicitNullValueDateTo; set { _explicitNullValueDateTo = value; AdditionalData?.Remove("dateTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateTo"); else _explicitNullProperties?.Remove("dateTo"); } }
         private Date? _explicitNullValueDateTo = default!;
         /// <summary>The id property</summary>
-        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>

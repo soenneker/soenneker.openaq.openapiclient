@@ -17,12 +17,18 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("datetimeFrom") is { } nullNodeDatetimeFrom && nullNodeDatetimeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeFrom = null;
-            if (parseNode.GetChildNode("datetimeTo") is { } nullNodeDatetimeTo && nullNodeDatetimeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeTo = null;
-            if (parseNode.GetChildNode("flagType") is { } nullNodeFlagType && nullNodeFlagType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagType = null;
-            if (parseNode.GetChildNode("locationId") is { } nullNodeLocationId && nullNodeLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationId = null;
-            if (parseNode.GetChildNode("note") is { } nullNodeNote && nullNodeNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Note = null;
-            if (parseNode.GetChildNode("sensorIds") is { } nullNodeSensorIds && nullNodeSensorIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensorIds = null;
+            if (parseNode.GetChildNode("datetimeFrom") is null) { _explicitNullValueDatetimeFrom = default!; _explicitNullProperties?.Remove("datetimeFrom"); }
+            else if (parseNode.GetChildNode("datetimeFrom") is { } nullNodeDatetimeFrom && nullNodeDatetimeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeFrom = null;
+            if (parseNode.GetChildNode("datetimeTo") is null) { _explicitNullValueDatetimeTo = default!; _explicitNullProperties?.Remove("datetimeTo"); }
+            else if (parseNode.GetChildNode("datetimeTo") is { } nullNodeDatetimeTo && nullNodeDatetimeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatetimeTo = null;
+            if (parseNode.GetChildNode("flagType") is null) { _explicitNullValueFlagType = default!; _explicitNullProperties?.Remove("flagType"); }
+            else if (parseNode.GetChildNode("flagType") is { } nullNodeFlagType && nullNodeFlagType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FlagType = null;
+            if (parseNode.GetChildNode("locationId") is null) { _explicitNullValueLocationId = default!; _explicitNullProperties?.Remove("locationId"); }
+            else if (parseNode.GetChildNode("locationId") is { } nullNodeLocationId && nullNodeLocationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationId = null;
+            if (parseNode.GetChildNode("note") is null) { _explicitNullValueNote = default!; _explicitNullProperties?.Remove("note"); }
+            else if (parseNode.GetChildNode("note") is { } nullNodeNote && nullNodeNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Note = null;
+            if (parseNode.GetChildNode("sensorIds") is null) { _explicitNullValueSensorIds = default!; _explicitNullProperties?.Remove("sensorIds"); }
+            else if (parseNode.GetChildNode("sensorIds") is { } nullNodeSensorIds && nullNodeSensorIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensorIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,54 +36,54 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The datetimeFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeFrom = default!;
 #endif
         /// <summary>The datetimeTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeTo = default!;
 #endif
         /// <summary>The flagType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagType? FlagType { get => _explicitNullValueFlagType; set { _explicitNullValueFlagType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagType"); else _explicitNullProperties?.Remove("flagType"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagType? FlagType { get => _explicitNullValueFlagType; set { _explicitNullValueFlagType = value; AdditionalData?.Remove("flagType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagType"); else _explicitNullProperties?.Remove("flagType"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.FlagType? _explicitNullValueFlagType = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagType FlagType { get => _explicitNullValueFlagType; set { _explicitNullValueFlagType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagType"); else _explicitNullProperties?.Remove("flagType"); } }
+        public global::Soenneker.OpenAq.OpenApiClient.Models.FlagType FlagType { get => _explicitNullValueFlagType; set { _explicitNullValueFlagType = value; AdditionalData?.Remove("flagType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flagType"); else _explicitNullProperties?.Remove("flagType"); } }
         private global::Soenneker.OpenAq.OpenApiClient.Models.FlagType _explicitNullValueFlagType = default!;
 #endif
         /// <summary>The locationId property</summary>
-        public int? LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationId"); else _explicitNullProperties?.Remove("locationId"); } }
+        public int? LocationId { get => _explicitNullValueLocationId; set { _explicitNullValueLocationId = value; AdditionalData?.Remove("locationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locationId"); else _explicitNullProperties?.Remove("locationId"); } }
         private int? _explicitNullValueLocationId = default!;
         /// <summary>The note property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
+        public string? Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; AdditionalData?.Remove("note"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
         private string? _explicitNullValueNote = default!;
 #nullable restore
 #else
-        public string Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
+        public string Note { get => _explicitNullValueNote; set { _explicitNullValueNote = value; AdditionalData?.Remove("note"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note"); else _explicitNullProperties?.Remove("note"); } }
         private string _explicitNullValueNote = default!;
 #endif
         /// <summary>The sensorIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SensorIds { get => _explicitNullValueSensorIds; set { _explicitNullValueSensorIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensorIds"); else _explicitNullProperties?.Remove("sensorIds"); } }
+        public List<int?>? SensorIds { get => _explicitNullValueSensorIds; set { _explicitNullValueSensorIds = value; AdditionalData?.Remove("sensorIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensorIds"); else _explicitNullProperties?.Remove("sensorIds"); } }
         private List<int?>? _explicitNullValueSensorIds = default!;
 #nullable restore
 #else
-        public List<int?> SensorIds { get => _explicitNullValueSensorIds; set { _explicitNullValueSensorIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensorIds"); else _explicitNullProperties?.Remove("sensorIds"); } }
+        public List<int?> SensorIds { get => _explicitNullValueSensorIds; set { _explicitNullValueSensorIds = value; AdditionalData?.Remove("sensorIds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensorIds"); else _explicitNullProperties?.Remove("sensorIds"); } }
         private List<int?> _explicitNullValueSensorIds = default!;
 #endif
         /// <summary>

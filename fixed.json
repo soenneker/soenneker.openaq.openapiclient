@@ -4558,7 +4558,7 @@
             "$ref": "#/components/schemas/CoverageDatetimeFrom"
           },
           "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeTo"
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           }
         }
       },
@@ -4584,16 +4584,16 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "period": {
-            "$ref": "#/components/schemas/DailyDataPeriod"
+            "$ref": "#/components/schemas/AnnualDataPeriod"
           },
           "coordinates": {
-            "$ref": "#/components/schemas/DailyDataCoordinates"
+            "$ref": "#/components/schemas/AnnualDataCoordinates"
           },
           "summary": {
-            "$ref": "#/components/schemas/DailyDataSummary"
+            "$ref": "#/components/schemas/AnnualDataSummary"
           },
           "coverage": {
-            "$ref": "#/components/schemas/DailyDataCoverage"
+            "$ref": "#/components/schemas/AnnualDataCoverage"
           }
         }
       },
@@ -4750,16 +4750,16 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "period": {
-            "$ref": "#/components/schemas/HourlyDataPeriod"
+            "$ref": "#/components/schemas/AnnualDataPeriod"
           },
           "coordinates": {
-            "$ref": "#/components/schemas/HourlyDataCoordinates"
+            "$ref": "#/components/schemas/AnnualDataCoordinates"
           },
           "summary": {
-            "$ref": "#/components/schemas/HourlyDataSummary"
+            "$ref": "#/components/schemas/AnnualDataSummary"
           },
           "coverage": {
-            "$ref": "#/components/schemas/HourlyDataCoverage"
+            "$ref": "#/components/schemas/AnnualDataCoverage"
           }
         }
       },
@@ -5142,10 +5142,10 @@
             ]
           },
           "datetimeFirst": {
-            "$ref": "#/components/schemas/LocationDatetimeFirst"
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           },
           "datetimeLast": {
-            "$ref": "#/components/schemas/LocationDatetimeLast"
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           }
         }
       },
@@ -5402,16 +5402,16 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "period": {
-            "$ref": "#/components/schemas/MeasurementPeriod"
+            "$ref": "#/components/schemas/AnnualDataPeriod"
           },
           "coordinates": {
-            "$ref": "#/components/schemas/MeasurementCoordinates"
+            "$ref": "#/components/schemas/AnnualDataCoordinates"
           },
           "summary": {
-            "$ref": "#/components/schemas/MeasurementSummary"
+            "$ref": "#/components/schemas/AnnualDataSummary"
           },
           "coverage": {
-            "$ref": "#/components/schemas/MeasurementCoverage"
+            "$ref": "#/components/schemas/AnnualDataCoverage"
           }
         }
       },
@@ -5677,10 +5677,10 @@
             "type": "string"
           },
           "datetimeFrom": {
-            "$ref": "#/components/schemas/PeriodDatetimeFrom"
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           },
           "datetimeTo": {
-            "$ref": "#/components/schemas/PeriodDatetimeTo"
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           }
         }
       },
@@ -5827,19 +5827,19 @@
             "$ref": "#/components/schemas/ParameterBase"
           },
           "datetimeFirst": {
-            "$ref": "#/components/schemas/SensorDatetimeFirst"
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           },
           "datetimeLast": {
-            "$ref": "#/components/schemas/SensorDatetimeLast"
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           },
           "coverage": {
-            "$ref": "#/components/schemas/SensorCoverage"
+            "$ref": "#/components/schemas/AnnualDataCoverage"
           },
           "latest": {
             "$ref": "#/components/schemas/SensorLatest"
           },
           "summary": {
-            "$ref": "#/components/schemas/SensorSummary"
+            "$ref": "#/components/schemas/AnnualDataSummary"
           }
         }
       },
