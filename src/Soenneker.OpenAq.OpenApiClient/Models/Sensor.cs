@@ -40,32 +40,32 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The coverage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? _explicitNullValueCoverage = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage? _explicitNullValueCoverage = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Coverage _explicitNullValueCoverage = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage _explicitNullValueCoverage = default!;
 #endif
         /// <summary>The datetimeFirst property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeFirst = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? _explicitNullValueDatetimeFirst = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeFirst = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom _explicitNullValueDatetimeFirst = default!;
 #endif
         /// <summary>The datetimeLast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeLast = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? _explicitNullValueDatetimeLast = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeLast = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom _explicitNullValueDatetimeLast = default!;
 #endif
         /// <summary>The id property</summary>
         public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -73,12 +73,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The latest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase? Latest { get => _explicitNullValueLatest; set { _explicitNullValueLatest = value; AdditionalData?.Remove("latest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest"); else _explicitNullProperties?.Remove("latest"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase? _explicitNullValueLatest = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest? Latest { get => _explicitNullValueLatest; set { _explicitNullValueLatest = value; AdditionalData?.Remove("latest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest"); else _explicitNullProperties?.Remove("latest"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest? _explicitNullValueLatest = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase Latest { get => _explicitNullValueLatest; set { _explicitNullValueLatest = value; AdditionalData?.Remove("latest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest"); else _explicitNullProperties?.Remove("latest"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase _explicitNullValueLatest = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest Latest { get => _explicitNullValueLatest; set { _explicitNullValueLatest = value; AdditionalData?.Remove("latest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latest"); else _explicitNullProperties?.Remove("latest"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest _explicitNullValueLatest = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,12 +103,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Summary? _explicitNullValueSummary = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Summary _explicitNullValueSummary = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary _explicitNullValueSummary = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Sensor"/> and sets the default values.
@@ -135,14 +135,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>(global::Soenneker.OpenAq.OpenApiClient.Models.Coverage.CreateFromDiscriminatorValue); } },
-                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
-                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
+                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage>(global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage.CreateFromDiscriminatorValue); } },
+                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },
+                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "latest", n => { Latest = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase>(global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase.CreateFromDiscriminatorValue); } },
+                { "latest", n => { Latest = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest>(global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parameter", n => { Parameter = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>(global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>(global::Soenneker.OpenAq.OpenApiClient.Models.Summary.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary>(global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -152,14 +152,14 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>("coverage", Coverage);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeFirst", DatetimeFirst);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeLast", DatetimeLast);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage>("coverage", Coverage);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>("datetimeFirst", DatetimeFirst);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>("datetimeLast", DatetimeLast);
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.LatestBase>("latest", Latest);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.SensorLatest>("latest", Latest);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>("parameter", Parameter);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>("summary", Summary);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary>("summary", Summary);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

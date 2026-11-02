@@ -38,22 +38,22 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The coordinates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; AdditionalData?.Remove("coordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates? _explicitNullValueCoordinates = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoordinates? Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; AdditionalData?.Remove("coordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoordinates? _explicitNullValueCoordinates = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; AdditionalData?.Remove("coordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates _explicitNullValueCoordinates = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoordinates Coordinates { get => _explicitNullValueCoordinates; set { _explicitNullValueCoordinates = value; AdditionalData?.Remove("coordinates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coordinates"); else _explicitNullProperties?.Remove("coordinates"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoordinates _explicitNullValueCoordinates = default!;
 #endif
         /// <summary>The coverage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Coverage? _explicitNullValueCoverage = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage? Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage? _explicitNullValueCoverage = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Coverage Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Coverage _explicitNullValueCoverage = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage Coverage { get => _explicitNullValueCoverage; set { _explicitNullValueCoverage = value; AdditionalData?.Remove("coverage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("coverage"); else _explicitNullProperties?.Remove("coverage"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage _explicitNullValueCoverage = default!;
 #endif
         /// <summary>The flagInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,22 +78,22 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The period property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Period? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Period? _explicitNullValuePeriod = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod? _explicitNullValuePeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Period Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Period _explicitNullValuePeriod = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; AdditionalData?.Remove("period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod _explicitNullValuePeriod = default!;
 #endif
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Summary? _explicitNullValueSummary = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.Summary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.Summary _explicitNullValueSummary = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary _explicitNullValueSummary = default!;
 #endif
         /// <summary>The value property</summary>
         public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
@@ -123,12 +123,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "coordinates", n => { Coordinates = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>(global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.CreateFromDiscriminatorValue); } },
-                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>(global::Soenneker.OpenAq.OpenApiClient.Models.Coverage.CreateFromDiscriminatorValue); } },
+                { "coordinates", n => { Coordinates = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoordinates>(global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoordinates.CreateFromDiscriminatorValue); } },
+                { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage>(global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage.CreateFromDiscriminatorValue); } },
                 { "flagInfo", n => { FlagInfo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo>(global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo.CreateFromDiscriminatorValue); } },
                 { "parameter", n => { Parameter = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>(global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase.CreateFromDiscriminatorValue); } },
-                { "period", n => { Period = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Period>(global::Soenneker.OpenAq.OpenApiClient.Models.Period.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>(global::Soenneker.OpenAq.OpenApiClient.Models.Summary.CreateFromDiscriminatorValue); } },
+                { "period", n => { Period = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod>(global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary>(global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
@@ -139,12 +139,12 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>("coordinates", Coordinates);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coverage>("coverage", Coverage);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoordinates>("coordinates", Coordinates);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage>("coverage", Coverage);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.FlagInfo>("flagInfo", FlagInfo);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ParameterBase>("parameter", Parameter);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Period>("period", Period);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Summary>("summary", Summary);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod>("period", Period);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataSummary>("summary", Summary);
             writer.WriteDoubleValue("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

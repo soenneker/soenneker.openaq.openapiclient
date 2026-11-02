@@ -4518,50 +4518,6 @@
           }
         }
       },
-      "Coverage": {
-        "title": "Coverage",
-        "required": [
-          "expectedCount",
-          "expectedInterval",
-          "observedCount",
-          "observedInterval",
-          "percentComplete",
-          "percentCoverage"
-        ],
-        "type": "object",
-        "properties": {
-          "expectedCount": {
-            "title": "Expectedcount",
-            "type": "integer"
-          },
-          "expectedInterval": {
-            "title": "Expectedinterval",
-            "type": "string"
-          },
-          "observedCount": {
-            "title": "Observedcount",
-            "type": "integer"
-          },
-          "observedInterval": {
-            "title": "Observedinterval",
-            "type": "string"
-          },
-          "percentComplete": {
-            "title": "Percentcomplete",
-            "type": "number"
-          },
-          "percentCoverage": {
-            "title": "Percentcoverage",
-            "type": "number"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          }
-        }
-      },
       "DailyData": {
         "title": "DailyData",
         "required": [
@@ -4693,25 +4649,6 @@
           "level": {
             "title": "Level",
             "type": "string"
-          }
-        }
-      },
-      "GeoJson": {
-        "title": "GeoJSON",
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "title": "Type",
-            "type": "string"
-          },
-          "coordinates": {
-            "title": "Coordinates",
-            "type": "array",
-            "items": {},
-            "default": []
           }
         }
       },
@@ -4903,27 +4840,6 @@
           "locationsId": {
             "title": "Locationsid",
             "type": "integer"
-          }
-        }
-      },
-      "LatestBase": {
-        "title": "LatestBase",
-        "required": [
-          "datetime",
-          "value",
-          "coordinates"
-        ],
-        "type": "object",
-        "properties": {
-          "datetime": {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          "value": {
-            "title": "Value",
-            "type": "number"
-          },
-          "coordinates": {
-            "$ref": "#/components/schemas/Coordinates"
           }
         }
       },
@@ -5660,30 +5576,6 @@
           ]
         }
       },
-      "Period": {
-        "title": "Period",
-        "required": [
-          "label",
-          "interval"
-        ],
-        "type": "object",
-        "properties": {
-          "label": {
-            "title": "Label",
-            "type": "string"
-          },
-          "interval": {
-            "title": "Interval",
-            "type": "string"
-          },
-          "datetimeFrom": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          },
-          "datetimeTo": {
-            "$ref": "#/components/schemas/CoverageDatetimeFrom"
-          }
-        }
-      },
       "Provider": {
         "title": "Provider",
         "required": [
@@ -5912,9 +5804,108 @@
           ]
         }
       },
-      "Summary": {
-        "title": "Summary",
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
         "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationErrorLocItem"
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      },
+      "AnnualDataPeriod": {
+        "title": "Period",
+        "required": [
+          "label",
+          "interval"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "label": {
+            "title": "Label",
+            "type": "string"
+          },
+          "interval": {
+            "title": "Interval",
+            "type": "string"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          }
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/Period"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "AnnualDataCoordinates": {
+        "title": "Coordinates",
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "latitude": {
+            "title": "Latitude",
+            "type": [
+              "null",
+              "number"
+            ]
+          },
+          "longitude": {
+            "title": "Longitude",
+            "type": [
+              "null",
+              "number"
+            ]
+          }
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/Coordinates"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "AnnualDataSummary": {
+        "title": "Summary",
+        "type": [
+          "object",
+          "null"
+        ],
         "properties": {
           "min": {
             "title": "Min",
@@ -5979,233 +5970,107 @@
               "number"
             ]
           }
-        }
-      },
-      "ValidationError": {
-        "title": "ValidationError",
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "loc": {
-            "title": "Location",
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ValidationErrorLocItem"
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/Summary"
+            },
+            {
+              "type": "null"
             }
-          },
-          "msg": {
-            "title": "Message",
-            "type": "string"
-          },
-          "type": {
-            "title": "Error Type",
-            "type": "string"
-          }
+          ]
         }
-      },
-      "AnnualDataPeriod": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Period"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "AnnualDataCoordinates": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coordinates"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "AnnualDataSummary": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Summary"
-          },
-          {
-            "type": "null"
-          }
-        ]
       },
       "AnnualDataCoverage": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coverage"
+        "title": "Coverage",
+        "required": [
+          "expectedCount",
+          "expectedInterval",
+          "observedCount",
+          "observedInterval",
+          "percentComplete",
+          "percentCoverage"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "expectedCount": {
+            "title": "Expectedcount",
+            "type": "integer"
           },
-          {
-            "type": "null"
+          "expectedInterval": {
+            "title": "Expectedinterval",
+            "type": "string"
+          },
+          "observedCount": {
+            "title": "Observedcount",
+            "type": "integer"
+          },
+          "observedInterval": {
+            "title": "Observedinterval",
+            "type": "string"
+          },
+          "percentComplete": {
+            "title": "Percentcomplete",
+            "type": "number"
+          },
+          "percentCoverage": {
+            "title": "Percentcoverage",
+            "type": "number"
+          },
+          "datetimeFrom": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
+          },
+          "datetimeTo": {
+            "$ref": "#/components/schemas/CoverageDatetimeFrom"
           }
-        ]
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/Coverage"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
       },
       "CoverageDatetimeFrom": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
+        "title": "DatetimeObject",
+        "required": [
+          "utc",
+          "local"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "utc": {
+            "title": "Utc",
+            "type": "string",
+            "format": "date-time"
           },
-          {
-            "type": "null"
+          "local": {
+            "title": "Local",
+            "type": "string",
+            "format": "date-time"
           }
-        ]
-      },
-      "CoverageDatetimeTo": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "DailyDataPeriod": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Period"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "DailyDataCoordinates": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coordinates"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "DailyDataSummary": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Summary"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "DailyDataCoverage": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coverage"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "HourlyDataPeriod": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Period"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "HourlyDataCoordinates": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coordinates"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "HourlyDataSummary": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Summary"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "HourlyDataCoverage": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coverage"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "LocationDatetimeFirst": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "LocationDatetimeLast": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "MeasurementPeriod": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Period"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "MeasurementCoordinates": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coordinates"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "MeasurementSummary": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Summary"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "MeasurementCoverage": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coverage"
-          },
-          {
-            "type": "null"
-          }
-        ]
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/DatetimeObject"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
       },
       "MetaFound": {
         "title": "Found",
@@ -6221,85 +6086,71 @@
           }
         ]
       },
-      "PeriodDatetimeFrom": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "PeriodDatetimeTo": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
       "ProviderBbox": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GeoJson"
+        "title": "GeoJSON",
+        "required": [
+          "type"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "type": {
+            "title": "Type",
+            "type": "string"
           },
-          {
-            "type": "null"
+          "coordinates": {
+            "title": "Coordinates",
+            "type": "array",
+            "items": {},
+            "default": []
           }
-        ]
-      },
-      "SensorDatetimeFirst": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "SensorDatetimeLast": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/DatetimeObject"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "SensorCoverage": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Coverage"
-          },
-          {
-            "type": "null"
-          }
-        ]
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/GeoJson"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
       },
       "SensorLatest": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/LatestBase"
+        "title": "LatestBase",
+        "required": [
+          "datetime",
+          "value",
+          "coordinates"
+        ],
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "datetime": {
+            "$ref": "#/components/schemas/DatetimeObject"
           },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "SensorSummary": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/Summary"
+          "value": {
+            "title": "Value",
+            "type": "number"
           },
-          {
-            "type": "null"
+          "coordinates": {
+            "$ref": "#/components/schemas/Coordinates"
           }
-        ]
+        },
+        "x-client-original-nullable-union": {
+          "anyOf": [
+            {
+              "$ref": "#/components/schemas/LatestBase"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
       },
       "ValidationErrorLocItem": {
         "anyOf": [
@@ -6310,10 +6161,6 @@
             "type": "integer"
           }
         ]
-      },
-      "ExamplePayload": {
-        "type": "object",
-        "description": "Placeholder schema for path example refs"
       }
     },
     "securitySchemes": {
@@ -6322,6 +6169,1186 @@
         "name": "X-API-Key",
         "in": "header"
       }
+    }
+  },
+  "x-client-unused-schemas": {
+    "Coverage": {
+      "title": "Coverage",
+      "required": [
+        "expectedCount",
+        "expectedInterval",
+        "observedCount",
+        "observedInterval",
+        "percentComplete",
+        "percentCoverage"
+      ],
+      "type": "object",
+      "properties": {
+        "expectedCount": {
+          "title": "Expectedcount",
+          "type": "integer"
+        },
+        "expectedInterval": {
+          "title": "Expectedinterval",
+          "type": "string"
+        },
+        "observedCount": {
+          "title": "Observedcount",
+          "type": "integer"
+        },
+        "observedInterval": {
+          "title": "Observedinterval",
+          "type": "string"
+        },
+        "percentComplete": {
+          "title": "Percentcomplete",
+          "type": "number"
+        },
+        "percentCoverage": {
+          "title": "Percentcoverage",
+          "type": "number"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      }
+    },
+    "GeoJson": {
+      "title": "GeoJSON",
+      "required": [
+        "type"
+      ],
+      "type": "object",
+      "properties": {
+        "type": {
+          "title": "Type",
+          "type": "string"
+        },
+        "coordinates": {
+          "title": "Coordinates",
+          "type": "array",
+          "items": {},
+          "default": []
+        }
+      }
+    },
+    "LatestBase": {
+      "title": "LatestBase",
+      "required": [
+        "datetime",
+        "value",
+        "coordinates"
+      ],
+      "type": "object",
+      "properties": {
+        "datetime": {
+          "$ref": "#/components/schemas/DatetimeObject"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "coordinates": {
+          "$ref": "#/components/schemas/Coordinates"
+        }
+      }
+    },
+    "Period": {
+      "title": "Period",
+      "required": [
+        "label",
+        "interval"
+      ],
+      "type": "object",
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "interval": {
+          "title": "Interval",
+          "type": "string"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      }
+    },
+    "Summary": {
+      "title": "Summary",
+      "type": "object",
+      "properties": {
+        "min": {
+          "title": "Min",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q02": {
+          "title": "Q02",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q25": {
+          "title": "Q25",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "median": {
+          "title": "Median",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q75": {
+          "title": "Q75",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q98": {
+          "title": "Q98",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "max": {
+          "title": "Max",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "avg": {
+          "title": "Avg",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "sd": {
+          "title": "Sd",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      }
+    },
+    "CoverageDatetimeTo": {
+      "title": "DatetimeObject",
+      "required": [
+        "utc",
+        "local"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "utc": {
+          "title": "Utc",
+          "type": "string",
+          "format": "date-time"
+        },
+        "local": {
+          "title": "Local",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "DailyDataPeriod": {
+      "title": "Period",
+      "required": [
+        "label",
+        "interval"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "interval": {
+          "title": "Interval",
+          "type": "string"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Period"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "DailyDataCoordinates": {
+      "title": "Coordinates",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "latitude": {
+          "title": "Latitude",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "longitude": {
+          "title": "Longitude",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coordinates"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "DailyDataSummary": {
+      "title": "Summary",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "min": {
+          "title": "Min",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q02": {
+          "title": "Q02",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q25": {
+          "title": "Q25",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "median": {
+          "title": "Median",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q75": {
+          "title": "Q75",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q98": {
+          "title": "Q98",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "max": {
+          "title": "Max",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "avg": {
+          "title": "Avg",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "sd": {
+          "title": "Sd",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "DailyDataCoverage": {
+      "title": "Coverage",
+      "required": [
+        "expectedCount",
+        "expectedInterval",
+        "observedCount",
+        "observedInterval",
+        "percentComplete",
+        "percentCoverage"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expectedCount": {
+          "title": "Expectedcount",
+          "type": "integer"
+        },
+        "expectedInterval": {
+          "title": "Expectedinterval",
+          "type": "string"
+        },
+        "observedCount": {
+          "title": "Observedcount",
+          "type": "integer"
+        },
+        "observedInterval": {
+          "title": "Observedinterval",
+          "type": "string"
+        },
+        "percentComplete": {
+          "title": "Percentcomplete",
+          "type": "number"
+        },
+        "percentCoverage": {
+          "title": "Percentcoverage",
+          "type": "number"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "HourlyDataPeriod": {
+      "title": "Period",
+      "required": [
+        "label",
+        "interval"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "interval": {
+          "title": "Interval",
+          "type": "string"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Period"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "HourlyDataCoordinates": {
+      "title": "Coordinates",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "latitude": {
+          "title": "Latitude",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "longitude": {
+          "title": "Longitude",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coordinates"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "HourlyDataSummary": {
+      "title": "Summary",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "min": {
+          "title": "Min",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q02": {
+          "title": "Q02",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q25": {
+          "title": "Q25",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "median": {
+          "title": "Median",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q75": {
+          "title": "Q75",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q98": {
+          "title": "Q98",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "max": {
+          "title": "Max",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "avg": {
+          "title": "Avg",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "sd": {
+          "title": "Sd",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "HourlyDataCoverage": {
+      "title": "Coverage",
+      "required": [
+        "expectedCount",
+        "expectedInterval",
+        "observedCount",
+        "observedInterval",
+        "percentComplete",
+        "percentCoverage"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expectedCount": {
+          "title": "Expectedcount",
+          "type": "integer"
+        },
+        "expectedInterval": {
+          "title": "Expectedinterval",
+          "type": "string"
+        },
+        "observedCount": {
+          "title": "Observedcount",
+          "type": "integer"
+        },
+        "observedInterval": {
+          "title": "Observedinterval",
+          "type": "string"
+        },
+        "percentComplete": {
+          "title": "Percentcomplete",
+          "type": "number"
+        },
+        "percentCoverage": {
+          "title": "Percentcoverage",
+          "type": "number"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "LocationDatetimeFirst": {
+      "title": "DatetimeObject",
+      "required": [
+        "utc",
+        "local"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "utc": {
+          "title": "Utc",
+          "type": "string",
+          "format": "date-time"
+        },
+        "local": {
+          "title": "Local",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "LocationDatetimeLast": {
+      "title": "DatetimeObject",
+      "required": [
+        "utc",
+        "local"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "utc": {
+          "title": "Utc",
+          "type": "string",
+          "format": "date-time"
+        },
+        "local": {
+          "title": "Local",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "MeasurementPeriod": {
+      "title": "Period",
+      "required": [
+        "label",
+        "interval"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "label": {
+          "title": "Label",
+          "type": "string"
+        },
+        "interval": {
+          "title": "Interval",
+          "type": "string"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Period"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "MeasurementCoordinates": {
+      "title": "Coordinates",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "latitude": {
+          "title": "Latitude",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "longitude": {
+          "title": "Longitude",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coordinates"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "MeasurementSummary": {
+      "title": "Summary",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "min": {
+          "title": "Min",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q02": {
+          "title": "Q02",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q25": {
+          "title": "Q25",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "median": {
+          "title": "Median",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q75": {
+          "title": "Q75",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q98": {
+          "title": "Q98",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "max": {
+          "title": "Max",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "avg": {
+          "title": "Avg",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "sd": {
+          "title": "Sd",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "MeasurementCoverage": {
+      "title": "Coverage",
+      "required": [
+        "expectedCount",
+        "expectedInterval",
+        "observedCount",
+        "observedInterval",
+        "percentComplete",
+        "percentCoverage"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expectedCount": {
+          "title": "Expectedcount",
+          "type": "integer"
+        },
+        "expectedInterval": {
+          "title": "Expectedinterval",
+          "type": "string"
+        },
+        "observedCount": {
+          "title": "Observedcount",
+          "type": "integer"
+        },
+        "observedInterval": {
+          "title": "Observedinterval",
+          "type": "string"
+        },
+        "percentComplete": {
+          "title": "Percentcomplete",
+          "type": "number"
+        },
+        "percentCoverage": {
+          "title": "Percentcoverage",
+          "type": "number"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "PeriodDatetimeFrom": {
+      "title": "DatetimeObject",
+      "required": [
+        "utc",
+        "local"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "utc": {
+          "title": "Utc",
+          "type": "string",
+          "format": "date-time"
+        },
+        "local": {
+          "title": "Local",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "PeriodDatetimeTo": {
+      "title": "DatetimeObject",
+      "required": [
+        "utc",
+        "local"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "utc": {
+          "title": "Utc",
+          "type": "string",
+          "format": "date-time"
+        },
+        "local": {
+          "title": "Local",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "SensorDatetimeFirst": {
+      "title": "DatetimeObject",
+      "required": [
+        "utc",
+        "local"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "utc": {
+          "title": "Utc",
+          "type": "string",
+          "format": "date-time"
+        },
+        "local": {
+          "title": "Local",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "SensorDatetimeLast": {
+      "title": "DatetimeObject",
+      "required": [
+        "utc",
+        "local"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "utc": {
+          "title": "Utc",
+          "type": "string",
+          "format": "date-time"
+        },
+        "local": {
+          "title": "Local",
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/DatetimeObject"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "SensorCoverage": {
+      "title": "Coverage",
+      "required": [
+        "expectedCount",
+        "expectedInterval",
+        "observedCount",
+        "observedInterval",
+        "percentComplete",
+        "percentCoverage"
+      ],
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "expectedCount": {
+          "title": "Expectedcount",
+          "type": "integer"
+        },
+        "expectedInterval": {
+          "title": "Expectedinterval",
+          "type": "string"
+        },
+        "observedCount": {
+          "title": "Observedcount",
+          "type": "integer"
+        },
+        "observedInterval": {
+          "title": "Observedinterval",
+          "type": "string"
+        },
+        "percentComplete": {
+          "title": "Percentcomplete",
+          "type": "number"
+        },
+        "percentCoverage": {
+          "title": "Percentcoverage",
+          "type": "number"
+        },
+        "datetimeFrom": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        },
+        "datetimeTo": {
+          "$ref": "#/components/schemas/CoverageDatetimeFrom"
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Coverage"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "SensorSummary": {
+      "title": "Summary",
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "min": {
+          "title": "Min",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q02": {
+          "title": "Q02",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q25": {
+          "title": "Q25",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "median": {
+          "title": "Median",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q75": {
+          "title": "Q75",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "q98": {
+          "title": "Q98",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "max": {
+          "title": "Max",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "avg": {
+          "title": "Avg",
+          "type": [
+            "null",
+            "number"
+          ]
+        },
+        "sd": {
+          "title": "Sd",
+          "type": [
+            "null",
+            "number"
+          ]
+        }
+      },
+      "x-client-original-nullable-union": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Summary"
+          },
+          {
+            "type": "null"
+          }
+        ]
+      }
+    },
+    "ExamplePayload": {
+      "type": "object",
+      "description": "Placeholder schema for path example refs"
     }
   }
 }

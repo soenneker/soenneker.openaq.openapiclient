@@ -9,7 +9,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Period : IAdditionalDataHolder, IParsable
+    public partial class AnnualDataPeriod : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
@@ -32,22 +32,22 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The datetimeFrom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeFrom = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? _explicitNullValueDatetimeFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeFrom = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom DatetimeFrom { get => _explicitNullValueDatetimeFrom; set { _explicitNullValueDatetimeFrom = value; AdditionalData?.Remove("datetimeFrom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFrom"); else _explicitNullProperties?.Remove("datetimeFrom"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom _explicitNullValueDatetimeFrom = default!;
 #endif
         /// <summary>The datetimeTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeTo = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? _explicitNullValueDatetimeTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeTo = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom DatetimeTo { get => _explicitNullValueDatetimeTo; set { _explicitNullValueDatetimeTo = value; AdditionalData?.Remove("datetimeTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeTo"); else _explicitNullProperties?.Remove("datetimeTo"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom _explicitNullValueDatetimeTo = default!;
 #endif
         /// <summary>The interval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,21 +70,23 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         private string _explicitNullValueLabel = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Period"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod"/> and sets the default values.
         /// </summary>
-        public Period()
+        public AnnualDataPeriod()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.Period"/></returns>
+        /// <returns>A <see cref="global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.OpenAq.OpenApiClient.Models.Period CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.Period(), parseNode);
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataPeriod(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +96,8 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "datetimeFrom", n => { DatetimeFrom = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
-                { "datetimeTo", n => { DatetimeTo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
+                { "datetimeFrom", n => { DatetimeFrom = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },
+                { "datetimeTo", n => { DatetimeTo = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
             };
@@ -107,8 +109,8 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeFrom", DatetimeFrom);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeTo", DatetimeTo);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>("datetimeFrom", DatetimeFrom);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>("datetimeTo", DatetimeTo);
             writer.WriteStringValue("interval", Interval);
             writer.WriteStringValue("label", Label);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

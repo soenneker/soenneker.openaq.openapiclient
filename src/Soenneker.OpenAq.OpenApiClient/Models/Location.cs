@@ -88,22 +88,22 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <summary>The datetimeFirst property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeFirst = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? _explicitNullValueDatetimeFirst = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeFirst = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom DatetimeFirst { get => _explicitNullValueDatetimeFirst; set { _explicitNullValueDatetimeFirst = value; AdditionalData?.Remove("datetimeFirst"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeFirst"); else _explicitNullProperties?.Remove("datetimeFirst"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom _explicitNullValueDatetimeFirst = default!;
 #endif
         /// <summary>The datetimeLast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject? _explicitNullValueDatetimeLast = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom? _explicitNullValueDatetimeLast = default!;
 #nullable restore
 #else
-        public global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
-        private global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject _explicitNullValueDatetimeLast = default!;
+        public global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom DatetimeLast { get => _explicitNullValueDatetimeLast; set { _explicitNullValueDatetimeLast = value; AdditionalData?.Remove("datetimeLast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datetimeLast"); else _explicitNullProperties?.Remove("datetimeLast"); } }
+        private global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom _explicitNullValueDatetimeLast = default!;
 #endif
         /// <summary>The distance property</summary>
         public double? Distance { get => _explicitNullValueDistance; set { _explicitNullValueDistance = value; AdditionalData?.Remove("distance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("distance"); else _explicitNullProperties?.Remove("distance"); } }
@@ -225,8 +225,8 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
                 { "bounds", n => { Bounds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "coordinates", n => { Coordinates = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>(global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates.CreateFromDiscriminatorValue); } },
                 { "country", n => { Country = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase>(global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase.CreateFromDiscriminatorValue); } },
-                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
-                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>(global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject.CreateFromDiscriminatorValue); } },
+                { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },
+                { "datetimeLast", n => { DatetimeLast = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },
                 { "distance", n => { Distance = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "instruments", n => { Instruments = n.GetCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>(global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -251,8 +251,8 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("bounds", Bounds);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.Coordinates>("coordinates", Coordinates);
             writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CountryBase>("country", Country);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeFirst", DatetimeFirst);
-            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.DatetimeObject>("datetimeLast", DatetimeLast);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>("datetimeFirst", DatetimeFirst);
+            writer.WriteObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>("datetimeLast", DatetimeLast);
             writer.WriteDoubleValue("distance", Distance);
             writer.WriteIntValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.OpenAq.OpenApiClient.Models.InstrumentBase>("instruments", Instruments);
