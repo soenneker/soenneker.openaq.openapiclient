@@ -133,7 +133,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "coverage", n => { Coverage = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage>(global::Soenneker.OpenAq.OpenApiClient.Models.AnnualDataCoverage.CreateFromDiscriminatorValue); } },
                 { "datetimeFirst", n => { DatetimeFirst = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom>(global::Soenneker.OpenAq.OpenApiClient.Models.CoverageDatetimeFrom.CreateFromDiscriminatorValue); } },

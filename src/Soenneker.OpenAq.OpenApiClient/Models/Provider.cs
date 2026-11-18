@@ -129,7 +129,7 @@ namespace Soenneker.OpenAq.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "bbox", n => { Bbox = n.GetObjectValue<global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBbox>(global::Soenneker.OpenAq.OpenApiClient.Models.ProviderBbox.CreateFromDiscriminatorValue); } },
                 { "datetimeAdded", n => { DatetimeAdded = n.GetDateTimeOffsetValue(); } },
